@@ -16,9 +16,9 @@
 package com.cs185.catchphrase;
 
 import android.annotation.SuppressLint;
+import android.app.Fragment;
 import android.os.Build;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
 import android.view.MenuItem;
 import android.view.View;
 
@@ -43,7 +43,7 @@ public class ImmersiveModeFragment extends Fragment {
                         int height = decorView.getHeight();
                     }
                 });
-        toggleHideyBar();
+        hideSystemBars();
     }
 
     @Override
@@ -55,29 +55,24 @@ public class ImmersiveModeFragment extends Fragment {
      * Detects and toggles immersive mode (also known as "hidey bar" mode).
      */
     @SuppressLint("InlinedApi")
-	public void toggleHideyBar() {
+	public void hideSystemBars() {
 
         // BEGIN_INCLUDE (get_current_ui_flags)
         // The UI options currently enabled are represented by a bitfield.
         // getSystemUiVisibility() gives us that bitfield.
         int uiOptions = getActivity().getWindow().getDecorView().getSystemUiVisibility();
         int newUiOptions = uiOptions;
-        // END_INCLUDE (get_current_ui_flags)
-        // BEGIN_INCLUDE (toggle_ui_flags)
-        boolean isImmersiveModeEnabled =
-                ((uiOptions | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY) == uiOptions);
-        if (isImmersiveModeEnabled) {
-        } else {
-        }
 
         // Navigation bar hiding:  Backwards compatible to ICS.
         if (Build.VERSION.SDK_INT >= 14) {
-            newUiOptions ^= View.SYSTEM_UI_FLAG_HIDE_NAVIGATION;
+        	getActivity().getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_HIDE_NAVIGATION);
+//            newUiOptions ^= View.SYSTEM_UI_FLAG_HIDE_NAVIGATION;
         }
 
         // Status bar hiding: Backwards compatible to Jellybean
         if (Build.VERSION.SDK_INT >= 16) {
-            newUiOptions ^= View.SYSTEM_UI_FLAG_FULLSCREEN;
+        	getActivity().getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_HIDE_NAVIGATION | View.SYSTEM_UI_FLAG_FULLSCREEN);
+//            newUiOptions ^= View.SYSTEM_UI_FLAG_FULLSCREEN;
         }
 
         // Immersive mode: Backward compatible to KitKat.
@@ -89,10 +84,17 @@ public class ImmersiveModeFragment extends Fragment {
         // semi-transparent, and the UI flag does not get cleared when the user interacts with
         // the screen.
         if (Build.VERSION.SDK_INT >= 18) {
-            newUiOptions ^= View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY;
+        	getActivity().getWindow().getDecorView().setSystemUiVisibility(
+                    View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+                    | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
+                    | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+                    | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION // hide nav bar
+                    | View.SYSTEM_UI_FLAG_FULLSCREEN // hide status bar
+                    | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY);
+
         }
 
-        getActivity().getWindow().getDecorView().setSystemUiVisibility(newUiOptions);
+//        getActivity().getWindow().getDecorView().setSystemUiVisibility(newUiOptions);
         //END_INCLUDE (set_ui_flags)
     }
 }

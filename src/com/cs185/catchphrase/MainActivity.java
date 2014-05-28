@@ -19,16 +19,17 @@
 
 package com.cs185.catchphrase;
 
+import android.app.ActionBar;
+import android.app.Activity;
+import android.app.FragmentTransaction;
 import android.os.Bundle;
-import android.support.v4.app.FragmentActivity;
-import android.support.v4.app.FragmentTransaction;
 import android.view.Menu;
 
 /**
  * A simple launcher activity containing a summary sample description
  * and a few action bar buttons.
  */
-public class MainActivity extends FragmentActivity {
+public class MainActivity extends Activity {
 
     public static final String TAG = "MainActivity";
 
@@ -39,10 +40,14 @@ public class MainActivity extends FragmentActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        
+        ActionBar actionBar = getActionBar();
+        actionBar.hide();
+        
         setContentView(R.layout.activity_main);
 
-        if (getSupportFragmentManager().findFragmentByTag(FRAGTAG) == null ) {
-            FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+        if (getFragmentManager().findFragmentByTag(FRAGTAG) == null ) {
+            FragmentTransaction transaction = getFragmentManager().beginTransaction();
             fragment = new ImmersiveModeFragment();
             transaction.add(fragment, FRAGTAG);
             transaction.commit();
@@ -52,7 +57,7 @@ public class MainActivity extends FragmentActivity {
     @Override
     protected void onResume() {
     	super.onResume();
-//        	fragment.toggleHideyBar();
+        fragment.hideSystemBars();
     }
 
     @Override
