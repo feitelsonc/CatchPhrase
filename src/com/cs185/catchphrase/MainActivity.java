@@ -14,13 +14,15 @@ import android.os.IBinder;
 import android.view.Menu;
 import android.view.View;
 import android.view.WindowManager;
+import android.widget.TextView;
 
 import com.cs185.catchphrase.Beeper.LocalBinder;
 
 public class MainActivity extends Activity {
 	
 	private Uri beeperTrackUri = null;
-	private Beeper beeper = null;
+	private Beeper beeper;
+	private TextView start;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +33,20 @@ public class MainActivity extends Activity {
         actionBar.hide();
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_main);
+        
+        start = (TextView) findViewById(R.id.start);
+        start.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+            	if (beeper != null) {
+            		if (beeper.isPlaying()) {
+                		stopBeeper();
+                	}
+                	else {
+                		startBeeper();
+                	}
+            	}
+            }
+        });
         
         if (!Beeper.isServiceStarted()) {
 	  		Intent intent = new Intent(this, Beeper.class);
@@ -59,6 +75,7 @@ public class MainActivity extends Activity {
 		unbindToMusicPlayerService();
     }
 
+    // not currently used because we aren't using the actionbar
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
 //        getMenuInflater().inflate(R.menu.main, menu);
@@ -127,6 +144,7 @@ public class MainActivity extends Activity {
     
     // call when user begins round
     private void startBeeper() {
+    	beeperTrackUri = Uri.parse("android.resource://com.cs185.catchphrase/" + R.raw.beeping);
     	beeper.initializeBeeper(beeperTrackUri);
     }
 
