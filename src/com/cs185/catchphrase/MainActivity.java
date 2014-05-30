@@ -55,8 +55,8 @@ public class MainActivity extends Activity {
 		if (Beeper.isServiceStarted()) {
 			beeper.releasePlayer();
 			stopService(new Intent(this, Beeper.class));
-			unbindToMusicPlayerService();
 		}
+		unbindToMusicPlayerService();
     }
 
     @Override
@@ -100,9 +100,9 @@ public class MainActivity extends Activity {
     
     private void unbindToMusicPlayerService() {
 		if (beeper != null) {
-			unbindService(mConnection);
 			beeper = null;
 		}
+		unbindService(mConnection);
 	}
     
     private ServiceConnection mConnection = new ServiceConnection() {
