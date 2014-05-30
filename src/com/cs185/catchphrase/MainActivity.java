@@ -3,17 +3,24 @@ package com.cs185.catchphrase;
 import android.annotation.SuppressLint;
 import android.app.ActionBar;
 import android.app.Activity;
+import android.content.ComponentName;
+import android.content.Context;
+import android.content.Intent;
+import android.content.ServiceConnection;
+import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.IBinder;
 import android.view.Menu;
 import android.view.View;
 import android.view.WindowManager;
 
-/**
- * A simple launcher activity containing a summary sample description
- * and a few action bar buttons.
- */
+import com.cs185.catchphrase.Beeper.LocalBinder;
+
 public class MainActivity extends Activity {
+	
+	private Uri beeperTrackUri = null;
+	private Beeper beeper = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,12 +31,32 @@ public class MainActivity extends Activity {
         actionBar.hide();
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_main);
+        
+        if (!Beeper.isServiceStarted()) {
+	  		Intent intent = new Intent(this, Beeper.class);
+	  		startService(intent);
+		}
+        bindToMusicPlayerService();
     }
     
     @Override
     protected void onResume() {
     	super.onResume();
+    	
         hideSystemBars();
+        
+        bindToMusicPlayerService();
+    }
+    
+    @Override
+	public void onDestroy(){
+		super.onDestroy();
+
+		if (Beeper.isServiceStarted()) {
+			beeper.releasePlayer();
+			stopService(new Intent(this, Beeper.class));
+			unbindToMusicPlayerService();
+		}
     }
 
     @Override
@@ -64,6 +91,43 @@ public class MainActivity extends Activity {
                     | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY);
 
         }
+    }
+    
+    private void bindToMusicPlayerService() {
+		Intent intent = new Intent(this, Beeper.class);
+		bindService(intent, mConnection, Context.BIND_AUTO_CREATE);
+	}
+    
+    private void unbindToMusicPlayerService() {
+		if (beeper != null) {
+			unbindService(mConnection);
+			beeper = null;
+		}
+	}
+    
+    private ServiceConnection mConnection = new ServiceConnection() {
+
+		@Override
+		public void onServiceConnected(ComponentName className, IBinder service) {
+			// We've bound to LocalService, cast the IBinder and get LocalService instance
+			LocalBinder binder = (LocalBinder) service;
+			beeper = binder.getService();
+		}
+
+		@Override
+		public void onServiceDisconnected(ComponentName arg0) {
+			beeper = null;
+		}
+	};
+    
+	// call if user wants to prematurely stop beeper
+    private void stopBeeper() {
+    	beeper.pause();
+    }
+    
+    // call when user begins round
+    private void startBeeper() {
+    	beeper.initializeBeeper(beeperTrackUri);
     }
 
 }
