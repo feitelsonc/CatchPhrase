@@ -13,6 +13,9 @@
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
+        
+        <service android:name="com.cs185.catchphrase.Beeper" />
+        
         <activity
             android:name="com.cs185.catchphrase.MainActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
