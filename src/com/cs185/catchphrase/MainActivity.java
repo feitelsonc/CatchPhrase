@@ -84,6 +84,9 @@ public class MainActivity extends Activity {
     
     @SuppressLint("InlinedApi")
 	public void hideSystemBars() {
+    	
+    	// prevent screen from dimming
+    	getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
         // Navigation bar hiding:  Backwards compatible to ICS.
         if (Build.VERSION.SDK_INT >= 14) {
         	getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_HIDE_NAVIGATION);
