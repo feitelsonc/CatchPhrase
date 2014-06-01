@@ -1,0 +1,11 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="edu.ucsb.cs.cs185.feitelsonc.hw5.MainActivity" >
+
+    
+    <item
+        android:id="@+id/renameTeamTwo"
+        android:title="@string/rename_team"/>
+
+</menu>

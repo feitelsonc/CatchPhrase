@@ -24,7 +24,8 @@
                 android:layout_height="30dp"
                 android:background="@drawable/btn_edit_team_name"
                 android:layout_alignParentLeft="true"
-                android:layout_centerVertical="true" />
+                android:layout_centerVertical="true"
+                android:onClick="editTeamOne" />
 
             <TextView
                 android:id="@+id/team1"
@@ -94,14 +95,15 @@
                 android:layout_height="30dp"
                 android:background="@drawable/btn_edit_team_name"
                 android:layout_toLeftOf="@id/team2"
-                android:layout_centerVertical="true" />
+                android:layout_centerVertical="true"
+                android:onClick="editTeamTwo" />
         </RelativeLayout>
 
     </LinearLayout>
 
     <TextView
         android:id="@+id/start"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
         android:gravity="center"

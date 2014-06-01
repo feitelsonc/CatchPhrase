@@ -12,28 +12,38 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.IBinder;
 import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.WindowManager;
+import android.widget.PopupMenu;
+import android.widget.PopupMenu.OnMenuItemClickListener;
 import android.widget.TextView;
 
 import com.cs185.catchphrase.Beeper.LocalBinder;
 
-public class MainActivity extends Activity {
+public class MainActivity extends Activity implements OnMenuItemClickListener {
 	
 	private Uri beeperTrackUri = null;
 	private Beeper beeper;
 	private TextView start;
+	private int team1Score = 0;
+	private int team2Score = 0;
+	private TextView team1ScoreTextView;
+	private TextView team2ScoreTextView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         
         hideSystemBars();
+        UiChangeListener();
         ActionBar actionBar = getActionBar();
         actionBar.hide();
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_main);
         
+        team1ScoreTextView = (TextView) findViewById(R.id.team1_score);
+        team2ScoreTextView = (TextView) findViewById(R.id.team2_score);
         start = (TextView) findViewById(R.id.start);
         start.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
@@ -104,13 +114,71 @@ public class MainActivity extends Activity {
         // the screen.
         if (Build.VERSION.SDK_INT >= 18) {
         	getWindow().getDecorView().setSystemUiVisibility(
-        			View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
+        			View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+        			| View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
                     | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
                     | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION // hide nav bar
                     | View.SYSTEM_UI_FLAG_FULLSCREEN // hide status bar
                     | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY);
 
         }
+    }
+    
+    // re-enables immersive mode after volume change or menu selection
+    public void UiChangeListener() {
+        final View decorView = getWindow().getDecorView();
+            decorView.setOnSystemUiVisibilityChangeListener (new View.OnSystemUiVisibilityChangeListener() {
+			@Override
+            public void onSystemUiVisibilityChange(int visibility) {
+				hideSystemBars();
+            }
+        });
+    }
+    
+    public void editTeamOne(View v) {
+        PopupMenu popup = new PopupMenu(this, v);
+        popup.setOnMenuItemClickListener(this);
+        popup.inflate(R.menu.edit_team_one);
+        popup.show();
+    }
+    
+    public void editTeamTwo(View v) {
+        PopupMenu popup = new PopupMenu(this, v);
+        popup.setOnMenuItemClickListener(this);
+        popup.inflate(R.menu.edit_team_two);
+        popup.show();
+    }
+    
+    @Override
+    public boolean onMenuItemClick(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.renameTeamOne:
+                return true;
+            case R.id.renameTeamTwo:
+                return true;
+            default:
+                return false;
+        }
+    }
+    
+    private void incrementTeam1Score() {
+    	++team1Score;
+    	team1ScoreTextView.setText(": " + Integer.valueOf(team1Score).toString());
+    }
+    
+    private void incrementTeam2Score() {
+    	++team2Score;
+    	team2ScoreTextView.setText(": " + Integer.valueOf(team2Score).toString());
+    }
+    
+    private void decrementTeam1Score() {
+    	--team1Score;
+    	team1ScoreTextView.setText(": " + Integer.valueOf(team1Score).toString());
+    }
+    
+    private void decrementTeam2Score() {
+    	--team2Score;
+    	team2ScoreTextView.setText(": " + Integer.valueOf(team2Score).toString());
     }
     
     private void bindToMusicPlayerService() {
