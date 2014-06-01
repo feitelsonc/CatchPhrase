@@ -56,8 +56,8 @@
             android:id="@+id/categories"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:prompt="@string/categories"
-            android:layout_weight=".33" />
+            android:layout_weight=".33"
+            android:prompt="@string/categories" />
         
         <RelativeLayout
             android:id="@+id/team2_layout"

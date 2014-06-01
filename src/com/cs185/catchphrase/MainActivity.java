@@ -15,8 +15,11 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.WindowManager;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.PopupMenu;
 import android.widget.PopupMenu.OnMenuItemClickListener;
+import android.widget.Spinner;
 import android.widget.TextView;
 
 import com.cs185.catchphrase.Beeper.LocalBinder;
@@ -30,6 +33,8 @@ public class MainActivity extends Activity implements OnMenuItemClickListener {
 	private int team2Score = 0;
 	private TextView team1ScoreTextView;
 	private TextView team2ScoreTextView;
+	private Spinner categorySpinner;
+	private int selectedCategory = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,6 +47,7 @@ public class MainActivity extends Activity implements OnMenuItemClickListener {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_main);
         
+        initializeCategorySpinner();
         team1ScoreTextView = (TextView) findViewById(R.id.team1_score);
         team2ScoreTextView = (TextView) findViewById(R.id.team2_score);
         start = (TextView) findViewById(R.id.start);
@@ -179,6 +185,20 @@ public class MainActivity extends Activity implements OnMenuItemClickListener {
     private void decrementTeam2Score() {
     	--team2Score;
     	team2ScoreTextView.setText(": " + Integer.valueOf(team2Score).toString());
+    }
+    
+    private void initializeCategorySpinner() {
+    	categorySpinner = (Spinner) findViewById(R.id.categories);
+    	// Create an ArrayAdapter using the string array and a default spinner layout
+    	ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.categories, R.layout.spinner_layout);
+    	// Specify the layout to use when the list of choices appears
+    	adapter.setDropDownViewResource(R.layout.spinner_item_layout);
+    	// Apply the adapter to the spinner
+    	categorySpinner.setAdapter(adapter);
+    }
+    
+    public void onItemSelected(AdapterView<?> parent, View view, int pos, long id) {
+    	selectedCategory = pos;
     }
     
     private void bindToMusicPlayerService() {
