@@ -11,10 +11,13 @@ import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.content.ServiceConnection;
+import android.graphics.Color;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Handler;
 import android.os.IBinder;
+import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.AdapterView;
@@ -23,6 +26,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.cs185.catchphrase.Beeper.LocalBinder;
 
@@ -39,12 +43,15 @@ public class MainActivity extends Activity implements OnItemSelectedListener {
 	private Spinner categorySpinner;
 	private int selectedCategory = 0;
 	private Button pauseButton;
+	private View mainView;
 	private Button incrementTeam1Score;
 	private Button decrementTeam1Score;
 	private Button incrementTeam2Score;
 	private Button decrementTeam2Score;
 	private String[] wordsArray;
 	private ArrayList<String> words;
+	private TimeChecker timeChecker = null;
+	private Handler handler = new Handler();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,6 +70,7 @@ public class MainActivity extends Activity implements OnItemSelectedListener {
         words = new ArrayList<String>(Arrays.asList(wordsArray));
         
         // initialize widgets and set onclick listeners
+        mainView = (View) findViewById(R.id.main_layout);
         pauseButton = (Button) findViewById(R.id.pause_button);
         pauseButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
@@ -130,7 +138,20 @@ public class MainActivity extends Activity implements OnItemSelectedListener {
 	  		startService(intent);
 		}
         bindToMusicPlayerService();
+        
+        timeChecker = new TimeChecker();
+        timeChecker.start();
     }
+    
+    @Override
+	public void onPause() {
+		super.onPause();
+
+		if (timeChecker != null) {
+			timeChecker.stopTimeChecker();
+			timeChecker = null;
+		}
+	}
     
     @Override
     protected void onResume() {
@@ -139,6 +160,11 @@ public class MainActivity extends Activity implements OnItemSelectedListener {
         hideSystemBars();
         
         bindToMusicPlayerService();
+        
+        if (timeChecker == null && Beeper.isServiceStarted()) {
+        	timeChecker = new TimeChecker();
+        	timeChecker.start();
+		}
     }
     
     @Override
@@ -150,6 +176,11 @@ public class MainActivity extends Activity implements OnItemSelectedListener {
 			stopService(new Intent(this, Beeper.class));
 		}
 		unbindToMusicPlayerService();
+		
+		if (timeChecker != null) {
+			timeChecker.stopTimeChecker();
+			timeChecker = null;
+		}
     }
     
     @SuppressLint("InlinedApi")
@@ -361,6 +392,11 @@ public class MainActivity extends Activity implements OnItemSelectedListener {
 			// We've bound to LocalService, cast the IBinder and get LocalService instance
 			LocalBinder binder = (LocalBinder) service;
 			beeper = binder.getService();
+			
+			if (beeper.isPlaying()) {
+				timeChecker = new TimeChecker();
+				timeChecker.start();
+			}
 		}
 
 		@Override
@@ -379,5 +415,81 @@ public class MainActivity extends Activity implements OnItemSelectedListener {
     	beeperTrackUri = Uri.parse("android.resource://com.cs185.catchphrase/" + R.raw.beeping);
     	beeper.initializeBeeper(beeperTrackUri);
     }
+    
+    // recalculate color for background
+    private void setBackgroundColor() {
+    	if (beeper != null) {
+    		float percentDone = (float) beeper.getCurrentPosition() / (float) beeper.getDuration();
+    		float blueComponent = (255*(1-percentDone));
+        	float redComponent = (255*percentDone);
+        	
+        	int backgroundColor = Color.argb(200, (int) redComponent, 0, (int) blueComponent);
+        	mainView.setBackgroundColor(backgroundColor);
+        	
+//        	int textColor = Color.argb(255, (int) redComponent, 0, (int) blueComponent);
+//        	start.setTextColor(textColor);
+    	}	
+    }
+    
+    private class TimeChecker extends Thread {
+    	TimeCheckerRunnable runnable = null;
+    	
+    	public TimeChecker() {
+    		this(new TimeCheckerRunnable());
+     	}
+    	
+    	private TimeChecker(TimeCheckerRunnable runnable) {
+    		super(runnable, "time_checker");
+    		this.runnable = runnable;
+    	}
+    	
+    	public void stopTimeChecker() {
+    		runnable.stopTicker();
+    	}
+    }
+
+	private class TimeCheckerRunnable implements Runnable {
+	   	private final int TICKER_TIME = 100;
+    	
+    	private boolean canceled = false; 
+    	
+ 
+    	@Override
+    	public void run() {
+     		
+     		while(!canceled) {
+	    		try {
+	    			Thread.sleep(TICKER_TIME);
+	    		} catch (InterruptedException e) {
+	    			return;
+	    		} catch (Exception e) {
+	    			return;
+	    		}
+
+	    		handler.post(new Runnable() {
+	    			@Override
+	    			public void run() {
+	    				
+	    				if(!canceled && beeper != null) {
+	    					if (beeper.isPlaying()) {
+	    						setBackgroundColor();
+	    						
+	    						// TODO: implement more robust way of determining end of round
+	    						
+	    						if ((float) beeper.getDuration() - beeper.getCurrentPosition() <= 150) {
+	    							
+	    							// TODO: popup round over dialog
+	    						}
+	    					}
+	    				}
+	    			}
+	    		});
+     		}
+    	}
+    	
+    	public void stopTicker() {
+    		canceled = true;
+    	}
+	}
 
 }

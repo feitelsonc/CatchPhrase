@@ -2,9 +2,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#ffffff"
+    tools:context="com.cs185.catchphrase.util.MainActivity"
+     >
+    
+    <RelativeLayout
+        android:layout_width="match_parent"
+    android:layout_height="match_parent"
     android:background="#0099cc"
     android:padding="@dimen/activity_margin"
-    tools:context="com.cs185.catchphrase.util.MainActivity" >
+    android:id="@+id/main_layout" >
     
     <LinearLayout
         android:id="@+id/team_names_and_spinner"
@@ -163,6 +170,8 @@
             android:textColor="#33b5e5"
             android:textSize="50sp"
             android:textStyle="bold" />
+    </RelativeLayout>
+    
     </RelativeLayout>
 
 </RelativeLayout>
