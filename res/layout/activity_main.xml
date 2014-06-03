@@ -3,15 +3,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#ffffff"
-    tools:context="com.cs185.catchphrase.util.MainActivity"
-     >
+    tools:context="com.cs185.catchphrase.util.MainActivity" >
     
     <RelativeLayout
+        android:id="@+id/main_layout"
         android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="#0099cc"
-    android:padding="@dimen/activity_margin"
-    android:id="@+id/main_layout" >
+        android:layout_height="match_parent"
+        android:background="#0099cc"
+        android:padding="@dimen/activity_margin" >
     
     <LinearLayout
         android:id="@+id/team_names_and_spinner"

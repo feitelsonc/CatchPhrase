@@ -419,11 +419,16 @@ public class MainActivity extends Activity implements OnItemSelectedListener {
     // recalculate color for background
     private void setBackgroundColor() {
     	if (beeper != null) {
+    		int baseColor = Color.parseColor("#0099cc");
+    		int baseBlue = Color.blue(baseColor);
+    		int baseGreen = Color.green(baseColor);
+    		
     		float percentDone = (float) beeper.getCurrentPosition() / (float) beeper.getDuration();
-    		float blueComponent = (255*(1-percentDone));
+    		float blueComponent = (baseBlue*(1-percentDone));
         	float redComponent = (255*percentDone);
+        	float greenComponent = (baseGreen*(1-percentDone));
         	
-        	int backgroundColor = Color.argb(200, (int) redComponent, 0, (int) blueComponent);
+        	int backgroundColor = Color.argb(255, (int) redComponent, (int) greenComponent, (int) blueComponent);
         	mainView.setBackgroundColor(backgroundColor);
         	
 //        	int textColor = Color.argb(255, (int) redComponent, 0, (int) blueComponent);
