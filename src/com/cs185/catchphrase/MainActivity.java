@@ -1,5 +1,8 @@
 package com.cs185.catchphrase;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+
 import android.annotation.SuppressLint;
 import android.app.ActionBar;
 import android.app.Activity;
@@ -12,19 +15,17 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.IBinder;
 import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.PopupMenu;
-import android.widget.PopupMenu.OnMenuItemClickListener;
+import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.TextView;
 
 import com.cs185.catchphrase.Beeper.LocalBinder;
 
-public class MainActivity extends Activity implements OnMenuItemClickListener {
+public class MainActivity extends Activity {
 	
 	private Uri beeperTrackUri = null;
 	private Beeper beeper;
@@ -35,6 +36,12 @@ public class MainActivity extends Activity implements OnMenuItemClickListener {
 	private TextView team2ScoreTextView;
 	private Spinner categorySpinner;
 	private int selectedCategory = 0;
+	private Button pauseButton;
+	private Button incrementTeam1Score;
+	private Button decrementTeam1Score;
+	private Button incrementTeam2Score;
+	private Button decrementTeam2Score;
+	private ArrayList<String> words;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,6 +55,49 @@ public class MainActivity extends Activity implements OnMenuItemClickListener {
         setContentView(R.layout.activity_main);
         
         initializeCategorySpinner();
+        
+        // initialize widgets and set onclick listeners
+        pauseButton = (Button) findViewById(R.id.pause_button);
+        pauseButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+            	if (beeper != null) {
+                		stopBeeper();
+            	}
+            }
+        });
+        
+        incrementTeam1Score = (Button) findViewById(R.id.add_button_team_one);
+        decrementTeam1Score = (Button) findViewById(R.id.subtract_button_team_one);
+        incrementTeam2Score = (Button) findViewById(R.id.add_button_team_two);
+        decrementTeam2Score = (Button) findViewById(R.id.subtract_button_team_two);
+        
+        incrementTeam1Score.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+            	decrementTeam1Score.setEnabled(true);
+            	incrementTeam1Score();
+            }
+        });
+        
+        decrementTeam1Score.setEnabled(false);
+        decrementTeam1Score.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+            	decrementTeam1Score();
+            }
+        });
+        
+        incrementTeam2Score.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+            	decrementTeam2Score.setEnabled(true);
+            	incrementTeam2Score();
+            }
+        });
+        
+        decrementTeam2Score.setEnabled(false);
+        decrementTeam2Score.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+            	decrementTeam2Score();
+            }
+        });
         team1ScoreTextView = (TextView) findViewById(R.id.team1_score);
         team2ScoreTextView = (TextView) findViewById(R.id.team2_score);
         start = (TextView) findViewById(R.id.start);
@@ -141,50 +191,55 @@ public class MainActivity extends Activity implements OnMenuItemClickListener {
         });
     }
     
-    public void editTeamOne(View v) {
-        PopupMenu popup = new PopupMenu(this, v);
-        popup.setOnMenuItemClickListener(this);
-        popup.inflate(R.menu.edit_team_one);
-        popup.show();
-    }
-    
-    public void editTeamTwo(View v) {
-        PopupMenu popup = new PopupMenu(this, v);
-        popup.setOnMenuItemClickListener(this);
-        popup.inflate(R.menu.edit_team_two);
-        popup.show();
-    }
-    
-    @Override
-    public boolean onMenuItemClick(MenuItem item) {
-        switch (item.getItemId()) {
-            case R.id.renameTeamOne:
-                return true;
-            case R.id.renameTeamTwo:
-                return true;
-            default:
-                return false;
-        }
-    }
+    // commented out teams editing overflow button code
+//    public void editTeamOne(View v) {
+//        PopupMenu popup = new PopupMenu(this, v);
+//        popup.setOnMenuItemClickListener(this);
+//        popup.inflate(R.menu.edit_team_one);
+//        popup.show();
+//    }
+//    
+//    public void editTeamTwo(View v) {
+//        PopupMenu popup = new PopupMenu(this, v);
+//        popup.setOnMenuItemClickListener(this);
+//        popup.inflate(R.menu.edit_team_two);
+//        popup.show();
+//    }
+//    
+//    @Override
+//    public boolean onMenuItemClick(MenuItem item) {
+//        switch (item.getItemId()) {
+//            case R.id.renameTeamOne:
+//                return true;
+//            case R.id.renameTeamTwo:
+//                return true;
+//            default:
+//                return false;
+//        }
+//    }
     
     private void incrementTeam1Score() {
     	++team1Score;
-    	team1ScoreTextView.setText(": " + Integer.valueOf(team1Score).toString());
+    	team1ScoreTextView.setText(Integer.valueOf(team1Score).toString());
     }
     
     private void incrementTeam2Score() {
     	++team2Score;
-    	team2ScoreTextView.setText(": " + Integer.valueOf(team2Score).toString());
+    	team2ScoreTextView.setText(Integer.valueOf(team2Score).toString());
     }
     
     private void decrementTeam1Score() {
-    	--team1Score;
-    	team1ScoreTextView.setText(": " + Integer.valueOf(team1Score).toString());
+    	if (team1Score > 0) {
+    		--team1Score;
+        	team1ScoreTextView.setText(Integer.valueOf(team1Score).toString());
+    	}
     }
     
     private void decrementTeam2Score() {
-    	--team2Score;
-    	team2ScoreTextView.setText(": " + Integer.valueOf(team2Score).toString());
+    	if (team2Score > 0) {
+	    	--team2Score;
+	    	team2ScoreTextView.setText(Integer.valueOf(team2Score).toString());
+    	}
     }
     
     private void initializeCategorySpinner() {
@@ -198,6 +253,50 @@ public class MainActivity extends Activity implements OnMenuItemClickListener {
     }
     
     public void onItemSelected(AdapterView<?> parent, View view, int pos, long id) {
+    	String[] wordsArray;
+    	switch(pos) {
+    	case 0:
+    		wordsArray = getResources().getStringArray(R.array.all);
+    		break;
+    	case 1:
+    		wordsArray = getResources().getStringArray(R.array.easy);
+    		break;
+    	case 2:
+    		wordsArray = getResources().getStringArray(R.array.medium);
+    		break;
+    	case 3:
+    		wordsArray = getResources().getStringArray(R.array.actions);
+    		break;
+    	case 4:
+    		wordsArray = getResources().getStringArray(R.array.animals);
+    		break;
+    	case 5:
+    		wordsArray = getResources().getStringArray(R.array.food);
+    		break;
+    	case 6:
+    		wordsArray = getResources().getStringArray(R.array.holiday);
+    		break;
+    	case 7:
+    		wordsArray = getResources().getStringArray(R.array.household_items);
+    		break;
+    	case 8:
+    		wordsArray = getResources().getStringArray(R.array.idioms);
+    		break;
+    	case 9:
+    		wordsArray = getResources().getStringArray(R.array.movies);
+    		break;
+    	case 10:
+    		wordsArray = getResources().getStringArray(R.array.people);
+    		break;
+    	case 11:
+    		wordsArray = getResources().getStringArray(R.array.travel);
+    		break;
+    	default:
+    		wordsArray = getResources().getStringArray(R.array.all);
+    		break;
+    	}
+    	
+    	words = new ArrayList<String>( Arrays.asList(wordsArray));
     	selectedCategory = pos;
     }
     

@@ -6,7 +6,7 @@
     <string name="team2">Team 2</string>
     <string name="categories">Categories</string>
     <string name="start">START</string>
-    <string name="zero">: 0</string>
+    <string name="zero">0</string>
     <string name="rename_team">Rename team</string>
 
 </resources>

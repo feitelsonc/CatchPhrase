@@ -7,100 +7,146 @@
     tools:context="com.cs185.catchphrase.util.MainActivity" >
     
     <LinearLayout
+        android:id="@+id/team_names_and_spinner"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:orientation="horizontal"
-        android:layout_alignParentTop="true" >
-        
-        <RelativeLayout
-            android:id="@+id/team1_layout"
+        android:layout_alignParentTop="true"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:id="@+id/team1"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight=".33" >
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="@string/team1"
+            android:textColor="#ffffff"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            android:layout_weight=".33"
+            android:singleLine="true"
+            android:ellipsize="end" />
 
-            <Button
-                android:id="@+id/team1_edit"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:background="@drawable/btn_edit_team_name"
-                android:layout_alignParentLeft="true"
-                android:layout_centerVertical="true"
-                android:onClick="editTeamOne" />
-
-            <TextView
-                android:id="@+id/team1"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:text="@string/team1"
-                android:textColor="#ffffff"
-                android:textSize="25sp"
-                android:textStyle="bold"
-                android:gravity="center"
-                android:layout_toRightOf="@id/team1_edit"
-                android:layout_centerVertical="true" />
-            
-            <TextView
-                android:id="@+id/team1_score"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:text="@string/zero"
-                android:textColor="#ffffff"
-                android:textSize="25sp"
-                android:textStyle="bold"
-                android:gravity="center"
-                android:layout_toRightOf="@id/team1"
-                android:layout_centerVertical="true" />
-        </RelativeLayout>
-        
         <Spinner
             android:id="@+id/categories"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight=".33"
-            android:prompt="@string/categories" />
-        
-        <RelativeLayout
-            android:id="@+id/team2_layout"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight=".33" >
-            
-            <TextView
-                android:id="@+id/team2_score"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:text="@string/zero"
-                android:textColor="#ffffff"
-                android:textSize="25sp"
-                android:textStyle="bold"
-                android:gravity="center"
-                android:layout_alignParentRight="true"
-                android:layout_centerVertical="true" />
+            android:prompt="@string/categories"
+            android:layout_weight=".33" />
 
-            <TextView
-                android:id="@+id/team2"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_toLeftOf="@id/team2_score"
-                android:layout_centerVertical="true"
-                android:text="@string/team2"
-                android:textColor="#ffffff"
-                android:textSize="25sp"
-                android:gravity="center"
-                android:textStyle="bold" />
-            
-            <Button
-                android:id="@+id/team2_edit"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:background="@drawable/btn_edit_team_name"
-                android:layout_toLeftOf="@id/team2"
-                android:layout_centerVertical="true"
-                android:onClick="editTeamTwo" />
-        </RelativeLayout>
+        <TextView
+            android:id="@+id/team2"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="@string/team2"
+            android:textColor="#ffffff"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            android:layout_weight=".33"
+            android:singleLine="true"
+            android:ellipsize="end" />
 
     </LinearLayout>
+    
+    <LinearLayout
+        android:id="@+id/scores_and_pause"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:orientation="horizontal"
+        android:layout_below="@id/team_names_and_spinner"
+        android:baselineAligned="false" >
+        
+         <RelativeLayout
+             android:layout_width="0dp"
+             android:layout_height="match_parent"
+             android:layout_weight=".33" >
 
+              <TextView
+                  android:id="@+id/team1_score"
+                  android:layout_width="wrap_content"
+                  android:layout_height="match_parent"
+                  android:layout_centerInParent="true"
+                  android:layout_marginTop="-10dp"
+                  android:gravity="center|top"
+                  android:paddingLeft="15dp"
+                  android:paddingRight="15dp"
+                  android:text="@string/zero"
+                  android:textColor="#ffffff"
+                  android:textSize="30sp"
+                  android:textStyle="bold" />
+
+              <Button
+                  android:id="@+id/subtract_button_team_one"
+                  android:layout_width="30dp"
+                  android:layout_height="30dp"
+                  android:layout_toLeftOf="@id/team1_score"
+                  android:background="@drawable/btn_subtract"
+                  android:gravity="center|top" />
+
+              <Button
+                  android:id="@+id/add_button_team_one"
+                  android:layout_width="30dp"
+                  android:layout_height="30dp"
+                  android:layout_toRightOf="@id/team1_score"
+                  android:background="@drawable/btn_add"
+                  android:gravity="center|top" />
+              
+         </RelativeLayout>
+        
+        <RelativeLayout
+            android:id="@+id/pause_button_layout"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight=".33" >
+
+            <Button
+                android:id="@+id/pause_button"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@drawable/btn_pause"
+                android:layout_centerInParent="true" />
+            
+		</RelativeLayout>
+
+        <RelativeLayout
+             android:layout_width="0dp"
+             android:layout_height="match_parent"
+             android:layout_weight=".33" >
+
+              <TextView
+                  android:id="@+id/team2_score"
+                  android:layout_width="wrap_content"
+                  android:layout_height="match_parent"
+                  android:layout_centerInParent="true"
+                  android:layout_marginTop="-10dp"
+                  android:gravity="center|top"
+                  android:paddingLeft="15dp"
+                  android:paddingRight="15dp"
+                  android:text="@string/zero"
+                  android:textColor="#ffffff"
+                  android:textSize="30sp"
+                  android:textStyle="bold" />
+
+              <Button
+                  android:id="@+id/subtract_button_team_two"
+                  android:layout_width="30dp"
+                  android:layout_height="30dp"
+                  android:layout_toLeftOf="@id/team2_score"
+                  android:background="@drawable/btn_subtract"
+                  android:gravity="center|top" />
+
+              <Button
+                  android:id="@+id/add_button_team_two"
+                  android:layout_width="30dp"
+                  android:layout_height="30dp"
+                  android:layout_toRightOf="@id/team2_score"
+                  android:background="@drawable/btn_add"
+                  android:gravity="center|top" />
+              
+         </RelativeLayout>
+
+    </LinearLayout>
+    
     <TextView
         android:id="@+id/start"
         android:layout_width="wrap_content"

@@ -1,0 +1,2835 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="categories">
+        <item>All</item>
+        <item>Easy</item>
+        <item>Medium</item>
+        <item>Actions</item>
+        <item>Animals</item>
+        <item>Food</item>
+        <item>Holidays</item>
+        <item>Household items</item>
+        <item>Idioms</item>
+        <item>Movies</item>
+        <item>People</item>
+        <item>Travel</item>
+    </string-array>
+    <string-array name="actions">
+        <item>asking for an autograph</item>
+        <item>baking bread </item>
+        <item>ballet </item>
+        <item>body surfing</item>
+        <item>building a campfire </item>
+        <item>building a sandcastle </item>
+        <item>chasing a tornado</item>
+        <item>climbing Mount Everest</item>
+        <item>cutting someone\'s hair</item>
+        <item>delivering mail</item>
+        <item>digging a hole</item>
+        <item>feeding the ducks </item>
+        <item>filling up a car with gas</item>
+        <item>filming a movie </item>
+        <item>finger painting </item>
+        <item>flight attendent</item>
+        <item>flipping pancakes </item>
+        <item>flying a kite</item>
+        <item>gathering eggs from a hen house</item>
+        <item>going  through airport security</item>
+        <item>going bowling </item>
+        <item>going on an African safari</item>
+        <item>hailing a taxi </item>
+        <item>hang-gliding</item>
+        <item>having a food fight </item>
+        <item>ironing a shirt </item>
+        <item>landing an airplane</item>
+        <item>making a pizza</item>
+        <item>milking a cow </item>
+        <item>mowing a lawn </item>
+        <item>opening birthday presents</item>
+        <item>operating a jackhammer</item>
+        <item>ordering food at a restaurant</item>
+        <item>paddling in a canoe </item>
+        <item>painting</item>
+        <item>performing at a rock concert</item>
+        <item>picking apples from a tree</item>
+        <item>playing at a piano recital</item>
+        <item>playing baseball</item>
+        <item>playing chess</item>
+        <item>playing four square</item>
+        <item>playing hopscotch </item>
+        <item>playing soccer </item>
+        <item>playing with dough</item>
+        <item>practicing karate </item>
+        <item>raking leaves</item>
+        <item>riding a carousel </item>
+        <item>riding a motorcycle </item>
+        <item>riding bumper cars </item>
+        <item>riding in a chairlift </item>
+        <item>rock climbing</item>
+        <item>scuba diving </item>
+        <item>setting up a tent </item>
+        <item>sewing a dress </item>
+        <item>sewing on a button</item>
+        <item>shopping at the mall </item>
+        <item>sorting laundry</item>
+        <item>sumo wrestling </item>
+        <item>swimming with dolphins</item>
+        <item>visiting the zoo </item>
+        <item>walking through a haunted house</item>
+        <item>washing an elephant </item>
+        <item>washing windows</item>
+        <item>watchinga movie at the theater</item>
+        <item>watering a garden </item>
+        <item>whale watching</item>
+    </string-array>
+    <string-array name="all">
+        <item>101 Dalmatians </item>
+        <item>2001: A Space Odyssey </item>
+        <item>A Bug’s Life </item>
+        <item>A blessing in disguise</item>
+        <item>A fifth wheel </item>
+        <item>A fly on the wall</item>
+        <item>A wolf in sheep\'\' clothing </item>
+        <item>Aardvark </item>
+        <item>Abraham Lincoln </item>
+        <item>Acne</item>
+        <item>Afraid </item>
+        <item>Africa </item>
+        <item>Aircraft </item>
+        <item>Airline </item>
+        <item>Airplane </item>
+        <item>Airport</item>
+        <item>Airport security</item>
+        <item>Aladdin</item>
+        <item>Alarm clock</item>
+        <item>Alaska</item>
+        <item>Albatross </item>
+        <item>Albert Einstein </item>
+        <item>Alex Rodriguez</item>
+        <item>Alexander Graham Bell </item>
+        <item>Alfredo sauce </item>
+        <item>Alice in Wonderland </item>
+        <item>All bark and no bite </item>
+        <item>All-you-can-eat buffet </item>
+        <item>Alligator </item>
+        <item>Amanda Bynes </item>
+        <item>Amelia Earhart</item>
+        <item>America</item>
+        <item>Anakin Skywalker </item>
+        <item>Anastasia </item>
+        <item>Andy Griffith </item>
+        <item>Andy Warhol </item>
+        <item>Angel </item>
+        <item>Angels in the Outfield </item>
+        <item>Ankle </item>
+        <item>Anne Frank</item>
+        <item>Ape </item>
+        <item>Apollo 13 </item>
+        <item>Appetizer </item>
+        <item>Apple </item>
+        <item>Apple cider </item>
+        <item>Apple of my eye </item>
+        <item>Apple pie </item>
+        <item>Archimedes </item>
+        <item>Are we there yet? </item>
+        <item>Aristotle </item>
+        <item>Arizona</item>
+        <item>Arm </item>
+        <item>Armadillo </item>
+        <item>Artichoke</item>
+        <item>Aruba </item>
+        <item>Asking for an autograph</item>
+        <item>Asleep</item>
+        <item>Astronaut </item>
+        <item>Athens </item>
+        <item>Athlete </item>
+        <item>Audrey Hepburn </item>
+        <item>Aunt </item>
+        <item>Autumn </item>
+        <item>Avatar </item>
+        <item>Avocado </item>
+        <item>BLT </item>
+        <item>Babe </item>
+        <item>Babe Ruth </item>
+        <item>Baby </item>
+        <item>Baby-sitter </item>
+        <item>Back to the Future </item>
+        <item>Back to the drawing board</item>
+        <item>Backbone </item>
+        <item>Backpacking</item>
+        <item>Bag</item>
+        <item>Bagel</item>
+        <item>Bake </item>
+        <item>Baking bread </item>
+        <item>Baking soda </item>
+        <item>Bald eagle </item>
+        <item>Ball </item>
+        <item>Ballet </item>
+        <item>Balloon </item>
+        <item>Ballpoint pen</item>
+        <item>Balsamic vinegar</item>
+        <item>Bambi </item>
+        <item>Banana </item>
+        <item>Banana bread</item>
+        <item>Banana peel </item>
+        <item>Banana split </item>
+        <item>Banister</item>
+        <item>Barack Obama </item>
+        <item>Barbie </item>
+        <item>Baseball </item>
+        <item>Baseboards </item>
+        <item>Basil </item>
+        <item>Basketball </item>
+        <item>Basset hound </item>
+        <item>Bat </item>
+        <item>Bathroom </item>
+        <item>Bathroom scale</item>
+        <item>Batman </item>
+        <item>Bats</item>
+        <item>Batteries </item>
+        <item>Battery </item>
+        <item>Be good </item>
+        <item>Be mine </item>
+        <item>Be true</item>
+        <item>Beach </item>
+        <item>Beach ball </item>
+        <item>Beach house</item>
+        <item>Beauty and the Beast</item>
+        <item>Beaver</item>
+        <item>Bed </item>
+        <item>Bedbug </item>
+        <item>Bedroom</item>
+        <item>Bedspread </item>
+        <item>Bedtime</item>
+        <item>Beef </item>
+        <item>Beef jerky</item>
+        <item>Beethoven </item>
+        <item>Bells</item>
+        <item>Belt </item>
+        <item>Benjamin Franklin </item>
+        <item>Bermuda </item>
+        <item>Betsy Ross</item>
+        <item>Bib </item>
+        <item>Bicycle </item>
+        <item>Big</item>
+        <item>Bike</item>
+        <item>Bill Clinton</item>
+        <item>Bill Cosby </item>
+        <item>Bill Gates </item>
+        <item>Bill and Ted\'s Excellent Adventure </item>
+        <item>Billy the Kid </item>
+        <item>Binoculars </item>
+        <item>Bird </item>
+        <item>Bird watching </item>
+        <item>Bird\'s nest </item>
+        <item>Birthday</item>
+        <item>Bite </item>
+        <item>Black </item>
+        <item>Black beans</item>
+        <item>Black bear</item>
+        <item>Blackberry </item>
+        <item>Blanch </item>
+        <item>Blender </item>
+        <item>Blue </item>
+        <item>Blue jeans</item>
+        <item>Blue whale </item>
+        <item>Boardwalk </item>
+        <item>Boat</item>
+        <item>Bobsled</item>
+        <item>Body </item>
+        <item>Body surfing</item>
+        <item>Boiled egg </item>
+        <item>Bomb</item>
+        <item>Bonnet </item>
+        <item>Boo </item>
+        <item>Book </item>
+        <item>Boots </item>
+        <item>Boston </item>
+        <item>Bottle </item>
+        <item>Bouncing off the walls</item>
+        <item>Bowtie </item>
+        <item>Box </item>
+        <item>Boy </item>
+        <item>Brad Pitt </item>
+        <item>Brass </item>
+        <item>Brave </item>
+        <item>Bread </item>
+        <item>Bridge </item>
+        <item>Broadway </item>
+        <item>Broccoli </item>
+        <item>Broil </item>
+        <item>Broken </item>
+        <item>Broom </item>
+        <item>Brother Bear</item>
+        <item>Bruce Willis </item>
+        <item>Bud </item>
+        <item>Buddy Holly </item>
+        <item>Buddy the Elf </item>
+        <item>Buffalo</item>
+        <item>Bug </item>
+        <item>Bug spray </item>
+        <item>Bugs Bunny </item>
+        <item>Building a campfire </item>
+        <item>Building a sandcastle </item>
+        <item>Bull in a china closet </item>
+        <item>Bulldog </item>
+        <item>Bundt pan </item>
+        <item>Bunk bed</item>
+        <item>Burger King</item>
+        <item>Butch Cassidy and the Sundance Kid</item>
+        <item>Button </item>
+        <item>Buy </item>
+        <item>Buzz Aldrin </item>
+        <item>Buzz Lightyear</item>
+        <item>C-3P0 </item>
+        <item>C. S. Lewis </item>
+        <item>Cafeteria </item>
+        <item>Cake </item>
+        <item>Cake broth</item>
+        <item>Calculator </item>
+        <item>Calendar </item>
+        <item>Calf </item>
+        <item>California </item>
+        <item>Call me</item>
+        <item>Camel </item>
+        <item>Camera </item>
+        <item>Camping </item>
+        <item>Campsite</item>
+        <item>Can\'t keep a good dog down</item>
+        <item>Canada </item>
+        <item>Candle </item>
+        <item>Candlestick </item>
+        <item>Candy </item>
+        <item>Candy cane</item>
+        <item>Candy corn</item>
+        <item>Cap\'n Crunch </item>
+        <item>Captain Hook </item>
+        <item>Captain Kirk </item>
+        <item>Carrie Fisher </item>
+        <item>Carry a tune </item>
+        <item>Cars</item>
+        <item>Cat </item>
+        <item>Catch Me If You Can</item>
+        <item>Caterpillar</item>
+        <item>Catfish</item>
+        <item>Caught red-handed </item>
+        <item>Caviar</item>
+        <item>Ceiling fan </item>
+        <item>Celine Dion</item>
+        <item>Cell phone </item>
+        <item>Cell phone charger </item>
+        <item>Cello </item>
+        <item>Chair </item>
+        <item>Chalk </item>
+        <item>Chameleon </item>
+        <item>Charles Darwin </item>
+        <item>Charles Dickens </item>
+        <item>Charlie Brown </item>
+        <item>Chasing a tornado</item>
+        <item>Cheese </item>
+        <item>Chestnuts</item>
+        <item>Chew </item>
+        <item>Chicken </item>
+        <item>Chicken pot pie</item>
+        <item>Chimney</item>
+        <item>Chimpanzee </item>
+        <item>China </item>
+        <item>Chinchilla </item>
+        <item>Chipmunk </item>
+        <item>Chocolate </item>
+        <item>Christian Bale</item>
+        <item>Christmas Eve </item>
+        <item>Christmas break </item>
+        <item>Christmas carol</item>
+        <item>Christmas carolers </item>
+        <item>Christmas spirit </item>
+        <item>Christmas tree </item>
+        <item>Christopher Columbus</item>
+        <item>Church</item>
+        <item>Cinderella </item>
+        <item>Cinnamon</item>
+        <item>Cinnamon rolls </item>
+        <item>Circle</item>
+        <item>Circus </item>
+        <item>Clark Kent</item>
+        <item>Claude Monet</item>
+        <item>Claw </item>
+        <item>Cleaning spray </item>
+        <item>Cleopatra </item>
+        <item>Climbing Mount Everest</item>
+        <item>Clock</item>
+        <item>Close, but no cigar </item>
+        <item>Cloud</item>
+        <item>Clown</item>
+        <item>Clownfish </item>
+        <item>Coach </item>
+        <item>Coal </item>
+        <item>Coat </item>
+        <item>Colander</item>
+        <item>Cold</item>
+        <item>Coldplay</item>
+        <item>Colorado </item>
+        <item>Columbus</item>
+        <item>Computer</item>
+        <item>Computer </item>
+        <item>Condo </item>
+        <item>Cook</item>
+        <item>Cookie </item>
+        <item>Cool </item>
+        <item>Copernicus </item>
+        <item>Coral reef </item>
+        <item>Corn </item>
+        <item>Corn maze </item>
+        <item>Cornbread</item>
+        <item>Cost an arm and a leg </item>
+        <item>Costume </item>
+        <item>Couch </item>
+        <item>Cougar</item>
+        <item>Cough</item>
+        <item>Cow </item>
+        <item>Cowboy </item>
+        <item>Crab</item>
+        <item>Crayon</item>
+        <item>Crayons </item>
+        <item>Creepy </item>
+        <item>Crepe </item>
+        <item>Cricket </item>
+        <item>Crocodile</item>
+        <item>Crow</item>
+        <item>Cruise ship </item>
+        <item>Crumb </item>
+        <item>Crypt</item>
+        <item>Cub </item>
+        <item>Cup</item>
+        <item>Cupcakes</item>
+        <item>Cupid</item>
+        <item>Curtains </item>
+        <item>Customs </item>
+        <item>Cutie pie </item>
+        <item>Cutting board</item>
+        <item>Cutting someone\'s hair</item>
+        <item>DVDs</item>
+        <item>Dad </item>
+        <item>Dairy</item>
+        <item>Dakota Fanning </item>
+        <item>Dance</item>
+        <item>Danny Glover </item>
+        <item>Dark </item>
+        <item>Darth Vader</item>
+        <item>Date </item>
+        <item>David Beckham </item>
+        <item>Davy Crockett </item>
+        <item>Day</item>
+        <item>Dear</item>
+        <item>Decorations</item>
+        <item>Deep</item>
+        <item>Deep-fry</item>
+        <item>Deer </item>
+        <item>Delaware</item>
+        <item>Delivering mail</item>
+        <item>Dennis the Menace </item>
+        <item>Dentist</item>
+        <item>Denzel Washington </item>
+        <item>Desk </item>
+        <item>Dick Van Dyke</item>
+        <item>Dictionary</item>
+        <item>Digging a hole</item>
+        <item>Dirty </item>
+        <item>Disneyland </item>
+        <item>Dock</item>
+        <item>Doctor</item>
+        <item>Doe </item>
+        <item>Dog </item>
+        <item>Dog leash</item>
+        <item>Doghouse </item>
+        <item>Doll </item>
+        <item>Dollar </item>
+        <item>Dolphin </item>
+        <item>Dominoes </item>
+        <item>Donkey </item>
+        <item>Door </item>
+        <item>Door knob</item>
+        <item>Doorbell </item>
+        <item>Doormat</item>
+        <item>Doorway</item>
+        <item>Dora the Explorer </item>
+        <item>Doughnuts </item>
+        <item>Dove </item>
+        <item>Dr. Emmett Brown</item>
+        <item>Dr. Seuss</item>
+        <item>Dracula </item>
+        <item>Dragon </item>
+        <item>Draw </item>
+        <item>Dredge </item>
+        <item>Dress </item>
+        <item>Dress shirt</item>
+        <item>Drive-through</item>
+        <item>Drum </item>
+        <item>Duck </item>
+        <item>Duckling </item>
+        <item>Dumbledore</item>
+        <item>Dumbo</item>
+        <item>Dump truck </item>
+        <item>Dustpan </item>
+        <item>Dyed-in-the-wool </item>
+        <item>E.T. </item>
+        <item>Ear </item>
+        <item>Earache</item>
+        <item>Easel </item>
+        <item>Eat</item>
+        <item>Eat my words</item>
+        <item>Ebenezer Scrooge</item>
+        <item>Eddie Murphy </item>
+        <item>Egg</item>
+        <item>Egg salad </item>
+        <item>Eggnog </item>
+        <item>Egypt </item>
+        <item>Elbow </item>
+        <item>Eleanor Roosevelt</item>
+        <item>Electrical outlet </item>
+        <item>Electricity </item>
+        <item>Elephant </item>
+        <item>Elevator</item>
+        <item>Elf</item>
+        <item>Eli Whitney</item>
+        <item>Elijah Wood </item>
+        <item>Elizabeth Bennett</item>
+        <item>Elk</item>
+        <item>Elton John </item>
+        <item>Elves </item>
+        <item>Elvis Presley </item>
+        <item>Email me </item>
+        <item>England </item>
+        <item>Eraser </item>
+        <item>Ernest Hemingway </item>
+        <item>Europe </item>
+        <item>Everything but the kitchen sink </item>
+        <item>Eye </item>
+        <item>Eyebrow </item>
+        <item>Face </item>
+        <item>Family reunion </item>
+        <item>Fanny pack</item>
+        <item>Fast</item>
+        <item>Feeding the ducks </item>
+        <item>Feeling under the weather </item>
+        <item>Fence </item>
+        <item>Fetch</item>
+        <item>Fiddle </item>
+        <item>Fight </item>
+        <item>Filling up a car with gas</item>
+        <item>Filming a movie </item>
+        <item>Finding Nemo</item>
+        <item>Finger </item>
+        <item>Finger painting </item>
+        <item>Fire </item>
+        <item>Fire engine </item>
+        <item>Firefighter </item>
+        <item>First class</item>
+        <item>First kiss </item>
+        <item>Fix </item>
+        <item>Flag</item>
+        <item>Flagpole</item>
+        <item>Flashlight</item>
+        <item>Flight attendent</item>
+        <item>Flipping pancakes </item>
+        <item>Flock </item>
+        <item>Florida</item>
+        <item>Flower</item>
+        <item>Flute </item>
+        <item>Flying a kite</item>
+        <item>Fog</item>
+        <item>Foil </item>
+        <item>Football </item>
+        <item>For you </item>
+        <item>Forehead </item>
+        <item>Forest Gump</item>
+        <item>Fork </item>
+        <item>Fortune teller</item>
+        <item>Four Corners </item>
+        <item>Fox </item>
+        <item>Fozzy</item>
+        <item>Fraidey cat </item>
+        <item>France</item>
+        <item>Frank Lloyd Wright</item>
+        <item>Frankenstein </item>
+        <item>Franklin D. Roosevelt</item>
+        <item>Freckle</item>
+        <item>Freeze </item>
+        <item>Frightened </item>
+        <item>Frodo </item>
+        <item>Frog </item>
+        <item>Frog in your throat</item>
+        <item>Front porch</item>
+        <item>Front porch </item>
+        <item>Frosty the Snowman </item>
+        <item>Frown</item>
+        <item>Fruit salad </item>
+        <item>Fruit smoothie</item>
+        <item>Frying pan </item>
+        <item>Funny </item>
+        <item>Galileo</item>
+        <item>Garage </item>
+        <item>Garbage</item>
+        <item>Garden hose </item>
+        <item>Garfield</item>
+        <item>Gathering eggs from a hen house</item>
+        <item>Genghis Khan </item>
+        <item>George Lucas </item>
+        <item>George Washington</item>
+        <item>George of the Jungle </item>
+        <item>Georgia O\'Keeffe</item>
+        <item>Get cold feet </item>
+        <item>Ghost </item>
+        <item>Ghost story </item>
+        <item>Ghostbusters </item>
+        <item>Gifts </item>
+        <item>Gila monster</item>
+        <item>Gilligan </item>
+        <item>Gingerbread house </item>
+        <item>Gingerbread man </item>
+        <item>Giraffe </item>
+        <item>Girl</item>
+        <item>Glide </item>
+        <item>Glue stick</item>
+        <item>Go out on a limb </item>
+        <item>Goblin</item>
+        <item>Going  through airport security</item>
+        <item>Going bowling </item>
+        <item>Going on an African safari</item>
+        <item>Goodbye </item>
+        <item>Goody bag ghoul coffin</item>
+        <item>Goose </item>
+        <item>Gopher </item>
+        <item>Grab the bull by the horns </item>
+        <item>Grace Kelly </item>
+        <item>Grandfather </item>
+        <item>Grandma </item>
+        <item>Granola bar</item>
+        <item>Grape </item>
+        <item>Grass</item>
+        <item>Grave </item>
+        <item>Graveyard </item>
+        <item>Green </item>
+        <item>Green with envy </item>
+        <item>Grill </item>
+        <item>Groundhog</item>
+        <item>Groundhog Day </item>
+        <item>Grown-up </item>
+        <item>Guacamole </item>
+        <item>Guinea pig </item>
+        <item>Guitar </item>
+        <item>Gum</item>
+        <item>Gumball </item>
+        <item>Gumdrops</item>
+        <item>Gypsy</item>
+        <item>Hailing a taxi </item>
+        <item>Hair </item>
+        <item>Hair dryer </item>
+        <item>Hairspray </item>
+        <item>Half </item>
+        <item>Hamlet </item>
+        <item>Hamster</item>
+        <item>Han Solo </item>
+        <item>Hand lotion </item>
+        <item>Hand soap</item>
+        <item>Hang glider </item>
+        <item>Hannah Montana </item>
+        <item>Happy </item>
+        <item>Harrison Ford</item>
+        <item>Harry Houdini</item>
+        <item>Harry Potter</item>
+        <item>Hat </item>
+        <item>Haunted house</item>
+        <item>Have a cow </item>
+        <item>Have two left feet </item>
+        <item>Having a food fight </item>
+        <item>Hawaii </item>
+        <item>Hay ride </item>
+        <item>Head over heels in love </item>
+        <item>Headache </item>
+        <item>Headband </item>
+        <item>Heart </item>
+        <item>Hedgehog </item>
+        <item>Helen Keller</item>
+        <item>Helicopter</item>
+        <item>Hello</item>
+        <item>Henry Ford</item>
+        <item>Herd</item>
+        <item>Hi love </item>
+        <item>Hide-and-seek </item>
+        <item>High School Musical </item>
+        <item>Hill </item>
+        <item>Hippo </item>
+        <item>Hippopotamus </item>
+        <item>Hit the road </item>
+        <item>Hit the sack</item>
+        <item>Ho ho ho </item>
+        <item>Hockey </item>
+        <item>Hold your horses </item>
+        <item>Holiday</item>
+        <item>Home movies </item>
+        <item>Homework </item>
+        <item>Honeymoon </item>
+        <item>Hopscotch </item>
+        <item>Horror</item>
+        <item>Horse </item>
+        <item>Hot chocolate </item>
+        <item>Hot dog</item>
+        <item>Hot water </item>
+        <item>Hotel </item>
+        <item>House</item>
+        <item>Housecat </item>
+        <item>How sweet</item>
+        <item>Huddle</item>
+        <item>Hug </item>
+        <item>Human</item>
+        <item>Hungry </item>
+        <item>Hurdle </item>
+        <item>Hurt </item>
+        <item>Hyena</item>
+        <item>I do </item>
+        <item>I heart you </item>
+        <item>I love you</item>
+        <item>IPad</item>
+        <item>IPod </item>
+        <item>Ice</item>
+        <item>Ice cream cone </item>
+        <item>Ice cream sundae</item>
+        <item>Ice skating </item>
+        <item>Icicle</item>
+        <item>Igor </item>
+        <item>In the same boat </item>
+        <item>Inception </item>
+        <item>Indiana Jones </item>
+        <item>Inigo Montoya</item>
+        <item>Internet </item>
+        <item>Ireland </item>
+        <item>Iron </item>
+        <item>Ironing a shirt </item>
+        <item>Ironing board</item>
+        <item>Isaac Newton</item>
+        <item>Island</item>
+        <item>Istanbul</item>
+        <item>It\'s love </item>
+        <item>Italy</item>
+        <item>J.K. Rowling </item>
+        <item>Jack Black </item>
+        <item>Jack Frost </item>
+        <item>Jack-o-lantern </item>
+        <item>Jacket </item>
+        <item>Jackson Pollock</item>
+        <item>Jamaica</item>
+        <item>James Bond </item>
+        <item>James Earl Jones </item>
+        <item>James Madison </item>
+        <item>James Taylor </item>
+        <item>Jar</item>
+        <item>Jelly</item>
+        <item>Jellybeans</item>
+        <item>Jellyfish </item>
+        <item>Jewelry </item>
+        <item>Jim Henson </item>
+        <item>Jimmy Stewart </item>
+        <item>Jingle bells </item>
+        <item>Joey </item>
+        <item>John Hancock </item>
+        <item>John Williams </item>
+        <item>Johnny Depp </item>
+        <item>July </item>
+        <item>Jump </item>
+        <item>Jump the gun </item>
+        <item>June </item>
+        <item>Junk drawer</item>
+        <item>Justin Beiber</item>
+        <item>KFC </item>
+        <item>Kayak</item>
+        <item>Kevin Bacon</item>
+        <item>Key </item>
+        <item>Key lime pie</item>
+        <item>Kick the bucket </item>
+        <item>King </item>
+        <item>King George</item>
+        <item>Kiss </item>
+        <item>Kitchen</item>
+        <item>Kitchen knife set </item>
+        <item>Kite </item>
+        <item>Kitten </item>
+        <item>Knee </item>
+        <item>Koala </item>
+        <item>Komodo dragon </item>
+        <item>Kool-aid</item>
+        <item>Kumquat </item>
+        <item>Ladder</item>
+        <item>Ladybug </item>
+        <item>Lake </item>
+        <item>Lamb </item>
+        <item>Lamp</item>
+        <item>Lance Armstrong</item>
+        <item>Landing an airplane</item>
+        <item>Lantern </item>
+        <item>Las Vegas </item>
+        <item>Lasagna </item>
+        <item>Laugh </item>
+        <item>Laundry</item>
+        <item>Laundry basket </item>
+        <item>Laundry detergent </item>
+        <item>Lawn mower </item>
+        <item>Layover </item>
+        <item>Lazy river </item>
+        <item>Leg </item>
+        <item>Leonardo Da Vinci </item>
+        <item>Leonardo DiCaprio </item>
+        <item>Leopard </item>
+        <item>Let bygones be bygones </item>
+        <item>Let the cat out of the bag </item>
+        <item>Letter opener </item>
+        <item>Lewis Carrol </item>
+        <item>Lewis and Clark </item>
+        <item>Light </item>
+        <item>Light bulb </item>
+        <item>Light switch</item>
+        <item>Lights </item>
+        <item>Lightsaber</item>
+        <item>Lime </item>
+        <item>Lion </item>
+        <item>Lips </item>
+        <item>Little Saint Nick</item>
+        <item>Little drummer boy </item>
+        <item>Living room </item>
+        <item>Lizard </item>
+        <item>Llama </item>
+        <item>Lobster</item>
+        <item>Log </item>
+        <item>Lollipop</item>
+        <item>Lollipop </item>
+        <item>London </item>
+        <item>Long</item>
+        <item>Lord Byron</item>
+        <item>Los Angeles </item>
+        <item>Love </item>
+        <item>Loveseat </item>
+        <item>Low-fat</item>
+        <item>Lucille Ball</item>
+        <item>Luggage </item>
+        <item>Luke Skywalker</item>
+        <item>Lunch </item>
+        <item>Lunchbox </item>
+        <item>Mac and cheese </item>
+        <item>Mad scientist</item>
+        <item>Magazine </item>
+        <item>Magic </item>
+        <item>Magnets </item>
+        <item>Mahatma Gandhi </item>
+        <item>Mailbox </item>
+        <item>Mailman</item>
+        <item>Maine </item>
+        <item>Make a mountain out of a molehill</item>
+        <item>Making a pizza</item>
+        <item>Mandy Moore </item>
+        <item>Manger </item>
+        <item>Map </item>
+        <item>Marinade </item>
+        <item>Mario </item>
+        <item>Mark Twain</item>
+        <item>Markers </item>
+        <item>Marry me</item>
+        <item>Marshmallow</item>
+        <item>Martin Sheen</item>
+        <item>Marty McFly </item>
+        <item>Mary Poppins </item>
+        <item>Matchstick </item>
+        <item>Mattress </item>
+        <item>McDonalds </item>
+        <item>Meatballs</item>
+        <item>Melt </item>
+        <item>Mexico </item>
+        <item>Michael J. Fox </item>
+        <item>Michael Jackson </item>
+        <item>Michael Jordan </item>
+        <item>Michael Phelps</item>
+        <item>Michelangelo</item>
+        <item>Mighty Joe Young </item>
+        <item>Milk </item>
+        <item>Milking a cow </item>
+        <item>Mirror </item>
+        <item>Miss me </item>
+        <item>Miss you </item>
+        <item>Mistletoe </item>
+        <item>Mittens </item>
+        <item>Mohammad Ali </item>
+        <item>Mom </item>
+        <item>Monday </item>
+        <item>Money </item>
+        <item>Money belt</item>
+        <item>Monster </item>
+        <item>Monster Mash</item>
+        <item>Moon</item>
+        <item>Moose </item>
+        <item>Mop</item>
+        <item>Moth</item>
+        <item>Mother Teresa</item>
+        <item>Motorcycle </item>
+        <item>Mountain </item>
+        <item>Mountain biking </item>
+        <item>Mouse </item>
+        <item>Mouth</item>
+        <item>Mowing a lawn </item>
+        <item>Mozart</item>
+        <item>Mr. Darcy </item>
+        <item>Mr. Rogers </item>
+        <item>Mud</item>
+        <item>Mufasa </item>
+        <item>Muffin tin </item>
+        <item>Mushroom </item>
+        <item>Music</item>
+        <item>Mute</item>
+        <item>My Fair Lady </item>
+        <item>My Juliet</item>
+        <item>My Romeo </item>
+        <item>My baby </item>
+        <item>My doll </item>
+        <item>My girl </item>
+        <item>My guy</item>
+        <item>My hero </item>
+        <item>My love</item>
+        <item>My pal</item>
+        <item>Napkin </item>
+        <item>National park</item>
+        <item>Nativity </item>
+        <item>Nature </item>
+        <item>Neat</item>
+        <item>Necktie</item>
+        <item>Neighbor </item>
+        <item>Neil Armstrong</item>
+        <item>Neil Diamond</item>
+        <item>New </item>
+        <item>Newspaper </item>
+        <item>Niece</item>
+        <item>Night</item>
+        <item>Nightmare </item>
+        <item>Nighttime </item>
+        <item>Noodles</item>
+        <item>Norman Rockwell </item>
+        <item>Nose </item>
+        <item>Ocean</item>
+        <item>Old</item>
+        <item>Old Spice </item>
+        <item>Once in a blue moon </item>
+        <item>One leg in the door </item>
+        <item>One smart cookie</item>
+        <item>Only you </item>
+        <item>Opening birthday presents</item>
+        <item>Operating a jackhammer</item>
+        <item>Oprah Winfrey </item>
+        <item>Ordering food at a restaurant</item>
+        <item>Oscar Wilde</item>
+        <item>Otter</item>
+        <item>Out of the frying pan and into the fire </item>
+        <item>Out of this world </item>
+        <item>Outer space </item>
+        <item>Outside </item>
+        <item>Oven mitt</item>
+        <item>Pablo Picasso </item>
+        <item>Packing </item>
+        <item>Paddling in a canoe </item>
+        <item>Paint </item>
+        <item>Painting</item>
+        <item>Pajamas </item>
+        <item>Palace</item>
+        <item>Pancakes</item>
+        <item>Panda </item>
+        <item>Panther </item>
+        <item>Pantry</item>
+        <item>Pants</item>
+        <item>Paper </item>
+        <item>Paper dryer </item>
+        <item>Paperback</item>
+        <item>Paperclip </item>
+        <item>Parakeet </item>
+        <item>Paris</item>
+        <item>Park </item>
+        <item>Partridge</item>
+        <item>Party</item>
+        <item>Passport </item>
+        <item>Password </item>
+        <item>Patrick Henry</item>
+        <item>Paul McCartney </item>
+        <item>Pawn</item>
+        <item>Pear</item>
+        <item>Pelican</item>
+        <item>Pelé</item>
+        <item>Pen </item>
+        <item>Pencil </item>
+        <item>Penguin</item>
+        <item>Penny</item>
+        <item>Pepper </item>
+        <item>Performing at a rock concert</item>
+        <item>Person </item>
+        <item>Peter Pan </item>
+        <item>Photograph </item>
+        <item>Photographer</item>
+        <item>Piano </item>
+        <item>Picking apples from a tree</item>
+        <item>Picnic </item>
+        <item>Picture frame </item>
+        <item>Pie</item>
+        <item>Piece of cake </item>
+        <item>Pig</item>
+        <item>Pigpen </item>
+        <item>Pillow</item>
+        <item>Pillowcase</item>
+        <item>Pinwheel </item>
+        <item>Pirate </item>
+        <item>Pizza </item>
+        <item>Plate </item>
+        <item>Plato</item>
+        <item>Platypus </item>
+        <item>Playground </item>
+        <item>Playing at a piano recital</item>
+        <item>Playing baseball</item>
+        <item>Playing chess</item>
+        <item>Playing four square</item>
+        <item>Playing hopscotch </item>
+        <item>Playing soccer </item>
+        <item>Playing with dough</item>
+        <item>Plumber </item>
+        <item>Poach </item>
+        <item>Pocahontas </item>
+        <item>Pocket</item>
+        <item>Poem</item>
+        <item>Pogo stick </item>
+        <item>Pony </item>
+        <item>Pop Tart</item>
+        <item>Popcorn </item>
+        <item>Porch swing </item>
+        <item>Porcupine </item>
+        <item>Pork </item>
+        <item>Potato chips </item>
+        <item>Poultry </item>
+        <item>Practicing karate </item>
+        <item>Prairie dog </item>
+        <item>Princess </item>
+        <item>Princess Leia</item>
+        <item>Printer paper </item>
+        <item>Prize </item>
+        <item>Produce </item>
+        <item>Pull the wool over your eyes</item>
+        <item>Pumpkin </item>
+        <item>Pumpkin pie</item>
+        <item>Pumpkin seeds </item>
+        <item>Puppet</item>
+        <item>Puppy </item>
+        <item>Purse</item>
+        <item>Push</item>
+        <item>Put your foot in your mouth</item>
+        <item>Puzzle piece </item>
+        <item>Queen</item>
+        <item>Queen Latifah </item>
+        <item>Quiet </item>
+        <item>Quilt</item>
+        <item>Rabbit </item>
+        <item>Race</item>
+        <item>Radio </item>
+        <item>Rainbow </item>
+        <item>Rainforest</item>
+        <item>Raining cats and dogs</item>
+        <item>Raking leaves</item>
+        <item>Raphael </item>
+        <item>Rapunzel </item>
+        <item>Rat</item>
+        <item>Ratatouille</item>
+        <item>Rattle </item>
+        <item>Real love </item>
+        <item>Recycle </item>
+        <item>Red </item>
+        <item>Red wagon </item>
+        <item>Reese Witherspoon </item>
+        <item>Regis Philbin </item>
+        <item>Reindeer </item>
+        <item>Relax </item>
+        <item>Rembrandt </item>
+        <item>Remember the Titans </item>
+        <item>Resort</item>
+        <item>Rib</item>
+        <item>Riding a carousel </item>
+        <item>Riding a motorcycle </item>
+        <item>Riding bumper cars </item>
+        <item>Riding in a chairlift </item>
+        <item>Rise above the blues </item>
+        <item>River </item>
+        <item>River rafting </item>
+        <item>Road trip </item>
+        <item>Robe </item>
+        <item>Robin</item>
+        <item>Robin Hood </item>
+        <item>Robin Williams </item>
+        <item>Robot </item>
+        <item>Rock climbing</item>
+        <item>Rocket</item>
+        <item>Rocking chair </item>
+        <item>Rocky</item>
+        <item>Roller blading </item>
+        <item>Roller coaster</item>
+        <item>Rollerblades</item>
+        <item>Rolling pin </item>
+        <item>Rome</item>
+        <item>Ronald Regan </item>
+        <item>Rosa Parks</item>
+        <item>Rose</item>
+        <item>Round </item>
+        <item>Rudolph </item>
+        <item>Rushmore</item>
+        <item>S\'mores </item>
+        <item>Sacajawea </item>
+        <item>Sad </item>
+        <item>Safari </item>
+        <item>Salamander </item>
+        <item>Salt</item>
+        <item>Salt and pepper </item>
+        <item>Salt shaker </item>
+        <item>Salvador Dali</item>
+        <item>San Francisco </item>
+        <item>Sandcastle </item>
+        <item>Sandwich </item>
+        <item>Santa Claus </item>
+        <item>Santa\'s sleigh</item>
+        <item>Santa\'s workshop </item>
+        <item>Say "cheese"</item>
+        <item>Scarecrow</item>
+        <item>Scared </item>
+        <item>Scared stiff </item>
+        <item>Scarf </item>
+        <item>Scary </item>
+        <item>Scary movies </item>
+        <item>Scenery</item>
+        <item>School</item>
+        <item>School bus </item>
+        <item>School of fish</item>
+        <item>Scissors </item>
+        <item>Scooby Doo</item>
+        <item>Scotland</item>
+        <item>Scuba diving </item>
+        <item>Sea lion</item>
+        <item>Sea salt </item>
+        <item>Sea turtle </item>
+        <item>Seagull</item>
+        <item>Seahorse</item>
+        <item>Sean Connery</item>
+        <item>Seashell</item>
+        <item>Secret lab </item>
+        <item>Seesaw </item>
+        <item>Setting up a tent </item>
+        <item>Sewing a dress </item>
+        <item>Sewing on a button</item>
+        <item>Shakespeare </item>
+        <item>Shallow</item>
+        <item>Shampoo </item>
+        <item>Shaquille O\'Neal </item>
+        <item>Shark </item>
+        <item>Sheep dog </item>
+        <item>Sheets piano</item>
+        <item>Shel Silverstein </item>
+        <item>Shelf </item>
+        <item>Shepherds </item>
+        <item>Sherlock Holmes </item>
+        <item>Shia LaBeouf </item>
+        <item>Shipwreck</item>
+        <item>Shirt</item>
+        <item>Shish kabob </item>
+        <item>Shoe </item>
+        <item>Shoelace</item>
+        <item>Shopping </item>
+        <item>Shopping at the mall </item>
+        <item>Shopping cart </item>
+        <item>Short </item>
+        <item>Shovel </item>
+        <item>Shower curtain </item>
+        <item>Shrek </item>
+        <item>Shrimp </item>
+        <item>Sifter </item>
+        <item>Sightseeing </item>
+        <item>Silverware</item>
+        <item>Simmer</item>
+        <item>Singer </item>
+        <item>Sirius Black </item>
+        <item>Six Flags</item>
+        <item>Skate </item>
+        <item>Skateboard </item>
+        <item>Skeleton</item>
+        <item>Ski</item>
+        <item>Skiing </item>
+        <item>Skirt </item>
+        <item>Skunk</item>
+        <item>Slam dunk </item>
+        <item>Sledding</item>
+        <item>Sleeping Beauty</item>
+        <item>Sleeping bag</item>
+        <item>Sleigh ride </item>
+        <item>Slide</item>
+        <item>Slow </item>
+        <item>Smile </item>
+        <item>Smog </item>
+        <item>Snake </item>
+        <item>Sneeze </item>
+        <item>Snow</item>
+        <item>Snow White </item>
+        <item>Snow cone</item>
+        <item>Snowball </item>
+        <item>Snowboarding </item>
+        <item>Snowflake </item>
+        <item>Snowman </item>
+        <item>Snuggle</item>
+        <item>So fine </item>
+        <item>Socks </item>
+        <item>Socrates </item>
+        <item>Sofa </item>
+        <item>Soft pretzel </item>
+        <item>Song</item>
+        <item>Sorting laundry</item>
+        <item>Soup </item>
+        <item>Soup de jour</item>
+        <item>South Dakota </item>
+        <item>Spain </item>
+        <item>Spare </item>
+        <item>Spatula </item>
+        <item>Speakers </item>
+        <item>Spells</item>
+        <item>Spice rack </item>
+        <item>Spider </item>
+        <item>Spider Man </item>
+        <item>Spider web</item>
+        <item>Spiderman </item>
+        <item>Spinach </item>
+        <item>Sponge </item>
+        <item>Spooky </item>
+        <item>Spoon </item>
+        <item>Spring </item>
+        <item>Sprinkler</item>
+        <item>Spy</item>
+        <item>Square</item>
+        <item>Squirrel </item>
+        <item>Stable </item>
+        <item>Stairs </item>
+        <item>Stallion </item>
+        <item>Stamps</item>
+        <item>Standing ovation </item>
+        <item>Stapler </item>
+        <item>Star </item>
+        <item>Star Wars </item>
+        <item>State </item>
+        <item>Stationery</item>
+        <item>Steal my thunder</item>
+        <item>Stephanie Meyer</item>
+        <item>Steve Jobs </item>
+        <item>Stick</item>
+        <item>Stocking</item>
+        <item>Stoplight </item>
+        <item>Stove</item>
+        <item>Straw </item>
+        <item>Stream </item>
+        <item>Stripe</item>
+        <item>Student </item>
+        <item>Suitcase</item>
+        <item>Summer </item>
+        <item>Sumo wrestling </item>
+        <item>Sun </item>
+        <item>Sun-dried </item>
+        <item>Sunburn </item>
+        <item>Sunglasses</item>
+        <item>Sunny weather </item>
+        <item>Sunscreen</item>
+        <item>Surfboard </item>
+        <item>Susan B. Anthony</item>
+        <item>Sweater </item>
+        <item>Sweater vest</item>
+        <item>Sweet potatoes</item>
+        <item>Sweet talk </item>
+        <item>Sweets </item>
+        <item>Swimming pool </item>
+        <item>Swimming with dolphins</item>
+        <item>Swing</item>
+        <item>Switzerland</item>
+        <item>Swordfish </item>
+        <item>T-shirt</item>
+        <item>TV </item>
+        <item>Taco </item>
+        <item>Taco Bell </item>
+        <item>Take a hike</item>
+        <item>Tarzan </item>
+        <item>Taxi cab </item>
+        <item>Teacher </item>
+        <item>Teapot </item>
+        <item>Telephone</item>
+        <item>Tempura </item>
+        <item>Tennis shoes </item>
+        <item>Texas </item>
+        <item>The Bahamas</item>
+        <item>The Beatles</item>
+        <item>The Cowardly Lion </item>
+        <item>The Fox and the Hound </item>
+        <item>The Grand Canyon </item>
+        <item>The Grinch </item>
+        <item>The Importance of Being Earnest</item>
+        <item>The Incredibles </item>
+        <item>The Kid </item>
+        <item>The Lion King </item>
+        <item>The Little Mermaid </item>
+        <item>The Mighty Ducks </item>
+        <item>The Muppet Christmas Carol </item>
+        <item>The North Pole </item>
+        <item>The Nutcracker </item>
+        <item>The Parent Trap </item>
+        <item>The Princess Bride </item>
+        <item>The Princess Diaries</item>
+        <item>The Sandlot </item>
+        <item>The Wizard of Oz </item>
+        <item>The Wright brothers </item>
+        <item>The squeaky wheel gets the grease </item>
+        <item>The whole nine yards</item>
+        <item>Theme park </item>
+        <item>Theodore Roosevelt </item>
+        <item>Thief </item>
+        <item>Thomas Edison </item>
+        <item>Thomas Jefferson</item>
+        <item>Thomas Paine </item>
+        <item>Three-toed sloth </item>
+        <item>Throne</item>
+        <item>Throw a fit </item>
+        <item>Thunder </item>
+        <item>Tie the knot</item>
+        <item>Tiger </item>
+        <item>Tiger Woods </item>
+        <item>Time off </item>
+        <item>Tiptoe </item>
+        <item>Tired </item>
+        <item>Toad </item>
+        <item>Toast </item>
+        <item>Toaster</item>
+        <item>Toilet </item>
+        <item>Toilet paper </item>
+        <item>Tokyo Mount </item>
+        <item>Tom Hanks </item>
+        <item>Tomatoes </item>
+        <item>Tony Hawk</item>
+        <item>Too sweet</item>
+        <item>Tool </item>
+        <item>Toothbrush </item>
+        <item>Tornado</item>
+        <item>Tortoise </item>
+        <item>Toucan </item>
+        <item>Tour guide </item>
+        <item>Tourist </item>
+        <item>Towel </item>
+        <item>Toy Story</item>
+        <item>Toys </item>
+        <item>Tractor </item>
+        <item>Trains </item>
+        <item>Trash can </item>
+        <item>Treasure </item>
+        <item>Tree</item>
+        <item>Tree house </item>
+        <item>Triangle</item>
+        <item>Trick or treat</item>
+        <item>Trip </item>
+        <item>True love</item>
+        <item>Tuba </item>
+        <item>Tuna </item>
+        <item>Turkey </item>
+        <item>Turtle </item>
+        <item>Twig </item>
+        <item>Type</item>
+        <item>Ulysses S. Grant </item>
+        <item>Umbrella</item>
+        <item>Unicorn </item>
+        <item>Universal Studios</item>
+        <item>Up</item>
+        <item>Up a creek without a paddle </item>
+        <item>Vacation day </item>
+        <item>Vampire </item>
+        <item>Vanilla extract </item>
+        <item>Vase</item>
+        <item>Vest </item>
+        <item>Victor Hugo </item>
+        <item>Video camera</item>
+        <item>Vienna</item>
+        <item>Vincent Van Gogh</item>
+        <item>Visiting the zoo </item>
+        <item>Voldermort </item>
+        <item>Waffles </item>
+        <item>Wake up on the wrong side of the bed </item>
+        <item>Waldo </item>
+        <item>Walking through a haunted house</item>
+        <item>Wallet </item>
+        <item>Walrus</item>
+        <item>Walt Disney </item>
+        <item>Walter Cronkite </item>
+        <item>Warthog </item>
+        <item>Washing an elephant </item>
+        <item>Washing machine </item>
+        <item>Washing windows</item>
+        <item>Washington D.C. </item>
+        <item>Wasp</item>
+        <item>Wassail </item>
+        <item>Watchinga movie at the theater</item>
+        <item>Water</item>
+        <item>Water buffalo </item>
+        <item>Water park </item>
+        <item>Water under the bridge </item>
+        <item>Watering a garden </item>
+        <item>Watermelon</item>
+        <item>Wax</item>
+        <item>Wedding </item>
+        <item>Wedding ring </item>
+        <item>Weird Al</item>
+        <item>Werewolf</item>
+        <item>Whale </item>
+        <item>Whale watching</item>
+        <item>Wheelchair </item>
+        <item>When in Rome</item>
+        <item>When pigs fly</item>
+        <item>Whisk </item>
+        <item>Whistle </item>
+        <item>White </item>
+        <item>Why the long face?</item>
+        <item>Wildebeest </item>
+        <item>Will Smith</item>
+        <item>Willy Wonka </item>
+        <item>Willy Wonka and the Chocolate Factory</item>
+        <item>Wind</item>
+        <item>Windex </item>
+        <item>Windmill </item>
+        <item>Winnie the Pooh </item>
+        <item>Winter </item>
+        <item>Wise men </item>
+        <item>Witch </item>
+        <item>Wok </item>
+        <item>Wolf </item>
+        <item>Wombat</item>
+        <item>Wooden spoon </item>
+        <item>Worm</item>
+        <item>Wrapping paper</item>
+        <item>Wristwatch </item>
+        <item>Yo-yo </item>
+        <item>You + me </item>
+        <item>You rule </item>
+        <item>Zebra </item>
+        <item>Zest</item>
+        <item>Zombie </item>
+        <item>Zoo </item>
+        <item>à la carte </item>
+    </string-array>
+    <string-array name="animals">
+        <item>panda </item>
+        <item>housecat </item>
+        <item>moth</item>
+        <item>moose </item>
+        <item>water buffalo </item>
+        <item>caterpillar</item>
+        <item>albatross </item>
+        <item>duck </item>
+        <item>mouse</item>
+        <item>salamander </item>
+        <item>goose </item>
+        <item>rat</item>
+        <item>aardvark </item>
+        <item>joey </item>
+        <item>robin</item>
+        <item>horse </item>
+        <item>koala </item>
+        <item>black bear</item>
+        <item>hippopotamus </item>
+        <item>camel </item>
+        <item>cougar</item>
+        <item>giraffe </item>
+        <item>bald eagle </item>
+        <item>crocodile</item>
+        <item>dog </item>
+        <item>bird </item>
+        <item>penguin</item>
+        <item>pony </item>
+        <item>bat </item>
+        <item>otter</item>
+        <item>porcupine </item>
+        <item>dolphin </item>
+        <item>hamster</item>
+        <item>chameleon </item>
+        <item>swordfish </item>
+        <item>groundhog</item>
+        <item>cricket </item>
+        <item>clownfish </item>
+        <item>gila monster</item>
+        <item>leopard </item>
+        <item>rabbit </item>
+        <item>buffalo</item>
+        <item>shark </item>
+        <item>stallion </item>
+        <item>wombat</item>
+        <item>kitten </item>
+        <item>reindeer </item>
+        <item>wolf</item>
+        <item>dragon </item>
+        <item>blue whale </item>
+        <item>hyena</item>
+        <item>unicorn </item>
+        <item>tuna </item>
+        <item>platypus</item>
+        <item>basset hound </item>
+        <item>shrimp </item>
+        <item>skunk</item>
+        <item>bulldog </item>
+        <item>ladybug </item>
+        <item>beaver</item>
+        <item>chipmunk </item>
+        <item>lamb </item>
+        <item>tiger</item>
+        <item>doe </item>
+        <item>pelican</item>
+        <item>ape </item>
+        <item>sheep dog </item>
+        <item>partridge</item>
+        <item>hedgehog </item>
+        <item>cow </item>
+        <item>spider</item>
+        <item>turtle </item>
+        <item>alligator </item>
+        <item>seahorse</item>
+        <item>sea turtle </item>
+        <item>llama </item>
+        <item>lion </item>
+        <item>armadillo </item>
+        <item>herd</item>
+        <item>gopher </item>
+        <item>three-toed sloth </item>
+        <item>elk</item>
+        <item>fox </item>
+        <item>guinea pig </item>
+        <item>sea lion</item>
+        <item>donkey </item>
+        <item>frog </item>
+        <item>crow</item>
+        <item>zebra </item>
+        <item>toad </item>
+        <item>worm</item>
+        <item>panther </item>
+        <item>chinchilla </item>
+        <item>flock</item>
+        <item>chimpanzee </item>
+        <item>calf </item>
+        <item>school of fish</item>
+        <item>warthog </item>
+        <item>cub </item>
+        <item>seagull</item>
+        <item>parakeet </item>
+        <item>chicken </item>
+        <item>human</item>
+        <item>toucan </item>
+        <item>deer </item>
+        <item>lobster</item>
+        <item>prairie dog </item>
+        <item>dove </item>
+        <item>walrus</item>
+        <item>komodo dragon </item>
+        <item>jellyfish </item>
+        <item>crab</item>
+        <item>tortoise </item>
+        <item>duckling </item>
+        <item>wasp</item>
+        <item>squirrel </item>
+        <item>wildebeest </item>
+        <item>catfish</item>
+    </string-array>
+    <string-array name="easy">
+        <item>Monday </item>
+        <item>TV </item>
+        <item>alligator </item>
+        <item>ankle </item>
+        <item>apple </item>
+        <item>arm </item>
+        <item>asleep</item>
+        <item>athlete </item>
+        <item>baby </item>
+        <item>bag</item>
+        <item>ball </item>
+        <item>balloon </item>
+        <item>banana </item>
+        <item>baseball </item>
+        <item>basketball </item>
+        <item>bat</item>
+        <item>beach </item>
+        <item>bed </item>
+        <item>bedtime</item>
+        <item>belt </item>
+        <item>big</item>
+        <item>bike</item>
+        <item>bird </item>
+        <item>bird\'s nest </item>
+        <item>birthday</item>
+        <item>blue </item>
+        <item>boat</item>
+        <item>body </item>
+        <item>book </item>
+        <item>bottle </item>
+        <item>box </item>
+        <item>boy </item>
+        <item>brave </item>
+        <item>bridge </item>
+        <item>broccoli </item>
+        <item>broken </item>
+        <item>broom </item>
+        <item>bug </item>
+        <item>buy </item>
+        <item>cafeteria </item>
+        <item>cake </item>
+        <item>calculator </item>
+        <item>candle </item>
+        <item>candy </item>
+        <item>cat </item>
+        <item>chair </item>
+        <item>chalk </item>
+        <item>cheese</item>
+        <item>chew </item>
+        <item>chocolate </item>
+        <item>church</item>
+        <item>circle</item>
+        <item>clock</item>
+        <item>clown</item>
+        <item>coat </item>
+        <item>cold</item>
+        <item>computer </item>
+        <item>cook</item>
+        <item>cookie </item>
+        <item>couch </item>
+        <item>cough</item>
+        <item>cow </item>
+        <item>cowboy </item>
+        <item>crayon</item>
+        <item>cup</item>
+        <item>dad </item>
+        <item>day</item>
+        <item>desk </item>
+        <item>dictionary</item>
+        <item>dirty </item>
+        <item>doctor</item>
+        <item>dog </item>
+        <item>doll</item>
+        <item>door </item>
+        <item>draw </item>
+        <item>dress </item>
+        <item>drum </item>
+        <item>duck</item>
+        <item>dump truck </item>
+        <item>ear </item>
+        <item>egg</item>
+        <item>elbow </item>
+        <item>elephant </item>
+        <item>elevator</item>
+        <item>eye </item>
+        <item>eyebrow </item>
+        <item>eyes</item>
+        <item>face </item>
+        <item>fast</item>
+        <item>fence </item>
+        <item>finger </item>
+        <item>fire </item>
+        <item>fire engine </item>
+        <item>fix </item>
+        <item>flag</item>
+        <item>flashlight</item>
+        <item>flower</item>
+        <item>fog</item>
+        <item>football </item>
+        <item>forehead </item>
+        <item>freckle</item>
+        <item>frown</item>
+        <item>ghost </item>
+        <item>girl</item>
+        <item>goodbye </item>
+        <item>grandma </item>
+        <item>grape </item>
+        <item>grass</item>
+        <item>green </item>
+        <item>grown-up </item>
+        <item>guitar </item>
+        <item>gum</item>
+        <item>hair </item>
+        <item>happy </item>
+        <item>hat </item>
+        <item>heart </item>
+        <item>helicopter</item>
+        <item>hide-and-seek </item>
+        <item>hill </item>
+        <item>hippo </item>
+        <item>homework </item>
+        <item>hopscotch </item>
+        <item>horse </item>
+        <item>house</item>
+        <item>hug </item>
+        <item>hungry </item>
+        <item>hurt </item>
+        <item>ice</item>
+        <item>ice cream cone </item>
+        <item>jacket </item>
+        <item>jar</item>
+        <item>jelly</item>
+        <item>jump </item>
+        <item>key </item>
+        <item>king </item>
+        <item>kite </item>
+        <item>knee </item>
+        <item>ladybug</item>
+        <item>laundry</item>
+        <item>lawn mower </item>
+        <item>leg </item>
+        <item>light </item>
+        <item>light bulb </item>
+        <item>lime </item>
+        <item>lion </item>
+        <item>lips </item>
+        <item>lizard </item>
+        <item>lollipop </item>
+        <item>long</item>
+        <item>lunch </item>
+        <item>lunchbox </item>
+        <item>mailbox </item>
+        <item>milk </item>
+        <item>mom </item>
+        <item>monster </item>
+        <item>moon</item>
+        <item>mop</item>
+        <item>motorcycle </item>
+        <item>mountain </item>
+        <item>mouse </item>
+        <item>mouth</item>
+        <item>mud</item>
+        <item>music</item>
+        <item>neighbor </item>
+        <item>new </item>
+        <item>niece</item>
+        <item>night</item>
+        <item>nose </item>
+        <item>ocean</item>
+        <item>old</item>
+        <item>outer space</item>
+        <item>paint </item>
+        <item>pajamas </item>
+        <item>pants</item>
+        <item>paper </item>
+        <item>park </item>
+        <item>party</item>
+        <item>pear</item>
+        <item>pen </item>
+        <item>pencil </item>
+        <item>penny</item>
+        <item>pepper </item>
+        <item>person </item>
+        <item>piano </item>
+        <item>picnic </item>
+        <item>pie</item>
+        <item>pig</item>
+        <item>pillow</item>
+        <item>plate </item>
+        <item>playground </item>
+        <item>pocket</item>
+        <item>poem</item>
+        <item>princess </item>
+        <item>puppy </item>
+        <item>push</item>
+        <item>queen</item>
+        <item>quiet </item>
+        <item>race</item>
+        <item>radio </item>
+        <item>rainbow </item>
+        <item>red </item>
+        <item>roller coaster</item>
+        <item>rose</item>
+        <item>sad </item>
+        <item>salt</item>
+        <item>sandcastle </item>
+        <item>sandwich </item>
+        <item>scared </item>
+        <item>school</item>
+        <item>school bus </item>
+        <item>seashell</item>
+        <item>shark </item>
+        <item>shirt</item>
+        <item>shoe </item>
+        <item>shoelace</item>
+        <item>short </item>
+        <item>singer </item>
+        <item>skateboard </item>
+        <item>slide</item>
+        <item>slow </item>
+        <item>smile </item>
+        <item>snake </item>
+        <item>snow</item>
+        <item>snowflake</item>
+        <item>socks </item>
+        <item>spider </item>
+        <item>spider web</item>
+        <item>spoon </item>
+        <item>square</item>
+        <item>stairs </item>
+        <item>star </item>
+        <item>stick</item>
+        <item>straw </item>
+        <item>stream </item>
+        <item>student </item>
+        <item>sun </item>
+        <item>swimming pool </item>
+        <item>swing</item>
+        <item>teacher </item>
+        <item>telephone</item>
+        <item>thunder </item>
+        <item>tiger </item>
+        <item>tired </item>
+        <item>toilet paper </item>
+        <item>toothbrush </item>
+        <item>tornado</item>
+        <item>tractor </item>
+        <item>trash can </item>
+        <item>tree</item>
+        <item>tree house </item>
+        <item>triangle</item>
+        <item>tuba </item>
+        <item>type</item>
+        <item>water</item>
+        <item>watermelon</item>
+        <item>wedding </item>
+        <item>whale </item>
+        <item>wheelchair </item>
+        <item>white </item>
+        <item>wind</item>
+        <item>winter </item>
+        <item>wolf </item>
+        <item>worm</item>
+        <item>yo-yo </item>
+        <item>zoo </item>
+    </string-array>
+    <string-array name="food">
+        <item>sandwich </item>
+        <item>kumquat </item>
+        <item>black beans</item>
+        <item>spatula </item>
+        <item>pizza </item>
+        <item>zest</item>
+        <item>cheese </item>
+        <item>tempura </item>
+        <item>ice cream sundae</item>
+        <item>rolling pin </item>
+        <item>egg salad </item>
+        <item>artichoke</item>
+        <item>grape </item>
+        <item>à la carte </item>
+        <item>milk</item>
+        <item>banana split </item>
+        <item>boiled egg </item>
+        <item>soup de jour</item>
+        <item>Taco Bell </item>
+        <item>lasagna </item>
+        <item>toaster</item>
+        <item>soft pretzel </item>
+        <item>bread </item>
+        <item>jellybeans</item>
+        <item>mac and cheese </item>
+        <item>mushroom </item>
+        <item>cupcakes</item>
+        <item>apple pie </item>
+        <item>wok </item>
+        <item>oven mitt</item>
+        <item>corn </item>
+        <item>avocado </item>
+        <item>muffin tin </item>
+        <item>whisk </item>
+        <item>dairy</item>
+        <item>potato chips </item>
+        <item>sun-dried </item>
+        <item>tomatoes </item>
+        <item>granola bar</item>
+        <item>sea salt </item>
+        <item>poultry </item>
+        <item>noodles</item>
+        <item>banana </item>
+        <item>simmer</item>
+        <item>freeze </item>
+        <item>blender </item>
+        <item>cornbread</item>
+        <item>produce </item>
+        <item>salt shaker </item>
+        <item>poach </item>
+        <item>apple </item>
+        <item>Balsamic vinegar</item>
+        <item>shish kabob </item>
+        <item>sifter </item>
+        <item>meatballs</item>
+        <item>melt </item>
+        <item>napkin </item>
+        <item>colander</item>
+        <item>baking soda </item>
+        <item>all-you-can-eat buffet </item>
+        <item>toaster oven</item>
+        <item>BLT </item>
+        <item>cinnamon rolls </item>
+        <item>caviar</item>
+        <item>wooden spoon </item>
+        <item>dredge </item>
+        <item>bagel</item>
+        <item>beef </item>
+        <item>pork </item>
+        <item>deep-fry</item>
+        <item>bake </item>
+        <item>guacamole </item>
+        <item>banana bread</item>
+        <item>fork </item>
+        <item>grill </item>
+        <item>low-fat</item>
+        <item>vanilla extract </item>
+        <item>broil </item>
+        <item>fruit smoothie</item>
+        <item>waffles </item>
+        <item>marinade </item>
+        <item>chicken pot pie</item>
+        <item>beef jerky</item>
+        <item>crepe </item>
+        <item>blackberry </item>
+        <item>drive-through</item>
+        <item>fruit salad </item>
+        <item>sweet potatoes</item>
+        <item>McDonalds </item>
+        <item>Alfredo sauce </item>
+        <item>Burger King</item>
+        <item>taco </item>
+        <item>popcorn </item>
+        <item>pancakes</item>
+        <item>basil </item>
+        <item>Pop Tart</item>
+        <item>KFC </item>
+        <item>spinach </item>
+        <item>key lime pie</item>
+        <item>appetizer </item>
+        <item>s\'mores </item>
+        <item>cutting board</item>
+        <item>egg nog </item>
+        <item>chocolate </item>
+        <item>cake broth</item>
+        <item>doughnuts </item>
+        <item>blanch </item>
+        <item>hot dogs</item>
+        <item>Bundt pan </item>
+        <item>frying pan </item>
+        <item>Kool-aid</item>
+    </string-array>
+    <string-array name="holiday">
+        <item>Buddy the Elf </item>
+        <item>Christmas Eve </item>
+        <item>Christmas break </item>
+        <item>Christmas carol</item>
+        <item>Christmas spirit </item>
+        <item>Christmas tree </item>
+        <item>Cupid</item>
+        <item>Dracula </item>
+        <item>Frankenstein </item>
+        <item>Frosty the Snowman </item>
+        <item>Ghostbusters </item>
+        <item>I do </item>
+        <item>I heart you </item>
+        <item>I love you</item>
+        <item>Igor </item>
+        <item>Jack Frost </item>
+        <item>Little Saint Nick</item>
+        <item>Monster Mash</item>
+        <item>Rudolph </item>
+        <item>Santa Claus </item>
+        <item>Santa\'s sleigh</item>
+        <item>Santa\'s workshop </item>
+        <item>afraid </item>
+        <item>angel </item>
+        <item>apple cider </item>
+        <item>autumn </item>
+        <item>bats</item>
+        <item>be good </item>
+        <item>be mine </item>
+        <item>be true</item>
+        <item>bells</item>
+        <item>black </item>
+        <item>boo </item>
+        <item>call me</item>
+        <item>candle </item>
+        <item>candy </item>
+        <item>candy cane</item>
+        <item>candy corn</item>
+        <item>chestnuts</item>
+        <item>chimney</item>
+        <item>chocolate </item>
+        <item>cinnamon</item>
+        <item>cookies</item>
+        <item>cool </item>
+        <item>corn maze </item>
+        <item>costume </item>
+        <item>creepy </item>
+        <item>crypt</item>
+        <item>cutie pie </item>
+        <item>dark </item>
+        <item>dear</item>
+        <item>decorations</item>
+        <item>doll </item>
+        <item>doorbell </item>
+        <item>eggnog </item>
+        <item>elves </item>
+        <item>email me </item>
+        <item>fight </item>
+        <item>first kiss </item>
+        <item>for you </item>
+        <item>fortune teller</item>
+        <item>frightened </item>
+        <item>ghost </item>
+        <item>ghost story </item>
+        <item>gifts </item>
+        <item>gingerbread house </item>
+        <item>goblin</item>
+        <item>goody bag ghoul coffin</item>
+        <item>grave </item>
+        <item>graveyard </item>
+        <item>gumdrops</item>
+        <item>gypsy</item>
+        <item>haunted house</item>
+        <item>hay ride </item>
+        <item>hello</item>
+        <item>hi love </item>
+        <item>ho ho ho </item>
+        <item>horror</item>
+        <item>hot chocolate </item>
+        <item>how sweet</item>
+        <item>hug me </item>
+        <item>ice skating </item>
+        <item>icicle</item>
+        <item>it\'s love </item>
+        <item>jack-o-lantern </item>
+        <item>jingle bells </item>
+        <item>kiss me </item>
+        <item>lantern </item>
+        <item>lights </item>
+        <item>little drummer boy </item>
+        <item>lollipop</item>
+        <item>love </item>
+        <item>love me </item>
+        <item>mad scientist</item>
+        <item>manger </item>
+        <item>marry me</item>
+        <item>marshmallow</item>
+        <item>miss me </item>
+        <item>miss you </item>
+        <item>mistletoe </item>
+        <item>mittens </item>
+        <item>monster </item>
+        <item>my Juliet</item>
+        <item>my Romeo </item>
+        <item>my baby </item>
+        <item>my doll </item>
+        <item>my girl </item>
+        <item>my guy</item>
+        <item>my hero </item>
+        <item>my love</item>
+        <item>my pal</item>
+        <item>nativity </item>
+        <item>neat</item>
+        <item>nighttime </item>
+        <item>only you </item>
+        <item>pumpkin </item>
+        <item>pumpkin pie</item>
+        <item>pumpkin seeds </item>
+        <item>real love </item>
+        <item>reindeer </item>
+        <item>scarecrow</item>
+        <item>scarf</item>
+        <item>scary </item>
+        <item>scary movies </item>
+        <item>secret lab </item>
+        <item>shepherds </item>
+        <item>skeleton</item>
+        <item>sledding</item>
+        <item>sleigh ride </item>
+        <item>smile </item>
+        <item>snow</item>
+        <item>snowball </item>
+        <item>snowflake </item>
+        <item>snowman </item>
+        <item>so fine </item>
+        <item>soup </item>
+        <item>spells</item>
+        <item>spider </item>
+        <item>spider web</item>
+        <item>spooks</item>
+        <item>spooky </item>
+        <item>stable </item>
+        <item>star </item>
+        <item>stocking</item>
+        <item>sweet talk </item>
+        <item>sweets </item>
+        <item>the Grinch</item>
+        <item>the North Pole </item>
+        <item>the Nutcracker </item>
+        <item>too sweet</item>
+        <item>toys </item>
+        <item>trick or treat</item>
+        <item>true love</item>
+        <item>turkey</item>
+        <item>vampire </item>
+        <item>wassail </item>
+        <item>werewolf</item>
+        <item>wise men </item>
+        <item>witch </item>
+        <item>wrapping paper</item>
+        <item>you + me </item>
+        <item>you rule </item>
+        <item>zombie </item>
+    </string-array>
+    <string-array name="household_items">
+        <item>calendar </item>
+        <item>hot water </item>
+        <item>paint</item>
+        <item>tennis shoes </item>
+        <item>magnets </item>
+        <item>desk</item>
+        <item>hairspray </item>
+        <item>printer paper </item>
+        <item>trash can</item>
+        <item>washing machine </item>
+        <item>cell phone charger </item>
+        <item>sweater vest</item>
+        <item>shoes </item>
+        <item>button </item>
+        <item>hand soap</item>
+        <item>toilet </item>
+        <item>paper dryer </item>
+        <item>sheets piano</item>
+        <item>mirror </item>
+        <item>crayons </item>
+        <item>t-shirt</item>
+        <item>picture frame </item>
+        <item>skirt </item>
+        <item>flowers</item>
+        <item>speakers </item>
+        <item>garage </item>
+        <item>doormat</item>
+        <item>garden hose </item>
+        <item>spice rack </item>
+        <item>quilt</item>
+        <item>stapler </item>
+        <item>camera </item>
+        <item>dress shirt</item>
+        <item>sweater </item>
+        <item>cell phone </item>
+        <item>umbrella</item>
+        <item>hand lotion </item>
+        <item>towel </item>
+        <item>banister</item>
+        <item>boots </item>
+        <item>red wagon </item>
+        <item>ironing board</item>
+        <item>shampoo </item>
+        <item>books </item>
+        <item>baseboards</item>
+        <item>bicycle </item>
+        <item>blue jeans </item>
+        <item>socks</item>
+        <item>skateboard </item>
+        <item>vest </item>
+        <item>sunglasses</item>
+        <item>headband </item>
+        <item>scissors </item>
+        <item>light switch</item>
+        <item>magazine </item>
+        <item>markers </item>
+        <item>pillowcase</item>
+        <item>sofa </item>
+        <item>scarf </item>
+        <item>ladder</item>
+        <item>laundry detergent </item>
+        <item>dustpan </item>
+        <item>purse</item>
+        <item>mailbox </item>
+        <item>jewelry </item>
+        <item>front porch</item>
+        <item>newspaper </item>
+        <item>pantry</item>
+        <item>eraser </item>
+        <item>iron </item>
+        <item>doorway</item>
+        <item>rocking chair </item>
+        <item>ceiling fan </item>
+        <item>door knob</item>
+        <item>paperclip </item>
+        <item>electrical outlet </item>
+        <item>DVDs</item>
+        <item>bowtie </item>
+        <item>Windex </item>
+        <item>necktie</item>
+        <item>TV </item>
+        <item>porch swing </item>
+        <item>silverware</item>
+        <item>shovel </item>
+        <item>iPod </item>
+        <item>junk drawer</item>
+        <item>loveseat </item>
+        <item>bed </item>
+        <item>vase</item>
+        <item>lunchbox </item>
+        <item>hair dryer </item>
+        <item>ballpoint pen</item>
+        <item>photograph </item>
+        <item>cleaning spray </item>
+        <item>stationery</item>
+        <item>curtains </item>
+        <item>sponge </item>
+        <item>dog leash</item>
+        <item>batteries </item>
+        <item>candle</item>
+        <item>kitchen knife set </item>
+        <item>living room </item>
+        <item>bathroom scale</item>
+        <item>broom </item>
+        <item>letter opener </item>
+        <item>bedroom</item>
+        <item>bathroom </item>
+        <item>kitchen</item>
+        <item>laundry basket </item>
+        <item>computer </item>
+        <item>stairs</item>
+        <item>Internet </item>
+        <item>shower curtain </item>
+        <item>video camera</item>
+        <item>home movies </item>
+        <item>wallet </item>
+        <item>stamps</item>
+    </string-array>
+    <string-array name="idioms">
+        <item>a blessing in disguise</item>
+        <item>a fifth wheel </item>
+        <item>a fly on the wall</item>
+        <item>a wolf in sheep\'s clothing </item>
+        <item>all bark and no bite </item>
+        <item>apple of my eye </item>
+        <item>back to the drawing board</item>
+        <item>bouncing off the walls</item>
+        <item>bull in a china closet </item>
+        <item>can\'t keep a good dog down</item>
+        <item>carry a tune </item>
+        <item>caught red-handed </item>
+        <item>close, but no cigar </item>
+        <item>cost an arm and a leg </item>
+        <item>dyed-in-the-wool </item>
+        <item>eat my words</item>
+        <item>everything but the kitchen sink </item>
+        <item>feeling under the weather </item>
+        <item>fraidey cat </item>
+        <item>frog in your throat</item>
+        <item>get cold feet </item>
+        <item>go out on a limb </item>
+        <item>grab the bull by the horns </item>
+        <item>green with envy </item>
+        <item>have a cow </item>
+        <item>have two left feet </item>
+        <item>head over heels in love </item>
+        <item>hit the road </item>
+        <item>hit the sack</item>
+        <item>hold your horses </item>
+        <item>in the same boat </item>
+        <item>jump the gun </item>
+        <item>kick the bucket </item>
+        <item>let bygones be bygones </item>
+        <item>let the cat out of the bag </item>
+        <item>make a mountain out of a molehill</item>
+        <item>once in a blue moon </item>
+        <item>one leg in the door </item>
+        <item>one smart cookie</item>
+        <item>out of the frying pan and into the fire </item>
+        <item>out of this world </item>
+        <item>piece of cake </item>
+        <item>pull the wool over your eyes</item>
+        <item>put your foot in your mouth</item>
+        <item>raining cats and dogs</item>
+        <item>rise above the blues </item>
+        <item>scared stiff </item>
+        <item>steal my thunder</item>
+        <item>take a hike</item>
+        <item>the squeaky wheel gets the grease </item>
+        <item>the whole nine yards</item>
+        <item>throw a fit </item>
+        <item>tie the knot</item>
+        <item>up a creek without a paddle </item>
+        <item>wake up on the wrong side of the bed </item>
+        <item>water under the bridge </item>
+        <item>when in Rome</item>
+        <item>when pigs fly</item>
+        <item>why the long face?</item>
+    </string-array>
+    <string-array name="medium">
+        <item>taxi cab </item>
+        <item>standing ovation </item>
+        <item>alarm clock</item>
+        <item>tool </item>
+        <item>banana peel </item>
+        <item>flagpole</item>
+        <item>money </item>
+        <item>wallet </item>
+        <item>ballpoint pen</item>
+        <item>sunburn </item>
+        <item>wedding ring </item>
+        <item>spy</item>
+        <item>baby-sitter </item>
+        <item>aunt </item>
+        <item>acne</item>
+        <item>bib </item>
+        <item>puzzle piece </item>
+        <item>pawn</item>
+        <item>astronaut </item>
+        <item>tennis shoes </item>
+        <item>blue jeans</item>
+        <item>twig </item>
+        <item>outer space </item>
+        <item>banister</item>
+        <item>batteries </item>
+        <item>doghouse </item>
+        <item>campsite</item>
+        <item>plumber </item>
+        <item>bedbug </item>
+        <item>throne</item>
+        <item>tiptoe </item>
+        <item>log </item>
+        <item>mute</item>
+        <item>pogo stick </item>
+        <item>stoplight </item>
+        <item>ceiling fan</item>
+        <item>bedspread </item>
+        <item>bite </item>
+        <item>stove</item>
+        <item>windmill </item>
+        <item>nightmare </item>
+        <item>stripe</item>
+        <item>spring </item>
+        <item>wristwatch </item>
+        <item>eat</item>
+        <item>matchstick </item>
+        <item>gumball </item>
+        <item>bobsled</item>
+        <item>bonnet </item>
+        <item>flock </item>
+        <item>sprinkler</item>
+        <item>living room </item>
+        <item>laugh </item>
+        <item>snuggle</item>
+        <item>sneeze </item>
+        <item>bud </item>
+        <item>elf</item>
+        <item>headache </item>
+        <item>slam dunk </item>
+        <item>Internet</item>
+        <item>kiss </item>
+        <item>shopping cart </item>
+        <item>shipwreck</item>
+        <item>funny </item>
+        <item>glide </item>
+        <item>lamp</item>
+        <item>candlestick </item>
+        <item>grandfather </item>
+        <item>rocket</item>
+        <item>home movies </item>
+        <item>seesaw </item>
+        <item>rollerblades</item>
+        <item>smog </item>
+        <item>grill </item>
+        <item>goblin</item>
+        <item>coach </item>
+        <item>claw </item>
+        <item>cloud</item>
+        <item>shelf </item>
+        <item>recycle </item>
+        <item>glue stick</item>
+        <item>Christmas carolers </item>
+        <item>front porch </item>
+        <item>earache</item>
+        <item>robot </item>
+        <item>foil </item>
+        <item>rib</item>
+        <item>robe </item>
+        <item>crumb </item>
+        <item>paperback</item>
+        <item>hurdle </item>
+        <item>rattle </item>
+        <item>fetch</item>
+        <item>date </item>
+        <item>iPod </item>
+        <item>dance</item>
+        <item>cello </item>
+        <item>flute </item>
+        <item>dock</item>
+        <item>prize </item>
+        <item>dollar </item>
+        <item>puppet</item>
+        <item>brass </item>
+        <item>firefighter </item>
+        <item>huddle</item>
+        <item>easel </item>
+        <item>pigpen </item>
+        <item>bunk bed</item>
+        <item>bowtie </item>
+        <item>fiddle </item>
+        <item>dentist</item>
+        <item>baseboards </item>
+        <item>letter opener </item>
+        <item>photographer</item>
+        <item>magic </item>
+        <item>Old Spice </item>
+        <item>monster</item>
+        <item>horse </item>
+        <item>door </item>
+        <item>song</item>
+        <item>trip </item>
+        <item>backbone </item>
+        <item>bomb</item>
+        <item>round </item>
+        <item>treasure </item>
+        <item>garbage</item>
+        <item>park </item>
+        <item>pirate </item>
+        <item>ski</item>
+        <item>state </item>
+        <item>whistle </item>
+        <item>palace</item>
+        <item>baseball </item>
+        <item>coal </item>
+        <item>queen</item>
+        <item>dominoes </item>
+        <item>photograph </item>
+        <item>computer</item>
+        <item>hockey </item>
+        <item>aircraft </item>
+        <item>hot dog</item>
+        <item>salt and pepper </item>
+        <item>key </item>
+        <item>iPad</item>
+        <item>whisk </item>
+        <item>frog </item>
+        <item>lawnmower</item>
+        <item>mattress </item>
+        <item>pinwheel </item>
+        <item>cake</item>
+        <item>circus </item>
+        <item>battery </item>
+        <item>mailman</item>
+        <item>cowboy </item>
+        <item>password </item>
+        <item>bicycle</item>
+        <item>skate </item>
+        <item>electricity </item>
+        <item>lightsaber</item>
+        <item>thief </item>
+        <item>teapot </item>
+        <item>deep</item>
+        <item>spring </item>
+        <item>nature </item>
+        <item>shallow</item>
+        <item>toast </item>
+        <item>outside </item>
+        <item>America</item>
+        <item>roller blading </item>
+        <item>gingerbread man </item>
+        <item>bowtie</item>
+        <item>half </item>
+        <item>spare </item>
+        <item>wax</item>
+        <item>light bulb </item>
+        <item>platypus </item>
+        <item>music</item>
+    </string-array>
+    <string-array name="movies">
+        <item>101 Dalmatians </item>
+        <item>2001: A Space Odyssey </item>
+        <item>A Bug’s Life </item>
+        <item>Aladdin</item>
+        <item>Alice in Wonderland </item>
+        <item>Anastasia </item>
+        <item>Angels in the Outfield </item>
+        <item>Apollo 13 </item>
+        <item>Avatar </item>
+        <item>Babe </item>
+        <item>Back to the Future </item>
+        <item>Bambi </item>
+        <item>Batman </item>
+        <item>Beauty and the Beast</item>
+        <item>Big</item>
+        <item>Bill and Ted\'s Excellent Adventure </item>
+        <item>Brother Bear</item>
+        <item>Butch Cassidy and the Sundance Kid</item>
+        <item>Cars</item>
+        <item>Catch Me If You Can</item>
+        <item>Cinderella </item>
+        <item>Dumbo</item>
+        <item>E.T.</item>
+        <item>Finding Nemo</item>
+        <item>Forest Gump</item>
+        <item>Groundhog Day </item>
+        <item>High School Musical </item>
+        <item>Inception </item>
+        <item>Indiana Jones</item>
+        <item>James Bond</item>
+        <item>Mary Poppins </item>
+        <item>Mighty Joe Young </item>
+        <item>My Fair Lady </item>
+        <item>Peter Pan </item>
+        <item>Pocahontas </item>
+        <item>Ratatouille</item>
+        <item>Remember the Titans </item>
+        <item>Robin Hood </item>
+        <item>Shrek </item>
+        <item>Sleeping Beauty</item>
+        <item>Snow White </item>
+        <item>Spiderman </item>
+        <item>Star Wars </item>
+        <item>Tarzan </item>
+        <item>The Fox and the Hound </item>
+        <item>The Importance of Being Earnest</item>
+        <item>The Incredibles </item>
+        <item>The Kid </item>
+        <item>The Lion King </item>
+        <item>The Little Mermaid </item>
+        <item>The Mighty Ducks </item>
+        <item>The Muppet Christmas Carol </item>
+        <item>The Parent Trap </item>
+        <item>The Princess Bride </item>
+        <item>The Princess Diaries</item>
+        <item>The Sandlot </item>
+        <item>The Wizard of Oz </item>
+        <item>Toy Story</item>
+        <item>Up</item>
+        <item>Willy Wonka and the Chocolate Factory</item>
+    </string-array>
+    <string-array name="people">
+        <item>Abraham Lincoln </item>
+        <item>Albert Einstein </item>
+        <item>Alex Rodriguez</item>
+        <item>Alexander Graham Bell </item>
+        <item>Alice (in Wonderland) </item>
+        <item>Amanda Bynes </item>
+        <item>Amelia Earhart</item>
+        <item>Anakin Skywalker </item>
+        <item>Andy Griffith </item>
+        <item>Andy Warhol </item>
+        <item>Anne Frank</item>
+        <item>Archimedes </item>
+        <item>Aristotle </item>
+        <item>Audrey Hepburn </item>
+        <item>Babe Ruth </item>
+        <item>Barack Obama </item>
+        <item>Barbie </item>
+        <item>Batman </item>
+        <item>Beethoven </item>
+        <item>Ben Franklin</item>
+        <item>Benjamin Franklin </item>
+        <item>Betsy Ross</item>
+        <item>Bill Clinton</item>
+        <item>Bill Cosby </item>
+        <item>Bill Gates </item>
+        <item>Billy the Kid </item>
+        <item>Brad Pitt </item>
+        <item>Bruce Willis </item>
+        <item>Buddy Holly </item>
+        <item>Bugs Bunny </item>
+        <item>Buzz Aldrin </item>
+        <item>Buzz Lightyear</item>
+        <item>C-3P0 </item>
+        <item>C. S. Lewis </item>
+        <item>Cap\'n Crunch </item>
+        <item>Captain Hook </item>
+        <item>Captain Kirk </item>
+        <item>Carrie Fisher </item>
+        <item>Celine Dion</item>
+        <item>Charles Darwin </item>
+        <item>Charles Dickens </item>
+        <item>Charlie Brown </item>
+        <item>Christian Bale</item>
+        <item>Christopher Columbus</item>
+        <item>Cinderella </item>
+        <item>Clark Kent</item>
+        <item>Claude Monet</item>
+        <item>Cleopatra </item>
+        <item>Coldplay</item>
+        <item>Columbus</item>
+        <item>Copernicus </item>
+        <item>Dakota Fanning </item>
+        <item>Danny Glover </item>
+        <item>Darth Vader</item>
+        <item>David Beckham </item>
+        <item>Davy Crockett </item>
+        <item>Dennis the Menace </item>
+        <item>Denzel Washington </item>
+        <item>Dick Van Dyke</item>
+        <item>Dora the Explorer </item>
+        <item>Dr. Emmett Brown</item>
+        <item>Dr. Seuss</item>
+        <item>Dracula </item>
+        <item>Dumbledore</item>
+        <item>E.T. </item>
+        <item>Ebenezer Scrooge</item>
+        <item>Eddie Murphy </item>
+        <item>Eleanor Roosevelt</item>
+        <item>Eli Whitney</item>
+        <item>Elijah Wood </item>
+        <item>Elizabeth Bennett</item>
+        <item>Elton John </item>
+        <item>Elvis Presley </item>
+        <item>Ernest Hemingway </item>
+        <item>Fozzy</item>
+        <item>Frank Lloyd Wright</item>
+        <item>Frankenstein </item>
+        <item>Franklin D. Roosevelt</item>
+        <item>Frodo </item>
+        <item>Galileo</item>
+        <item>Garfield</item>
+        <item>Genghis Khan </item>
+        <item>George Lucas </item>
+        <item>George Washington</item>
+        <item>George of the Jungle </item>
+        <item>Georgia O\'Keeffe</item>
+        <item>Gilligan </item>
+        <item>Grace Kelly </item>
+        <item>Hamlet </item>
+        <item>Han Solo </item>
+        <item>Hannah Montana </item>
+        <item>Harrison Ford</item>
+        <item>Harry Houdini</item>
+        <item>Harry Potter</item>
+        <item>Helen Keller</item>
+        <item>Henry Ford</item>
+        <item>Indiana Jones </item>
+        <item>Inigo Montoya</item>
+        <item>Isaac Newton</item>
+        <item>J.K. Rowling </item>
+        <item>Jack Black </item>
+        <item>Jackson Pollock</item>
+        <item>James Bond </item>
+        <item>James Earl Jones </item>
+        <item>James Madison </item>
+        <item>James Taylor </item>
+        <item>Jim Henson </item>
+        <item>Jimmy Stewart </item>
+        <item>John Hancock </item>
+        <item>John Williams </item>
+        <item>Johnny Depp </item>
+        <item>Justin Beiber</item>
+        <item>Kevin Bacon</item>
+        <item>King George</item>
+        <item>Lance Armstrong</item>
+        <item>Leonardo Da Vinci </item>
+        <item>Leonardo DiCaprio </item>
+        <item>Lewis Carrol </item>
+        <item>Lewis and Clark </item>
+        <item>Lord Byron</item>
+        <item>Lucille Ball</item>
+        <item>Luke Skywalker</item>
+        <item>Mahatma Gandhi </item>
+        <item>Mandy Moore </item>
+        <item>Mario </item>
+        <item>Mark Twain</item>
+        <item>Martin Sheen</item>
+        <item>Marty McFly </item>
+        <item>Mary Poppins</item>
+        <item>Michael J. Fox </item>
+        <item>Michael Jackson </item>
+        <item>Michael Jordan </item>
+        <item>Michael Phelps</item>
+        <item>Michelangelo</item>
+        <item>Mohammad Ali </item>
+        <item>Mother Teresa</item>
+        <item>Mozart</item>
+        <item>Mr. Darcy </item>
+        <item>Mr. Rogers </item>
+        <item>Mufasa </item>
+        <item>Neil Armstrong</item>
+        <item>Neil Diamond</item>
+        <item>Norman Rockwell </item>
+        <item>Oprah Winfrey </item>
+        <item>Oscar Wilde</item>
+        <item>Pablo Picasso </item>
+        <item>Patrick Henry</item>
+        <item>Paul McCartney </item>
+        <item>Pelé</item>
+        <item>Peter Pan </item>
+        <item>Plato</item>
+        <item>Pocahontas</item>
+        <item>Princess Leia</item>
+        <item>Queen Latifah </item>
+        <item>Raphael </item>
+        <item>Rapunzel </item>
+        <item>Reese Witherspoon </item>
+        <item>Regis Philbin </item>
+        <item>Rembrandt </item>
+        <item>Robin Hood </item>
+        <item>Robin Williams </item>
+        <item>Rocky</item>
+        <item>Ronald Regan </item>
+        <item>Rosa Parks</item>
+        <item>Sacajawea </item>
+        <item>Salvador Dali</item>
+        <item>Santa Claus </item>
+        <item>Scooby Doo</item>
+        <item>Sean Connery</item>
+        <item>Shakespeare </item>
+        <item>Shaquille O\'Neal </item>
+        <item>Shel Silverstein </item>
+        <item>Sherlock Holmes </item>
+        <item>Shia LaBeouf </item>
+        <item>Sirius Black </item>
+        <item>Socrates </item>
+        <item>Spider Man </item>
+        <item>Stephanie Meyer</item>
+        <item>Steve Jobs </item>
+        <item>Susan B. Anthony</item>
+        <item>Theodore Roosevelt </item>
+        <item>Thomas Edison </item>
+        <item>Thomas Jefferson</item>
+        <item>Thomas Paine </item>
+        <item>Tiger Woods </item>
+        <item>Tom Hanks </item>
+        <item>Tony Hawk</item>
+        <item>Ulysses S. Grant </item>
+        <item>Victor Hugo </item>
+        <item>Vincent Van Gogh</item>
+        <item>Voldermort </item>
+        <item>Waldo </item>
+        <item>Walt Disney </item>
+        <item>Walter Cronkite </item>
+        <item>Weird Al</item>
+        <item>Will Smith</item>
+        <item>Willy Wonka </item>
+        <item>Winnie the Pooh</item>
+        <item>Winnie the Pooh </item>
+        <item>the Beatles</item>
+        <item>the Cowardly Lion </item>
+        <item>the Grinch </item>
+        <item>Wolf</item>
+        <item>the Wright brothers </item>
+    </string-array>
+    <string-array name="travel">
+        <item>Africa </item>
+        <item>Alaska</item>
+        <item>America</item>
+        <item>Are we there yet? </item>
+        <item>Arizona</item>
+        <item>Aruba </item>
+        <item>Athens </item>
+        <item>Bermuda </item>
+        <item>Boston </item>
+        <item>Broadway </item>
+        <item>California </item>
+        <item>Canada </item>
+        <item>China </item>
+        <item>Colorado </item>
+        <item>Delaware</item>
+        <item>Disneyland </item>
+        <item>Egypt </item>
+        <item>England </item>
+        <item>Europe </item>
+        <item>Florida</item>
+        <item>Four Corners </item>
+        <item>France</item>
+        <item>Hawaii </item>
+        <item>Ireland </item>
+        <item>Istanbul</item>
+        <item>Italy</item>
+        <item>Jamaica</item>
+        <item>July </item>
+        <item>June </item>
+        <item>Las Vegas </item>
+        <item>London </item>
+        <item>Los Angeles </item>
+        <item>Maine </item>
+        <item>Mexico </item>
+        <item>Paris</item>
+        <item>Rome</item>
+        <item>Rushmore</item>
+        <item>San Francisco </item>
+        <item>Say "cheese"</item>
+        <item>Scotland</item>
+        <item>Six Flags</item>
+        <item>South Dakota </item>
+        <item>Spain </item>
+        <item>Switzerland</item>
+        <item>Texas </item>
+        <item>Tokyo Mount </item>
+        <item>Turkey </item>
+        <item>Universal Studios</item>
+        <item>Vienna</item>
+        <item>Washington D.C. </item>
+        <item>airline </item>
+        <item>airplane </item>
+        <item>airport</item>
+        <item>airport security</item>
+        <item>backpacking</item>
+        <item>beach ball </item>
+        <item>beach house</item>
+        <item>bicycle </item>
+        <item>binoculars </item>
+        <item>bird watching </item>
+        <item>boardwalk </item>
+        <item>bug spray </item>
+        <item>camera </item>
+        <item>camping </item>
+        <item>condo </item>
+        <item>coral reef </item>
+        <item>cruise ship </item>
+        <item>customs </item>
+        <item>family reunion </item>
+        <item>fanny pack</item>
+        <item>first class</item>
+        <item>hang glider </item>
+        <item>holiday</item>
+        <item>honeymoon </item>
+        <item>hotel </item>
+        <item>island</item>
+        <item>kayak</item>
+        <item>lake </item>
+        <item>layover </item>
+        <item>lazy river </item>
+        <item>luggage </item>
+        <item>map </item>
+        <item>money belt</item>
+        <item>mountain biking </item>
+        <item>national park</item>
+        <item>packing </item>
+        <item>party</item>
+        <item>passport </item>
+        <item>rainforest</item>
+        <item>relax </item>
+        <item>resort</item>
+        <item>river </item>
+        <item>river rafting </item>
+        <item>road trip </item>
+        <item>safari </item>
+        <item>scenery</item>
+        <item>scuba diving</item>
+        <item>shopping </item>
+        <item>sightseeing </item>
+        <item>skiing </item>
+        <item>sleeping bag</item>
+        <item>snow cone</item>
+        <item>snowboarding </item>
+        <item>suitcase</item>
+        <item>summer </item>
+        <item>sunny weather </item>
+        <item>sunscreen</item>
+        <item>surfboard </item>
+        <item>swimming pool</item>
+        <item>the Bahamas</item>
+        <item>the Grand Canyon </item>
+        <item>theme park </item>
+        <item>time off </item>
+        <item>tour guide </item>
+        <item>tourist </item>
+        <item>trains </item>
+        <item>vacation day </item>
+        <item>water park </item>
+    </string-array>
+
+</resources>
