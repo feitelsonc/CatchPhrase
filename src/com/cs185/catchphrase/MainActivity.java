@@ -2,6 +2,7 @@ package com.cs185.catchphrase;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Random;
 
 import android.annotation.SuppressLint;
 import android.app.ActionBar;
@@ -14,10 +15,10 @@ import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.IBinder;
-import android.view.Menu;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
@@ -25,7 +26,7 @@ import android.widget.TextView;
 
 import com.cs185.catchphrase.Beeper.LocalBinder;
 
-public class MainActivity extends Activity {
+public class MainActivity extends Activity implements OnItemSelectedListener {
 	
 	private Uri beeperTrackUri = null;
 	private Beeper beeper;
@@ -34,6 +35,7 @@ public class MainActivity extends Activity {
 	private int team2Score = 0;
 	private TextView team1ScoreTextView;
 	private TextView team2ScoreTextView;
+	private int scoreToWin;
 	private Spinner categorySpinner;
 	private int selectedCategory = 0;
 	private Button pauseButton;
@@ -41,6 +43,7 @@ public class MainActivity extends Activity {
 	private Button decrementTeam1Score;
 	private Button incrementTeam2Score;
 	private Button decrementTeam2Score;
+	private String[] wordsArray;
 	private ArrayList<String> words;
 
     @Override
@@ -56,6 +59,9 @@ public class MainActivity extends Activity {
         
         initializeCategorySpinner();
         
+        wordsArray = getResources().getStringArray(R.array.all);
+        words = new ArrayList<String>(Arrays.asList(wordsArray));
+        
         // initialize widgets and set onclick listeners
         pauseButton = (Button) findViewById(R.id.pause_button);
         pauseButton.setOnClickListener(new View.OnClickListener() {
@@ -63,6 +69,8 @@ public class MainActivity extends Activity {
             	if (beeper != null) {
                 		stopBeeper();
             	}
+            	
+            	//TODO: popup paused game dialog
             }
         });
         
@@ -104,12 +112,13 @@ public class MainActivity extends Activity {
         start.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
             	if (beeper != null) {
-            		if (beeper.isPlaying()) {
-                		stopBeeper();
-                	}
-                	else {
+            		if (!beeper.isPlaying()) {
+//                		stopBeeper();
+//                	}
+//                	else {
                 		startBeeper();
                 	}
+            		getNextWord();
             	}
             }
         });
@@ -139,13 +148,6 @@ public class MainActivity extends Activity {
 			stopService(new Intent(this, Beeper.class));
 		}
 		unbindToMusicPlayerService();
-    }
-
-    // not currently used because we aren't using the actionbar
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-//        getMenuInflater().inflate(R.menu.main, menu);
-        return true;
     }
     
     @SuppressLint("InlinedApi")
@@ -218,16 +220,27 @@ public class MainActivity extends Activity {
 //        }
 //    }
     
+    // add 1 to team 1 score
     private void incrementTeam1Score() {
     	++team1Score;
     	team1ScoreTextView.setText(Integer.valueOf(team1Score).toString());
+    	
+    	if (team1Score >= scoreToWin) {
+    		//TODO: popup game over dialog
+    	}
     }
     
+    // add 1 to team 2 score
     private void incrementTeam2Score() {
     	++team2Score;
     	team2ScoreTextView.setText(Integer.valueOf(team2Score).toString());
+    	
+    	if (team2Score >= scoreToWin) {
+    		//TODO: popup game over dialog
+    	}
     }
     
+    // subtract 1 from team 1 score
     private void decrementTeam1Score() {
     	if (team1Score > 0) {
     		--team1Score;
@@ -235,6 +248,7 @@ public class MainActivity extends Activity {
     	}
     }
     
+    // subtract 1 from team 2 score
     private void decrementTeam2Score() {
     	if (team2Score > 0) {
 	    	--team2Score;
@@ -250,54 +264,80 @@ public class MainActivity extends Activity {
     	adapter.setDropDownViewResource(R.layout.spinner_item_layout);
     	// Apply the adapter to the spinner
     	categorySpinner.setAdapter(adapter);
+    	categorySpinner.setOnItemSelectedListener(this);
     }
     
+    // initialize word list based on user selected category
     public void onItemSelected(AdapterView<?> parent, View view, int pos, long id) {
-    	String[] wordsArray;
     	switch(pos) {
-    	case 0:
-    		wordsArray = getResources().getStringArray(R.array.all);
-    		break;
-    	case 1:
-    		wordsArray = getResources().getStringArray(R.array.easy);
-    		break;
-    	case 2:
-    		wordsArray = getResources().getStringArray(R.array.medium);
-    		break;
-    	case 3:
-    		wordsArray = getResources().getStringArray(R.array.actions);
-    		break;
-    	case 4:
-    		wordsArray = getResources().getStringArray(R.array.animals);
-    		break;
-    	case 5:
-    		wordsArray = getResources().getStringArray(R.array.food);
-    		break;
-    	case 6:
-    		wordsArray = getResources().getStringArray(R.array.holiday);
-    		break;
-    	case 7:
-    		wordsArray = getResources().getStringArray(R.array.household_items);
-    		break;
-    	case 8:
-    		wordsArray = getResources().getStringArray(R.array.idioms);
-    		break;
-    	case 9:
-    		wordsArray = getResources().getStringArray(R.array.movies);
-    		break;
-    	case 10:
-    		wordsArray = getResources().getStringArray(R.array.people);
-    		break;
-    	case 11:
-    		wordsArray = getResources().getStringArray(R.array.travel);
-    		break;
-    	default:
-    		wordsArray = getResources().getStringArray(R.array.all);
-    		break;
+	    	case 0:
+	    		wordsArray = getResources().getStringArray(R.array.all);
+	    		break;
+	    	case 1:
+	    		wordsArray = getResources().getStringArray(R.array.easy);
+	    		break;
+	    	case 2:
+	    		wordsArray = getResources().getStringArray(R.array.medium);
+	    		break;
+	    	case 3:
+	    		wordsArray = getResources().getStringArray(R.array.actions);
+	    		break;
+	    	case 4:
+	    		wordsArray = getResources().getStringArray(R.array.animals);
+	    		break;
+	    	case 5:
+	    		wordsArray = getResources().getStringArray(R.array.food);
+	    		break;
+	    	case 6:
+	    		wordsArray = getResources().getStringArray(R.array.holiday);
+	    		break;
+	    	case 7:
+	    		wordsArray = getResources().getStringArray(R.array.household_items);
+	    		break;
+	    	case 8:
+	    		wordsArray = getResources().getStringArray(R.array.idioms);
+	    		break;
+	    	case 9:
+	    		wordsArray = getResources().getStringArray(R.array.movies);
+	    		break;
+	    	case 10:
+	    		wordsArray = getResources().getStringArray(R.array.people);
+	    		break;
+	    	case 11:
+	    		wordsArray = getResources().getStringArray(R.array.travel);
+	    		break;
+	    	default:
+	    		wordsArray = getResources().getStringArray(R.array.all);
+	    		break;
     	}
     	
-    	words = new ArrayList<String>( Arrays.asList(wordsArray));
+    	words = new ArrayList<String>(Arrays.asList(wordsArray));
     	selectedCategory = pos;
+    }
+    
+    @Override
+	public void onNothingSelected(AdapterView<?> parent) {
+    	wordsArray = getResources().getStringArray(R.array.all);
+    	words = new ArrayList<String>(Arrays.asList(wordsArray));
+    	selectedCategory = 0;
+	}
+    
+    // call when new random word is needed but all words have already been used and the list should be recycled
+    private void repopulateArraylist() {
+    	words = new ArrayList<String>(Arrays.asList(wordsArray));
+    }
+    
+    // get a new randomly selected word
+    private void getNextWord() {
+    	if (words.size() == 0) {
+    		repopulateArraylist();
+    	}
+    	
+    	Random randomNumberGenerator = new Random();
+    	int randomNumber = randomNumberGenerator.nextInt(words.size());
+    	String randomWord = words.get(randomNumber);
+    	words.remove(randomNumber);
+    	start.setText(randomWord);
     }
     
     private void bindToMusicPlayerService() {
