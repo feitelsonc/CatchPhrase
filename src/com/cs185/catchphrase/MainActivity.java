@@ -69,6 +69,7 @@ public class MainActivity extends Activity implements OnItemSelectedListener {
             	if (beeper != null) {
                 		stopBeeper();
             	}
+            	pauseButton.setVisibility(View.GONE);
             	
             	//TODO: popup paused game dialog
             }
@@ -117,6 +118,7 @@ public class MainActivity extends Activity implements OnItemSelectedListener {
 //                	}
 //                	else {
                 		startBeeper();
+                		pauseButton.setVisibility(View.VISIBLE);
                 	}
             		getNextWord();
             	}
