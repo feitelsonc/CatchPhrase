@@ -87,9 +87,9 @@ public class SplashActivity extends Activity implements OnItemSelectedListener {
     private void initializeCategorySpinner() {
     	categorySpinner = (Spinner) findViewById(R.id.categories);
     	// Create an ArrayAdapter using the string array and a default spinner layout
-    	ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.categories, R.layout.spinner_layout);
+    	ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.categories, R.layout.spinner_layout_splash);
     	// Specify the layout to use when the list of choices appears
-    	adapter.setDropDownViewResource(R.layout.spinner_item_layout);
+    	adapter.setDropDownViewResource(R.layout.spinner_item_layout_splash);
     	// Apply the adapter to the spinner
     	categorySpinner.setAdapter(adapter);
     	categorySpinner.setOnItemSelectedListener(this);

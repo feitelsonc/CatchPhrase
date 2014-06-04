@@ -166,7 +166,7 @@
             android:layout_centerInParent="true"
             android:gravity="center"
             android:text="@string/start"
-            android:textColor="#33b5e5"
+            android:textColor="@color/white"
             android:textSize="50sp"
             android:textStyle="bold" />
     </RelativeLayout>
