@@ -159,7 +159,7 @@
         android:layout_height="match_parent"
         android:layout_below="@id/scores_and_pause" >
 
-        <TextView
+        <com.cs185.catchphrase.OutlineTextView
             android:id="@+id/start"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
