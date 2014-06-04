@@ -25,6 +25,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.cs185.catchphrase.Beeper.LocalBinder;
 
@@ -148,7 +149,7 @@ public class MainActivity extends Activity implements OnItemSelectedListener {
         timeChecker = new TimeChecker();
         timeChecker.start();
         
-        // TODO: extract extras and update private variables accordingly
+        // extract extras and update private variables accordingly
         Bundle extras = getIntent().getExtras();
         team1Name = extras.getString(TEAM_1_NAME_EXTRA);
         team2Name = extras.getString(TEAM_2_NAME_EXTRA);
@@ -240,6 +241,12 @@ public class MainActivity extends Activity implements OnItemSelectedListener {
 				hideSystemBars();
             }
         });
+    }
+    
+    // display dialog when round ends
+    public void displayRoundOverDialog() {
+    	Toast.makeText(this, "Round over!", Toast.LENGTH_SHORT).show();
+    	// TODO: display round over dialog
     }
     
     // add 1 to team 1 score
@@ -431,6 +438,8 @@ public class MainActivity extends Activity implements OnItemSelectedListener {
 			LocalBinder binder = (LocalBinder) service;
 			beeper = binder.getService();
 			
+			beeper.setActivity(MainActivity.this);
+			
 			if (beeper.isPlaying()) {
 				timeChecker = new TimeChecker();
 				timeChecker.start();
@@ -516,13 +525,6 @@ public class MainActivity extends Activity implements OnItemSelectedListener {
 	    				if(!canceled && beeper != null) {
 	    					if (beeper.isPlaying()) {
 	    						setBackgroundColor();
-	    						
-	    						// TODO: implement more robust way of determining end of round
-	    						
-	    						if ((float) beeper.getDuration() - beeper.getCurrentPosition() <= 150) {
-	    							
-	    							// TODO: popup round over dialog
-	    						}
 	    					}
 	    				}
 	    			}

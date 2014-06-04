@@ -8,10 +8,11 @@ import android.net.Uri;
 import android.os.Binder;
 import android.os.IBinder;
 
-public class Beeper extends Service {
+public class Beeper extends Service implements MediaPlayer.OnCompletionListener{
 
 	private MediaPlayer player = new MediaPlayer();
 	private final IBinder binder = new LocalBinder();
+	private MainActivity activity;
 	static private boolean serviceStarted = false;
 
 	static public boolean isServiceStarted() {
@@ -30,6 +31,10 @@ public class Beeper extends Service {
 			return Beeper.this;
 		}
 	}
+	
+	public void setActivity(MainActivity activity) {
+		this.activity = activity;
+	}
 
 	public void initializeBeeper(Uri uri) {
 		player.reset();
@@ -39,6 +44,8 @@ public class Beeper extends Service {
 			player.setDataSource(getApplicationContext(), uri);
 			player.prepare();
 			player.start();
+			
+			player.setOnCompletionListener(this);
 		}
 		catch(Exception e) {
 		}
@@ -75,6 +82,11 @@ public class Beeper extends Service {
 
 	void releasePlayer() {
 		player.release();
+	}
+
+	@Override
+	public void onCompletion(MediaPlayer mp) {
+		activity.displayRoundOverDialog();
 	}
 
 }
