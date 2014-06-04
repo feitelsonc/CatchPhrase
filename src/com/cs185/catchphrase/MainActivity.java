@@ -17,7 +17,6 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.IBinder;
-import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.AdapterView;
@@ -26,15 +25,23 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.cs185.catchphrase.Beeper.LocalBinder;
 
 public class MainActivity extends Activity implements OnItemSelectedListener {
 	
+	private static String TEAM_1_NAME_EXTRA = "team1nameextra";
+	private static String TEAM_2_NAME_EXTRA = "team2nameextra";
+	private static String CATEGORY_EXTRA = "categoryextra";
+	private static String POINTS_EXTRA = "pointsextra";
+	
 	private Uri beeperTrackUri = null;
 	private Beeper beeper;
 	private TextView start;
+	private TextView team1NameTextView;
+	private TextView team2NameTextView;
+	private String team1Name;
+	private String team2Name;
 	private int team1Score = 0;
 	private int team2Score = 0;
 	private TextView team1ScoreTextView;
@@ -70,6 +77,8 @@ public class MainActivity extends Activity implements OnItemSelectedListener {
         words = new ArrayList<String>(Arrays.asList(wordsArray));
         
         // initialize widgets and set onclick listeners
+        team1NameTextView = (TextView) findViewById(R.id.team1);
+        team2NameTextView = (TextView) findViewById(R.id.team2);
         mainView = (View) findViewById(R.id.main_layout);
         pauseButton = (Button) findViewById(R.id.pause_button);
         pauseButton.setOnClickListener(new View.OnClickListener() {
@@ -122,9 +131,6 @@ public class MainActivity extends Activity implements OnItemSelectedListener {
             public void onClick(View v) {
             	if (beeper != null) {
             		if (!beeper.isPlaying()) {
-//                		stopBeeper();
-//                	}
-//                	else {
                 		startBeeper();
                 		pauseButton.setVisibility(View.VISIBLE);
                 	}
@@ -141,6 +147,16 @@ public class MainActivity extends Activity implements OnItemSelectedListener {
         
         timeChecker = new TimeChecker();
         timeChecker.start();
+        
+        // TODO: extract extras and update private variables accordingly
+        Bundle extras = getIntent().getExtras();
+        team1Name = extras.getString(TEAM_1_NAME_EXTRA);
+        team2Name = extras.getString(TEAM_2_NAME_EXTRA);
+        team1NameTextView.setText(team1Name);
+        team2NameTextView.setText(team2Name);
+        selectedCategory = extras.getInt(CATEGORY_EXTRA);
+        updateArraylistAndSpinner();
+        scoreToWin =  extras.getInt(POINTS_EXTRA);  
     }
     
     @Override
@@ -225,33 +241,6 @@ public class MainActivity extends Activity implements OnItemSelectedListener {
             }
         });
     }
-    
-    // commented out teams editing overflow button code
-//    public void editTeamOne(View v) {
-//        PopupMenu popup = new PopupMenu(this, v);
-//        popup.setOnMenuItemClickListener(this);
-//        popup.inflate(R.menu.edit_team_one);
-//        popup.show();
-//    }
-//    
-//    public void editTeamTwo(View v) {
-//        PopupMenu popup = new PopupMenu(this, v);
-//        popup.setOnMenuItemClickListener(this);
-//        popup.inflate(R.menu.edit_team_two);
-//        popup.show();
-//    }
-//    
-//    @Override
-//    public boolean onMenuItemClick(MenuItem item) {
-//        switch (item.getItemId()) {
-//            case R.id.renameTeamOne:
-//                return true;
-//            case R.id.renameTeamTwo:
-//                return true;
-//            default:
-//                return false;
-//        }
-//    }
     
     // add 1 to team 1 score
     private void incrementTeam1Score() {
@@ -346,6 +335,55 @@ public class MainActivity extends Activity implements OnItemSelectedListener {
     	
     	words = new ArrayList<String>(Arrays.asList(wordsArray));
     	selectedCategory = pos;
+    }
+    
+    // initialize word list based on user selected category
+    public void updateArraylistAndSpinner() {
+    	switch(selectedCategory) {
+    	case 0:
+    		wordsArray = getResources().getStringArray(R.array.all);
+    		break;
+    	case 1:
+    		wordsArray = getResources().getStringArray(R.array.easy);
+    		break;
+    	case 2:
+    		wordsArray = getResources().getStringArray(R.array.medium);
+    		break;
+    	case 3:
+    		wordsArray = getResources().getStringArray(R.array.actions);
+    		break;
+    	case 4:
+    		wordsArray = getResources().getStringArray(R.array.animals);
+    		break;
+    	case 5:
+    		wordsArray = getResources().getStringArray(R.array.food);
+    		break;
+    	case 6:
+    		wordsArray = getResources().getStringArray(R.array.holiday);
+    		break;
+    	case 7:
+    		wordsArray = getResources().getStringArray(R.array.household_items);
+    		break;
+    	case 8:
+    		wordsArray = getResources().getStringArray(R.array.idioms);
+    		break;
+    	case 9:
+    		wordsArray = getResources().getStringArray(R.array.movies);
+    		break;
+    	case 10:
+    		wordsArray = getResources().getStringArray(R.array.people);
+    		break;
+    	case 11:
+    		wordsArray = getResources().getStringArray(R.array.travel);
+    		break;
+    	default:
+    		wordsArray = getResources().getStringArray(R.array.all);
+    		break;
+    	}
+
+    	words = new ArrayList<String>(Arrays.asList(wordsArray));
+    	
+    	categorySpinner.setSelection(selectedCategory);
     }
     
     @Override

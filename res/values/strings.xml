@@ -8,5 +8,11 @@
     <string name="start">START</string>
     <string name="zero">0</string>
     <string name="rename_team">Rename team</string>
+    <string name="name_team1">Team 1 name&#8230;</string>
+    <string name="name_team2">Team 2 name&#8230;</string>
+    <string name="category">Category:</string>
+    <string name="points_to_win">Points to win:</string>
+    <string name="points_to_win_hint">Points to win&#8230;</string>
+    <string name="play">Play!</string>
 
 </resources>
