@@ -25,15 +25,6 @@
      android:text="@string/reset_score"
      />
  
- <Button
-     android:id="@+id/edit_score_button"
-     android:layout_width="match_parent"
-     android:layout_height="wrap_content"
-     android:layout_marginLeft="30dp"
-     android:layout_marginRight="30dp"
-     android:text="@string/edit_score"
-     />
- 
  <Button 
      android:id="@+id/resume_button"
      android:layout_width="match_parent"
