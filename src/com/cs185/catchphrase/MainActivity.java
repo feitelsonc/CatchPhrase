@@ -138,7 +138,7 @@ public class MainActivity extends FragmentActivity implements OnItemSelectedList
             public void onClick(View v) {
             	if (beeper != null) {
             		if (!beeper.isPlaying()) {
-                		startBeeper();
+            			beeper.play();
                 		pauseButton.setVisibility(View.VISIBLE);
                 	}
             		getNextWord();
@@ -453,6 +453,7 @@ public class MainActivity extends FragmentActivity implements OnItemSelectedList
 			beeper = binder.getService();
 			
 			beeper.setActivity(MainActivity.this);
+			intializeBeeper();
 			
 			if (beeper.isPlaying()) {
 				timeChecker = new TimeChecker();
@@ -472,7 +473,7 @@ public class MainActivity extends FragmentActivity implements OnItemSelectedList
     }
     
     // call when user begins round
-    private void startBeeper() {
+    private void intializeBeeper() {
     	beeperTrackUri = Uri.parse("android.resource://com.cs185.catchphrase/" + R.raw.beeping);
     	beeper.initializeBeeper(beeperTrackUri);
     }
@@ -550,20 +551,19 @@ public class MainActivity extends FragmentActivity implements OnItemSelectedList
 
 	@Override
 	public void getChoice(int which) {
-		pauseButton.setVisibility(View.VISIBLE);
 		
 		switch(which) {
 			case 0: {
-				if (Beeper.isServiceStarted()) {
-					beeper.releasePlayer();
-					stopService(new Intent(this, Beeper.class));
-				}
-				unbindToMusicPlayerService();
-				
-				if (timeChecker != null) {
-					timeChecker.stopTimeChecker();
-					timeChecker = null;
-				}
+//				if (Beeper.isServiceStarted()) {
+//					beeper.releasePlayer();
+//					stopService(new Intent(this, Beeper.class));
+//				}
+//				unbindToMusicPlayerService();
+//				
+//				if (timeChecker != null) {
+//					timeChecker.stopTimeChecker();
+//					timeChecker = null;
+//				}
 				
 				Intent intent = new Intent(getApplicationContext(), SplashActivity.class);
 				MainActivity.this.startActivity(intent);
@@ -571,10 +571,12 @@ public class MainActivity extends FragmentActivity implements OnItemSelectedList
 				break;
 			}
 			case 1: {
+				pauseButton.setVisibility(View.GONE);
 				resetScores();
 				break;
 			}
 			case 2: {
+				pauseButton.setVisibility(View.VISIBLE);
 				beeper.play();
 				break;
 			}	
