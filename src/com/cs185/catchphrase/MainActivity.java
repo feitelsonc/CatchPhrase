@@ -478,9 +478,6 @@ public class MainActivity extends Activity implements OnItemSelectedListener {
         	
         	int backgroundColor = Color.argb(255, (int) redComponent, (int) greenComponent, (int) blueComponent);
         	mainView.setBackgroundColor(backgroundColor);
-        	
-//        	int textColor = Color.argb(255, (int) redComponent, 0, (int) blueComponent);
-//        	start.setTextColor(textColor);
     	}	
     }
     

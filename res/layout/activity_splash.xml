@@ -2,7 +2,7 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#0099cc"
+    android:background="@color/medium_blue"
     android:fillViewport="true"
     android:orientation="vertical"
     android:paddingLeft="@dimen/activity_margin"
@@ -120,7 +120,7 @@
             android:layout_height="100dp"
             android:layout_gravity="bottom|center"
             android:text="@string/play"
-            android:textColor="@color/white"
+            android:textColor="@drawable/btn_text_color"
             android:textSize="30sp"
             android:background="@drawable/btn_start"
             android:gravity="center" />
