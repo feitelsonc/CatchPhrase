@@ -6,7 +6,7 @@
     android:singleLine="true"
     android:ellipsize="marquee"
     android:background="@drawable/spinner_item_background"
-    android:textColor="#0099cc"
+    android:textColor="@color/medium_blue"
     android:textSize="18sp" >
 
 </TextView>

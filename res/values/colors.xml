@@ -3,6 +3,8 @@
     <color name="black_overlay">#66000000</color>
     <color name="black">#000000</color>
     <color name="white">#FFFFFF</color>
-    <color name="white_blue">#d2f1fc</color>
+    <color name="light_blue">#d2f1fc</color>
+    <color name="medium_blue">#0099cc</color>
+    <color name="dark_blue">#00688b</color>
 
 </resources>

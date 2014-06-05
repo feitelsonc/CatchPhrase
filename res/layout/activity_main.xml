@@ -2,15 +2,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#ffffff"
-    tools:context="com.cs185.catchphrase.util.MainActivity" >
-
-    <RelativeLayout
-        android:id="@+id/main_layout"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="#0099cc"
-        android:padding="@dimen/activity_margin" >
+    android:background="@color/medium_blue"
+    android:padding="@dimen/activity_margin"
+    tools:context="com.cs185.catchphrase.util.MainActivity"
+    android:id="@+id/main_layout" >
 
         <LinearLayout
             android:id="@+id/team_names_and_spinner"
@@ -28,7 +23,7 @@
                 android:gravity="center"
                 android:singleLine="true"
                 android:text="@string/team1"
-                android:textColor="#ffffff"
+                android:textColor="@color/white"
                 android:textSize="25sp"
                 android:textStyle="bold" />
 
@@ -37,6 +32,8 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight=".33"
+                android:background="@drawable/edit_text"
+                android:padding="@dimen/activity_margin"
                 android:prompt="@string/categories" />
 
             <TextView
@@ -48,7 +45,7 @@
                 android:gravity="center"
                 android:singleLine="true"
                 android:text="@string/team2"
-                android:textColor="#ffffff"
+                android:textColor="@color/white"
                 android:textSize="25sp"
                 android:textStyle="bold" />
         </LinearLayout>
@@ -76,7 +73,7 @@
                     android:paddingLeft="15dp"
                     android:paddingRight="15dp"
                     android:text="@string/zero"
-                    android:textColor="#ffffff"
+                    android:textColor="@color/white"
                     android:textSize="30sp"
                     android:textStyle="bold" />
 
@@ -127,7 +124,7 @@
                     android:paddingLeft="15dp"
                     android:paddingRight="15dp"
                     android:text="@string/zero"
-                    android:textColor="#ffffff"
+                    android:textColor="@color/white"
                     android:textSize="30sp"
                     android:textStyle="bold" />
 
@@ -160,6 +157,5 @@
             android:textColor="@color/white"
             android:textSize="50sp"
             android:textStyle="bold" />
-    </RelativeLayout>
 
 </RelativeLayout>
