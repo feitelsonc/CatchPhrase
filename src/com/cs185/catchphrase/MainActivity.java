@@ -6,7 +6,6 @@ import java.util.Random;
 
 import android.annotation.SuppressLint;
 import android.app.ActionBar;
-import android.app.Activity;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
@@ -18,6 +17,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.IBinder;
 import android.support.v4.app.DialogFragment;
+import android.support.v4.app.FragmentActivity;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.AdapterView;
@@ -31,7 +31,7 @@ import android.widget.Toast;
 import com.cs185.catchphrase.Beeper.LocalBinder;
 import com.cs185.catchphrase.PausedDialog.PauseDialogListener;
 
-public class MainActivity extends Activity implements OnItemSelectedListener, PauseDialogListener {
+public class MainActivity extends FragmentActivity implements OnItemSelectedListener, PauseDialogListener {
 	
 	private static String TEAM_1_NAME_EXTRA = "team1nameextra";
 	private static String TEAM_2_NAME_EXTRA = "team2nameextra";
@@ -40,7 +40,7 @@ public class MainActivity extends Activity implements OnItemSelectedListener, Pa
 	
 	private Uri beeperTrackUri = null;
 	private Beeper beeper;
-	private TouchView start;
+	private OutlineTextView start;
 	private TextView team1NameTextView;
 	private TextView team2NameTextView;
 	private String team1Name;
@@ -94,7 +94,7 @@ public class MainActivity extends Activity implements OnItemSelectedListener, Pa
             	//TODO: popup paused game dialog
             	DialogFragment pauseDialog = new PausedDialog();
 //            	pauseDialog.show(getFragmentManager(), "paused");
-//            	pauseDialog.show(MainActivity.this.getSupportFragmentManager(), "paused");
+            	pauseDialog.show(getSupportFragmentManager(), "paused");
             	
             }
         });
@@ -133,8 +133,7 @@ public class MainActivity extends Activity implements OnItemSelectedListener, Pa
         });
         team1ScoreTextView = (TextView) findViewById(R.id.team1_score);
         team2ScoreTextView = (TextView) findViewById(R.id.team2_score);
-        start = (TouchView) findViewById(R.id.start);
-        /*
+        start = (OutlineTextView) findViewById(R.id.start);
         start.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
             	if (beeper != null) {
@@ -146,7 +145,7 @@ public class MainActivity extends Activity implements OnItemSelectedListener, Pa
             	}
             }
         });
-        */
+
         if (!Beeper.isServiceStarted()) {
 	  		Intent intent = new Intent(this, Beeper.class);
 	  		startService(intent);
@@ -551,32 +550,34 @@ public class MainActivity extends Activity implements OnItemSelectedListener, Pa
 
 	@Override
 	public void getChoice(int which) {
+		pauseButton.setVisibility(View.VISIBLE);
+		
 		switch(which) {
-		case 0: {
-			if (Beeper.isServiceStarted()) {
-				beeper.releasePlayer();
-				stopService(new Intent(this, Beeper.class));
+			case 0: {
+				if (Beeper.isServiceStarted()) {
+					beeper.releasePlayer();
+					stopService(new Intent(this, Beeper.class));
+				}
+				unbindToMusicPlayerService();
+				
+				if (timeChecker != null) {
+					timeChecker.stopTimeChecker();
+					timeChecker = null;
+				}
+				
+				Intent intent = new Intent(getApplicationContext(), SplashActivity.class);
+				MainActivity.this.startActivity(intent);
+				this.finish();
+				break;
 			}
-			unbindToMusicPlayerService();
-			
-			if (timeChecker != null) {
-				timeChecker.stopTimeChecker();
-				timeChecker = null;
+			case 1: {
+				resetScores();
+				break;
 			}
-			
-			Intent intent = new Intent(getApplicationContext(), SplashActivity.class);
-			MainActivity.this.startActivity(intent);
-			this.finish();
-			break;
-		}
-		case 1: {
-			resetScores();
-			break;
-		}
-		case 2: {
-			beeper.play();
-			break;
-		}	
+			case 2: {
+				beeper.play();
+				break;
+			}	
 			
 		}
 	}
