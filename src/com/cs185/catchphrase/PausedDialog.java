@@ -12,15 +12,15 @@ public class PausedDialog extends DialogFragment {
 	private String[] choices = new String[3];
 	
 	public interface PauseDialogListener {
-		public void getChoice(int which);
+		public void pause_getChoice(int which);
 	}
 	
 	PauseDialogListener mListener;
 	
 	@Override
 	public void onAttach(Activity activity){
-		super.onAttach(activity); //I was missing this in the live demo,
-			// and this is what caused it to crash
+		super.onAttach(activity); 
+			
 		mListener = (PauseDialogListener)activity;
 	}
 	
@@ -33,7 +33,7 @@ public class PausedDialog extends DialogFragment {
 		builder.setTitle(R.string.paused)
 		.setItems(choices, new DialogInterface.OnClickListener() {
 			public void onClick(DialogInterface dialog, int which) {
-				mListener.getChoice(which);
+				mListener.pause_getChoice(which);
 			}
 		});
 

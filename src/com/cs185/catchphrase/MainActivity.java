@@ -30,8 +30,9 @@ import android.widget.Toast;
 
 import com.cs185.catchphrase.Beeper.LocalBinder;
 import com.cs185.catchphrase.PausedDialog.PauseDialogListener;
+import com.cs185.catchphrase.TimeupDialog.TimeupDialogListener;
 
-public class MainActivity extends FragmentActivity implements OnItemSelectedListener, PauseDialogListener {
+public class MainActivity extends FragmentActivity implements OnItemSelectedListener, PauseDialogListener , TimeupDialogListener{
 	
 	private static String TEAM_1_NAME_EXTRA = "team1nameextra";
 	private static String TEAM_2_NAME_EXTRA = "team2nameextra";
@@ -252,7 +253,7 @@ public class MainActivity extends FragmentActivity implements OnItemSelectedList
     // display dialog when round ends
     public void displayRoundOverDialog() {
     	Toast.makeText(this, "Round over!", Toast.LENGTH_SHORT).show();
-    	// TODO: display round over dialog
+    	DialogFragment timeupDialog = new TimeupDialog();
     }
     
     // add 1 to team 1 score
@@ -549,7 +550,7 @@ public class MainActivity extends FragmentActivity implements OnItemSelectedList
 	}
 
 	@Override
-	public void getChoice(int which) {
+	public void pause_getChoice(int which) {
 		pauseButton.setVisibility(View.VISIBLE);
 		
 		switch(which) {
@@ -581,5 +582,29 @@ public class MainActivity extends FragmentActivity implements OnItemSelectedList
 			
 		}
 	}
+
+	@Override
+	public void timeup_getChoice(int which) {
+		switch(which) {
+			case 0: {
+				incrementTeam1Score();
+				break;
+				
+			}
+			
+			case 1: {
+				incrementTeam2Score();
+				break;
+			}
+			
+			
+			case 2: {
+				break;
+			}
+		}
+		
+	}
+
+
 
 }
