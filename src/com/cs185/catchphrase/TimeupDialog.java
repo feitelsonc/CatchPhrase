@@ -34,7 +34,6 @@ private String[] choices = new String[3];
 		
 		AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
 		builder.setTitle(R.string.times_up)
-		.setMessage(R.string.point_to)
 		.setItems(choices, new DialogInterface.OnClickListener() {
 			public void onClick(DialogInterface dialog, int which) {
 				mListener.timeupGetChoice(which);

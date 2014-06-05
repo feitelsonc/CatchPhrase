@@ -566,27 +566,6 @@ public class MainActivity extends FragmentActivity implements OnItemSelectedList
 	}
 
 	@Override
-	public void pauseGetChoice(int which) {
-		switch(which) {
-			case 0: {
-				startNewGame();
-				break;
-			}
-			case 1: {
-				pauseButton.setVisibility(View.GONE);
-				resetScores();
-				break;
-			}
-			case 2: {
-				pauseButton.setVisibility(View.VISIBLE);
-				beeper.play();
-				break;
-			}	
-			
-		}
-	}
-
-	@Override
 	public void timeupGetChoice(int which) {
 		switch(which) {
 			case 0: {
@@ -604,6 +583,23 @@ public class MainActivity extends FragmentActivity implements OnItemSelectedList
 			}
 		}
 		
+	}
+
+	@Override
+	public void newGameClicked() {
+		startNewGame();
+	}
+
+	@Override
+	public void resetScoreClicked() {
+		pauseButton.setVisibility(View.GONE);
+		resetScores();
+	}
+
+	@Override
+	public void resumeClicked() {
+		pauseButton.setVisibility(View.VISIBLE);
+		beeper.play();
 	}
 
 

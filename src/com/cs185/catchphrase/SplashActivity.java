@@ -78,7 +78,7 @@ public class SplashActivity extends Activity implements OnItemSelectedListener {
             	}
             	
             	SplashActivity.this.startActivity(intent);
-//            	SplashActivity.this.finish();
+            	SplashActivity.this.finish();
             }
         });
     }
