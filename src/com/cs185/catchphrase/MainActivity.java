@@ -17,6 +17,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.IBinder;
+import android.support.v4.app.DialogFragment;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.AdapterView;
@@ -28,8 +29,9 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.cs185.catchphrase.Beeper.LocalBinder;
+import com.cs185.catchphrase.PausedDialog.PauseDialogListener;
 
-public class MainActivity extends Activity implements OnItemSelectedListener {
+public class MainActivity extends Activity implements OnItemSelectedListener, PauseDialogListener {
 	
 	private static String TEAM_1_NAME_EXTRA = "team1nameextra";
 	private static String TEAM_2_NAME_EXTRA = "team2nameextra";
@@ -90,6 +92,10 @@ public class MainActivity extends Activity implements OnItemSelectedListener {
             	pauseButton.setVisibility(View.GONE);
             	
             	//TODO: popup paused game dialog
+            	DialogFragment pauseDialog = new PausedDialog();
+//            	pauseDialog.show(getFragmentManager(), "paused");
+//            	pauseDialog.show(MainActivity.this.getSupportFragmentManager(), "paused");
+            	
             }
         });
         
@@ -268,6 +274,14 @@ public class MainActivity extends Activity implements OnItemSelectedListener {
     	if (team2Score >= scoreToWin) {
     		//TODO: popup game over dialog
     	}
+    }
+    
+    private void resetScores() {
+    	team1Score = team2Score = 0;
+    	team2ScoreTextView.setText(Integer.valueOf(team2Score).toString());
+    	team1ScoreTextView.setText(Integer.valueOf(team1Score).toString());
+    	
+    	
     }
     
     // subtract 1 from team 1 score
@@ -533,6 +547,38 @@ public class MainActivity extends Activity implements OnItemSelectedListener {
     	public void stopTicker() {
     		canceled = true;
     	}
+	}
+
+	@Override
+	public void getChoice(int which) {
+		switch(which) {
+		case 0: {
+			if (Beeper.isServiceStarted()) {
+				beeper.releasePlayer();
+				stopService(new Intent(this, Beeper.class));
+			}
+			unbindToMusicPlayerService();
+			
+			if (timeChecker != null) {
+				timeChecker.stopTimeChecker();
+				timeChecker = null;
+			}
+			
+			Intent intent = new Intent(getApplicationContext(), SplashActivity.class);
+			MainActivity.this.startActivity(intent);
+			this.finish();
+			break;
+		}
+		case 1: {
+			resetScores();
+			break;
+		}
+		case 2: {
+			beeper.play();
+			break;
+		}	
+			
+		}
 	}
 
 }
