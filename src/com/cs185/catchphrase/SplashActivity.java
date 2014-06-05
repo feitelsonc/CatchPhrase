@@ -74,7 +74,7 @@ public class SplashActivity extends Activity implements OnItemSelectedListener {
             		intent.putExtra(POINTS_EXTRA, pointsToWin);
             	}
             	else {
-            		intent.putExtra(POINTS_EXTRA, pointsToWinEditText.getText());
+            		intent.putExtra(POINTS_EXTRA, Integer.valueOf(pointsToWinEditText.getText().toString()).intValue());
             	}
             	
             	SplashActivity.this.startActivity(intent);

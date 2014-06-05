@@ -22,7 +22,7 @@
     <string name="no_score">No score</string>
     
     <string name="game_over">Game Over!</string>
-    
+    <string name="exit">Exit</string>
     
     <string name="paused">Paused</string>
     <string name="new_game">New game</string>

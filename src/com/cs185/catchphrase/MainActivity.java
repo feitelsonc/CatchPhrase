@@ -29,10 +29,11 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.cs185.catchphrase.Beeper.LocalBinder;
+import com.cs185.catchphrase.GameoverDialog.GameOverDialogListener;
 import com.cs185.catchphrase.PausedDialog.PauseDialogListener;
 import com.cs185.catchphrase.TimeupDialog.TimeupDialogListener;
 
-public class MainActivity extends FragmentActivity implements OnItemSelectedListener, PauseDialogListener , TimeupDialogListener{
+public class MainActivity extends FragmentActivity implements OnItemSelectedListener, PauseDialogListener, GameOverDialogListener, TimeupDialogListener{
 	
 	private static String TEAM_1_NAME_EXTRA = "team1nameextra";
 	private static String TEAM_2_NAME_EXTRA = "team2nameextra";
@@ -92,9 +93,8 @@ public class MainActivity extends FragmentActivity implements OnItemSelectedList
             	}
             	pauseButton.setVisibility(View.GONE);
             	
-            	//TODO: popup paused game dialog
+            	// popup paused game dialog
             	DialogFragment pauseDialog = new PausedDialog();
-//            	pauseDialog.show(getFragmentManager(), "paused");
             	pauseDialog.show(getSupportFragmentManager(), "paused");
             	
             }
@@ -164,7 +164,7 @@ public class MainActivity extends FragmentActivity implements OnItemSelectedList
         team2NameTextView.setText(team2Name);
         selectedCategory = extras.getInt(CATEGORY_EXTRA);
         updateArraylistAndSpinner();
-        scoreToWin =  extras.getInt(POINTS_EXTRA);  
+        scoreToWin = extras.getInt(POINTS_EXTRA);  
     }
     
     @Override
@@ -263,7 +263,9 @@ public class MainActivity extends FragmentActivity implements OnItemSelectedList
     	team1ScoreTextView.setText(Integer.valueOf(team1Score).toString());
     	
     	if (team1Score >= scoreToWin) {
-    		//TODO: popup game over dialog
+    		// popup game over  dialog
+        	DialogFragment gameOverDialog = new GameoverDialog();
+        	gameOverDialog.show(getSupportFragmentManager(), "gameover");
     	}
     }
     
@@ -273,7 +275,9 @@ public class MainActivity extends FragmentActivity implements OnItemSelectedList
     	team2ScoreTextView.setText(Integer.valueOf(team2Score).toString());
     	
     	if (team2Score >= scoreToWin) {
-    		//TODO: popup game over dialog
+    		// popup game over  dialog
+        	DialogFragment gameOverDialog = new GameoverDialog();
+        	gameOverDialog.show(getSupportFragmentManager(), "gameover");
     	}
     }
     
@@ -298,6 +302,15 @@ public class MainActivity extends FragmentActivity implements OnItemSelectedList
     	if (team2Score > 0) {
 	    	--team2Score;
 	    	team2ScoreTextView.setText(Integer.valueOf(team2Score).toString());
+    	}
+    }
+    
+    public String getWinningTeamString() {
+    	if (team1Score > team2Score) {
+    		return team1Name + " Won!";
+    	}
+    	else {
+    		return team2Name + " Won!";
     	}
     }
     
@@ -600,6 +613,11 @@ public class MainActivity extends FragmentActivity implements OnItemSelectedList
 	public void resumeClicked() {
 		pauseButton.setVisibility(View.VISIBLE);
 		beeper.play();
+	}
+
+	@Override
+	public void exitClicked() {
+		this.finish();
 	}
 
 
