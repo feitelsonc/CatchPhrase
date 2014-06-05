@@ -15,6 +15,6 @@
     <string name="category">Category:</string>
     <string name="points_to_win">Points to win:</string>
     <string name="points_to_win_hint">Points to win&#8230;</string>
-    <string name="play">Play!</string>
+    <string name="play">Play</string>
 
 </resources>
