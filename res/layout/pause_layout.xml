@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:background="@color/medium_blue"
+    android:orientation="vertical" 
+    android:gravity="center">
+    
+ <Button
+     android:id="@+id/new_game_button"
+     android:layout_width="match_parent"
+     android:layout_height="wrap_content"
+     android:layout_marginLeft="30dp"
+     android:layout_marginRight="30dp"
+     android:text="@string/new_game"
+      />
+ 
+ <Button 
+     android:id="@+id/reset_score_button"
+     android:layout_width="match_parent"
+     android:layout_height="wrap_content"
+     android:layout_marginLeft="30dp"
+     android:layout_marginRight="30dp"
+     android:text="@string/reset_score"
+     />
+ 
+ <Button
+     android:id="@+id/edit_score_button"
+     android:layout_width="match_parent"
+     android:layout_height="wrap_content"
+     android:layout_marginLeft="30dp"
+     android:layout_marginRight="30dp"
+     android:text="@string/edit_score"
+     />
+ 
+ <Button 
+     android:id="@+id/resume_button"
+     android:layout_width="match_parent"
+     android:layout_height="wrap_content"
+     android:layout_marginLeft="30dp"
+     android:layout_marginRight="30dp"
+     android:text="@string/resume"
+     />
+
+</LinearLayout>
