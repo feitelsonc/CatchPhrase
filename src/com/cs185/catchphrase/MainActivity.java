@@ -26,7 +26,6 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.cs185.catchphrase.Beeper.LocalBinder;
 import com.cs185.catchphrase.GameoverDialog.GameOverDialogListener;
