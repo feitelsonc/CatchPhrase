@@ -7,37 +7,44 @@ import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.v4.app.DialogFragment;
 
-public class PausedDialog extends DialogFragment {
+public class TimeupDialog extends DialogFragment{
 	
-	private String[] choices = new String[3];
+private String[] choices = new String[3];
 	
-	public interface PauseDialogListener {
-		public void pauseGetChoice(int which);
+	public interface TimeupDialogListener {
+		public void timeupGetChoice(int which);
 	}
 	
-	PauseDialogListener mListener;
+	TimeupDialogListener mListener;
+	MainActivity activity;
 	
 	@Override
 	public void onAttach(Activity activity){
 		super.onAttach(activity); 
+		this.activity = (MainActivity) activity;
 			
-		mListener = (PauseDialogListener)activity;
+		mListener = (TimeupDialogListener)activity;
 	}
 	
 	public Dialog onCreateDialog(Bundle SavedInstanceState){
-		choices[0] = getResources().getString(R.string.new_game);
-		choices[1] = getResources().getString(R.string.reset_score);
-		choices[2] = getResources().getString(R.string.resume);
+		
+		choices[0] = activity.getTeam1Name();
+		choices[1] = activity.getTeam2Name();
+		choices[2] = getResources().getString(R.string.no_score);
 		
 		AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
-		builder.setTitle(R.string.paused)
+		builder.setTitle(R.string.times_up)
+		.setMessage(R.string.point_to)
 		.setItems(choices, new DialogInterface.OnClickListener() {
 			public void onClick(DialogInterface dialog, int which) {
-				mListener.pauseGetChoice(which);
+				mListener.timeupGetChoice(which);
 			}
 		});
 
 		return builder.create();
 	}
+		
+	}
 	
-}
+
+

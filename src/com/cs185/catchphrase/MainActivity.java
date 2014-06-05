@@ -30,8 +30,9 @@ import android.widget.Toast;
 
 import com.cs185.catchphrase.Beeper.LocalBinder;
 import com.cs185.catchphrase.PausedDialog.PauseDialogListener;
+import com.cs185.catchphrase.TimeupDialog.TimeupDialogListener;
 
-public class MainActivity extends FragmentActivity implements OnItemSelectedListener, PauseDialogListener {
+public class MainActivity extends FragmentActivity implements OnItemSelectedListener, PauseDialogListener , TimeupDialogListener{
 	
 	private static String TEAM_1_NAME_EXTRA = "team1nameextra";
 	private static String TEAM_2_NAME_EXTRA = "team2nameextra";
@@ -251,8 +252,9 @@ public class MainActivity extends FragmentActivity implements OnItemSelectedList
     
     // display dialog when round ends
     public void displayRoundOverDialog() {
-    	Toast.makeText(this, "Round over!", Toast.LENGTH_SHORT).show();
-    	// TODO: display round over dialog
+    	pauseButton.setVisibility(View.GONE);
+    	DialogFragment timeupDialog = new TimeupDialog();
+    	timeupDialog.show(getSupportFragmentManager(), "timeup");
     }
     
     // add 1 to team 1 score
@@ -297,6 +299,14 @@ public class MainActivity extends FragmentActivity implements OnItemSelectedList
 	    	--team2Score;
 	    	team2ScoreTextView.setText(Integer.valueOf(team2Score).toString());
     	}
+    }
+    
+    public String getTeam1Name() {
+    	return team1Name;
+    }
+    
+    public String getTeam2Name() {
+    	return team2Name;
     }
     
     private void initializeCategorySpinner() {
@@ -548,26 +558,18 @@ public class MainActivity extends FragmentActivity implements OnItemSelectedList
     		canceled = true;
     	}
 	}
+	
+	private void startNewGame() {
+		Intent intent = new Intent(getApplicationContext(), SplashActivity.class);
+		MainActivity.this.startActivity(intent);
+		this.finish();
+	}
 
 	@Override
-	public void getChoice(int which) {
-		
+	public void pauseGetChoice(int which) {
 		switch(which) {
 			case 0: {
-//				if (Beeper.isServiceStarted()) {
-//					beeper.releasePlayer();
-//					stopService(new Intent(this, Beeper.class));
-//				}
-//				unbindToMusicPlayerService();
-//				
-//				if (timeChecker != null) {
-//					timeChecker.stopTimeChecker();
-//					timeChecker = null;
-//				}
-				
-				Intent intent = new Intent(getApplicationContext(), SplashActivity.class);
-				MainActivity.this.startActivity(intent);
-				this.finish();
+				startNewGame();
 				break;
 			}
 			case 1: {
@@ -583,5 +585,27 @@ public class MainActivity extends FragmentActivity implements OnItemSelectedList
 			
 		}
 	}
+
+	@Override
+	public void timeupGetChoice(int which) {
+		switch(which) {
+			case 0: {
+				incrementTeam1Score();
+				break;
+			}
+			
+			case 1: {
+				incrementTeam2Score();
+				break;
+			}
+			
+			case 2: {
+				break;
+			}
+		}
+		
+	}
+
+
 
 }
