@@ -5,8 +5,12 @@ import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.support.v4.view.MotionEventCompat;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.MotionEvent;
+import android.view.animation.Animation;
+import android.view.animation.Animation.AnimationListener;
 import android.view.animation.TranslateAnimation;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 public class TouchView extends TextView {
@@ -62,16 +66,46 @@ public class TouchView extends TextView {
 		motions = ( motions + 1) % 10000;
 		return true;
 	}
+	// Moves text in accordance with gesture
+	public void move(float deltaX)
+	{
+		Log.d("MyLog","Moving " + deltaX );
+
+		setTranslationX(deltaX);
+	}
 	
+	// Not used, but could be used to animate new word/old word animations
 	public void translateText(float deltaX, float deltaY)
 	{
+		Log.d("Log", "Delta X is: " + deltaX);
 		// move text
 		int originalPos[] = new int[2];
 		getLocationOnScreen(originalPos);
 		// now holds original position
 		TranslateAnimation anim = new TranslateAnimation( 0, deltaX , 0, 0 );
-		anim.setDuration(0);
+		anim.setDuration(5);
+		anim.setFillEnabled(true);
+		anim.setFillAfter(true);
+		anim.setAnimationListener(new AnimationListener() {
+
+            @Override
+            public void onAnimationStart(Animation animation) {
+            }
+
+            @Override
+            public void onAnimationRepeat(Animation animation) {}
+
+            @Override
+            public void onAnimationEnd(Animation animation) {
+            	// need to set these layout parameters to keep the animation in place
+             //   RelativeLayout.LayoutParams rootlp = (RelativeLayout.LayoutParams) getView().getLayoutParams();
+             //   rootlp.topMargin = -rootlp.height*75/100;
+           //     rootWrapper.setLayoutParams(rootlp);
+            }
+        });
+
 		startAnimation(anim);
+		//new TranslateAnimation(Animation.RELATIVE_TO_SELF, 0, Animation.RELATIVE_TO_SELF, 0, Animation.ABSOLUTE, heightOfRootView-excuseContainer.getHeight(), Animation.ABSOLUTE, currentYPoint);
 	}
 	
 	public int getEventNum()
@@ -86,9 +120,9 @@ public class TouchView extends TextView {
 	
 	class TranslationHandler
 	{
-		float pX, pY, sX;
+		float sX;
 		int pEvent = 0;		// previous event number
-		float gestureLength = 100;	// arbitrary gesture length to be determined
+		final float gestureLength = 120;	// arbitrary gesture length to be determined
 		
 		void doTranslation(MotionEvent event)
 		{
@@ -96,37 +130,32 @@ public class TouchView extends TextView {
 			
 			if( action != MotionEvent.ACTION_DOWN && ( pEvent + 1 ) % 10000 != getEventNum() )	// Input Stream was interrupted
 			{
-				//Log.d("MyLog", "Failed: Internal: " + pEvent + "Total: " + motions);
 				return;	// do nothing
 			}
 			
 			pEvent = getEventNum();	// set previous event for future checking
-			//Log.d("MyLog", "Translation Test Passes");
 			
 			switch(action)
 			{
 				case MotionEvent.ACTION_DOWN:
 					sX = event.getX();	// to track entire x movement
-					pX = event.getX();	// to calculate next movement
-					pY = event.getY();	// to calculate next movement
 					break;
 				case MotionEvent.ACTION_UP:
-					translateText(event.getX() - pX, event.getY() - pY);
-					if( event.getX() - sX > gestureLength )
+					if( event.getX() - sX > gestureLength || event.getX() - sX < -gestureLength )
 					{
 						// gesture is large enough to warrant a new word
+						Log.d("MyLog","NEW WORD: " + (event.getX() - sX) );
+						// make invisible
+						// maybe animate off-screen
+						// then upon completion in animation listener get new word and recenter
 						newWord();	// get new word
 					}
-					else
-					{
-						// recenter word
-						translateText( sX - event.getX(), 0);
-					}
+			
+					// recenter word, can be done elsewhere
+					move(0);
 					break;
-				default: // Same for last and intermediate steps
-					translateText(event.getX() - pX, event.getY() - pY );
-					pX = event.getX();
-					pY = event.getY();
+				default:    // intermediate steps
+					move(event.getX() - sX);
 					break;
 			}
 		}

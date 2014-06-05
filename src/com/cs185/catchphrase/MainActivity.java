@@ -38,7 +38,7 @@ public class MainActivity extends Activity implements OnItemSelectedListener {
 	
 	private Uri beeperTrackUri = null;
 	private Beeper beeper;
-	private TextView start;
+	private TouchView start;
 	private TextView team1NameTextView;
 	private TextView team2NameTextView;
 	private String team1Name;
@@ -127,7 +127,8 @@ public class MainActivity extends Activity implements OnItemSelectedListener {
         });
         team1ScoreTextView = (TextView) findViewById(R.id.team1_score);
         team2ScoreTextView = (TextView) findViewById(R.id.team2_score);
-        start = (TextView) findViewById(R.id.start);
+        start = (TouchView) findViewById(R.id.start);
+        /*
         start.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
             	if (beeper != null) {
@@ -139,7 +140,7 @@ public class MainActivity extends Activity implements OnItemSelectedListener {
             	}
             }
         });
-        
+        */
         if (!Beeper.isServiceStarted()) {
 	  		Intent intent = new Intent(this, Beeper.class);
 	  		startService(intent);
