@@ -6,7 +6,6 @@ import java.util.Random;
 
 import android.annotation.SuppressLint;
 import android.app.ActionBar;
-import android.app.Activity;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
@@ -17,6 +16,8 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.IBinder;
+import android.support.v4.app.DialogFragment;
+import android.support.v4.app.FragmentActivity;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.AdapterView;
@@ -25,11 +26,13 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.cs185.catchphrase.Beeper.LocalBinder;
+import com.cs185.catchphrase.GameoverDialog.GameOverDialogListener;
+import com.cs185.catchphrase.PausedDialog.PauseDialogListener;
+import com.cs185.catchphrase.TimeupDialog.TimeupDialogListener;
 
-public class MainActivity extends Activity implements OnItemSelectedListener {
+public class MainActivity extends FragmentActivity implements OnItemSelectedListener, PauseDialogListener, GameOverDialogListener, TimeupDialogListener{
 	
 	private static String TEAM_1_NAME_EXTRA = "team1nameextra";
 	private static String TEAM_2_NAME_EXTRA = "team2nameextra";
@@ -89,7 +92,10 @@ public class MainActivity extends Activity implements OnItemSelectedListener {
             	}
             	pauseButton.setVisibility(View.GONE);
             	
-            	//TODO: popup paused game dialog
+            	// popup paused game dialog
+            	DialogFragment pauseDialog = new PausedDialog();
+            	pauseDialog.show(getSupportFragmentManager(), "paused");
+            	
             }
         });
         
@@ -127,20 +133,10 @@ public class MainActivity extends Activity implements OnItemSelectedListener {
         });
         team1ScoreTextView = (TextView) findViewById(R.id.team1_score);
         team2ScoreTextView = (TextView) findViewById(R.id.team2_score);
+
         start = (TouchView2) findViewById(R.id.start);
-        /*
-        start.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-            	if (beeper != null) {
-            		if (!beeper.isPlaying()) {
-                		startBeeper();
-                		pauseButton.setVisibility(View.VISIBLE);
-                	}
-            		getNextWord();
-            	}
-            }
-        });
-        */
+        start.setActivity(this);
+
         if (!Beeper.isServiceStarted()) {
 	  		Intent intent = new Intent(this, Beeper.class);
 	  		startService(intent);
@@ -158,7 +154,19 @@ public class MainActivity extends Activity implements OnItemSelectedListener {
         team2NameTextView.setText(team2Name);
         selectedCategory = extras.getInt(CATEGORY_EXTRA);
         updateArraylistAndSpinner();
-        scoreToWin =  extras.getInt(POINTS_EXTRA);  
+        scoreToWin = extras.getInt(POINTS_EXTRA);  
+    }
+    
+    public void requestNewWord()
+    {
+    	if (beeper != null) {
+    		if (!beeper.isPlaying()) 
+    		{
+    			beeper.play();
+        		pauseButton.setVisibility(View.VISIBLE);
+        	}
+    		getNextWord();
+    	}
     }
     
     @Override
@@ -246,8 +254,9 @@ public class MainActivity extends Activity implements OnItemSelectedListener {
     
     // display dialog when round ends
     public void displayRoundOverDialog() {
-    	Toast.makeText(this, "Round over!", Toast.LENGTH_SHORT).show();
-    	// TODO: display round over dialog
+    	pauseButton.setVisibility(View.GONE);
+    	DialogFragment timeupDialog = new TimeupDialog();
+    	timeupDialog.show(getSupportFragmentManager(), "timeup");
     }
     
     // add 1 to team 1 score
@@ -256,7 +265,9 @@ public class MainActivity extends Activity implements OnItemSelectedListener {
     	team1ScoreTextView.setText(Integer.valueOf(team1Score).toString());
     	
     	if (team1Score >= scoreToWin) {
-    		//TODO: popup game over dialog
+    		// popup game over  dialog
+        	DialogFragment gameOverDialog = new GameoverDialog();
+        	gameOverDialog.show(getSupportFragmentManager(), "gameover");
     	}
     }
     
@@ -266,8 +277,18 @@ public class MainActivity extends Activity implements OnItemSelectedListener {
     	team2ScoreTextView.setText(Integer.valueOf(team2Score).toString());
     	
     	if (team2Score >= scoreToWin) {
-    		//TODO: popup game over dialog
+    		// popup game over  dialog
+        	DialogFragment gameOverDialog = new GameoverDialog();
+        	gameOverDialog.show(getSupportFragmentManager(), "gameover");
     	}
+    }
+    
+    private void resetScores() {
+    	team1Score = team2Score = 0;
+    	team2ScoreTextView.setText(Integer.valueOf(team2Score).toString());
+    	team1ScoreTextView.setText(Integer.valueOf(team1Score).toString());
+    	
+    	
     }
     
     // subtract 1 from team 1 score
@@ -284,6 +305,23 @@ public class MainActivity extends Activity implements OnItemSelectedListener {
 	    	--team2Score;
 	    	team2ScoreTextView.setText(Integer.valueOf(team2Score).toString());
     	}
+    }
+    
+    public String getWinningTeamString() {
+    	if (team1Score > team2Score) {
+    		return team1Name + " Won!";
+    	}
+    	else {
+    		return team2Name + " Won!";
+    	}
+    }
+    
+    public String getTeam1Name() {
+    	return team1Name;
+    }
+    
+    public String getTeam2Name() {
+    	return team2Name;
     }
     
     private void initializeCategorySpinner() {
@@ -440,6 +478,7 @@ public class MainActivity extends Activity implements OnItemSelectedListener {
 			beeper = binder.getService();
 			
 			beeper.setActivity(MainActivity.this);
+			intializeBeeper();
 			
 			if (beeper.isPlaying()) {
 				timeChecker = new TimeChecker();
@@ -459,7 +498,7 @@ public class MainActivity extends Activity implements OnItemSelectedListener {
     }
     
     // call when user begins round
-    private void startBeeper() {
+    private void intializeBeeper() {
     	beeperTrackUri = Uri.parse("android.resource://com.cs185.catchphrase/" + R.raw.beeping);
     	beeper.initializeBeeper(beeperTrackUri);
     }
@@ -534,5 +573,48 @@ public class MainActivity extends Activity implements OnItemSelectedListener {
     		canceled = true;
     	}
 	}
+	
+	private void startNewGame() {
+		Intent intent = new Intent(getApplicationContext(), SplashActivity.class);
+		MainActivity.this.startActivity(intent);
+		this.finish();
+	}
 
+	@Override
+	public void newGameClicked() {
+		startNewGame();
+	}
+
+	@Override
+	public void resetScoreClicked() {
+		pauseButton.setVisibility(View.GONE);
+		resetScores();
+	}
+
+	@Override
+	public void resumeClicked() {
+		pauseButton.setVisibility(View.VISIBLE);
+		beeper.play();
+		requestNewWord();
+	}
+
+	@Override
+	public void exitClicked() {
+		this.finish();
+	}
+	
+	@Override
+	public void team1Selected() {
+		incrementTeam1Score();
+	}
+	
+	@Override
+	public void team2Selected() {
+		incrementTeam2Score();
+	}
+
+	@Override
+	public void neitherTeamSelected() {
+	}
+	
 }

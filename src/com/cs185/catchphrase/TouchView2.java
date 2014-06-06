@@ -23,8 +23,14 @@ public class TouchView2 extends TextView {
 	int motions = 0;
 	final long time = 500;
 	int width;
+	
+	MainActivity activity;
 	// velocity needed to get a new word
 	final float exitVelocity = 6000;
+	
+	public void setActivity(MainActivity activity) {
+		this.activity = activity;
+	}
 	
 	private void setDefault()
 	{
@@ -108,7 +114,7 @@ public class TouchView2 extends TextView {
 		//modify time by velocity, resulting in a faster animation
 		long animTime = (long) (time / (Math.abs(velocity)/(exitVelocity%(3*exitVelocity))));
 		
-		float flingDist = width - width/4;
+		float flingDist = width;
 		if( velocity < 0)
 		{
 			flingDist *= -1;
@@ -133,7 +139,7 @@ public class TouchView2 extends TextView {
             	setVisibility(View.INVISIBLE);
             	Log.d("MyLog","Setting Invisible");
             	clearAnimation();
-            	newWord();
+            	activity.requestNewWord();
             	setVisibility(View.VISIBLE);
             }
         });
@@ -143,7 +149,7 @@ public class TouchView2 extends TextView {
 	private void weakAnimation( float velocity )
 	{
 		long struggleTime = 50;
-		float struggleDist = width/20;
+		float struggleDist = width/25;
 		if ( velocity < 0 )
 		{
 			struggleDist *= -1;
@@ -176,10 +182,10 @@ public class TouchView2 extends TextView {
 	
 
 	
-	public void newWord()
-	{
-		// get a new word
-		setText( "" + motions);
-	}
+//	public void newWord()
+//	{
+//		// get a new word
+//		setText( "" + motions);
+//	}
 		
 }
