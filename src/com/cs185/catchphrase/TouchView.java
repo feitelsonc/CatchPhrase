@@ -10,7 +10,6 @@ import android.view.MotionEvent;
 import android.view.animation.Animation;
 import android.view.animation.Animation.AnimationListener;
 import android.view.animation.TranslateAnimation;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 public class TouchView extends TextView {

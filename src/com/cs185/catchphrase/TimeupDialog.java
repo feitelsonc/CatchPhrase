@@ -9,11 +9,17 @@ import android.os.Bundle;
 import android.support.v4.app.DialogFragment;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.Button;
+import android.widget.EditText;
 
 public class TimeupDialog extends DialogFragment{
 	
-private String[] choices = new String[3];
+	private Button team1button;
+	private Button team2button;
+	private Button neitherteambutton;
 	
+
 	public interface TimeupDialogListener {
 		public void team1Selected();
 		public void team2Selected();
@@ -21,32 +27,66 @@ private String[] choices = new String[3];
 	}
 	
 	TimeupDialogListener mListener;
-	MainActivity activity;
+	
 	
 	@Override
 	public void onAttach(Activity activity){
 		super.onAttach(activity); 
-		this.activity = (MainActivity) activity;
+		
 			
 		mListener = (TimeupDialogListener)activity;
 	}
 	
 	public Dialog onCreateDialog(Bundle SavedInstanceState){
 		
-//		choices[0] = activity.getTeam1Name();
-//		choices[1] = activity.getTeam2Name();
-//		choices[2] = getResources().getString(R.string.no_score);
+		LayoutInflater inflater = getActivity().getLayoutInflater();
+		View view = inflater.inflate(R.layout.timeup_dialog_layout, null);
+		team1button = (Button) view.findViewById(R.id.team1button);
+		EditText team1name = (EditText)getActivity().findViewById(R.id.edit_team_one_name);
+		team1button.setText(team1name.getText());
+		
+		team2button = (Button) view.findViewById(R.id.team2button);
+		EditText team2name = (EditText)getActivity().findViewById(R.id.edit_team_two_name);
+		team2button.setText(team2name.getText());
+		
+		neitherteambutton = (Button) view.findViewById(R.id.noscorebutton);
+		
+		team1button.setOnClickListener(new View.OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				mListener.team1Selected();
+				TimeupDialog.this.dismiss();
+				
+			}
+		});
+		
+		team2button.setOnClickListener(new View.OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				mListener.team2Selected(); 
+				TimeupDialog.this.dismiss();
+			}
+		});
+		
+		neitherteambutton.setOnClickListener(new View.OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				mListener.neitherTeamSelected();
+				TimeupDialog.this.dismiss();
+				
+			}
+		});
+		
 		
 		AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+
 		builder.setTitle(R.string.times_up);
 		
-		LayoutInflater inflater = getActivity().getLayoutInflater();
-		final View v = inflater.inflate(R.layout.timeupfrag, null);
-		builder.setView(v);
+		builder.setView(view);
 		
-		
-			
-
 		return builder.create();
 	}
 		

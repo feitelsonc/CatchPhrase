@@ -12,7 +12,6 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="@dimen/activity_margin"
         android:gravity="center"
-        android:text="@string/paused"
         android:textColor="@color/white"
         android:textSize="30sp"
         android:textStyle="italic|bold" />
@@ -30,26 +29,14 @@
         android:textSize="20sp" />
     
     <Button
-        android:id="@+id/reset_score"
+        android:id="@+id/exit"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="@dimen/list_item_margin"
         android:background="@drawable/btn_general"
         android:padding="@dimen/activity_margin"
         android:singleLine="true"
-        android:text="@string/reset_score"
-        android:textColor="@drawable/btn_text_color"
-        android:textSize="20sp" />
-
-    <Button
-        android:id="@+id/resume"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="@dimen/list_item_margin"
-        android:background="@drawable/btn_general"
-        android:padding="@dimen/activity_margin"
-        android:singleLine="true"
-        android:text="@string/resume"
+        android:text="@string/exit"
         android:textColor="@drawable/btn_text_color"
         android:textSize="20sp" />
 
