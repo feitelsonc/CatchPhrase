@@ -12,6 +12,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="@dimen/activity_margin"
         android:gravity="center"
+        android:text="@string/game_over"
         android:textColor="@color/white"
         android:textSize="30sp"
         android:textStyle="italic|bold" />

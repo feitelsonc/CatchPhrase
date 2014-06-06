@@ -607,20 +607,16 @@ public class MainActivity extends FragmentActivity implements OnItemSelectedList
 	@Override
 	public void team1Selected() {
 		incrementTeam1Score();
-		
 	}
 
 	
 	@Override
 	public void team2Selected() {
 		incrementTeam2Score();
-		
 	}
 
 	@Override
 	public void neitherTeamSelected() {
-		// TODO Auto-generated method stub
-		
 	}
 
 
