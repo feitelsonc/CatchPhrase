@@ -43,6 +43,7 @@
         android:textColor="@drawable/btn_text_color"
         android:textSize="20sp" />
 
+    
     <Button
         android:id="@+id/noscorebutton"
         android:layout_width="match_parent"

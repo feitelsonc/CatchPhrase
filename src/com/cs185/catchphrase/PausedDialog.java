@@ -22,6 +22,7 @@ public class PausedDialog extends DialogFragment {
 		public void resumeClicked();
 	}
 	
+	
 	PauseDialogListener mListener;
 	
 	@Override

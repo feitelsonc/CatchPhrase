@@ -52,6 +52,7 @@ public class TimeupDialog extends DialogFragment{
 		neitherteambutton = (Button) view.findViewById(R.id.noscorebutton);
 		
 		team1button.setOnClickListener(new View.OnClickListener() {
+			 
 			
 			@Override
 			public void onClick(View v) {

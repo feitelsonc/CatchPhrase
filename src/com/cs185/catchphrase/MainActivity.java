@@ -577,25 +577,7 @@ public class MainActivity extends FragmentActivity implements OnItemSelectedList
 		this.finish();
 	}
 
-	@Override
-	public void timeupGetChoice(int which) {
-		switch(which) {
-			case 0: {
-				incrementTeam1Score();
-				break;
-			}
-			
-			case 1: {
-				incrementTeam2Score();
-				break;
-			}
-			
-			case 2: {
-				break;
-			}
-		}
-		
-	}
+	
 
 	@Override
 	public void newGameClicked() {
@@ -617,6 +599,28 @@ public class MainActivity extends FragmentActivity implements OnItemSelectedList
 	@Override
 	public void exitClicked() {
 		this.finish();
+	}
+
+	
+	
+	
+	@Override
+	public void team1Selected() {
+		incrementTeam1Score();
+		
+	}
+
+	
+	@Override
+	public void team2Selected() {
+		incrementTeam2Score();
+		
+	}
+
+	@Override
+	public void neitherTeamSelected() {
+		// TODO Auto-generated method stub
+		
 	}
 
 
