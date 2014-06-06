@@ -37,13 +37,13 @@ public class Beeper extends Service implements MediaPlayer.OnCompletionListener{
 	}
 
 	public void initializeBeeper(Uri uri) {
-		player.reset();
+//		player.reset();
 		player = new MediaPlayer();
 		try {
 			player.setAudioStreamType(AudioManager.STREAM_MUSIC);
 			player.setDataSource(getApplicationContext(), uri);
 			player.prepare();
-			player.start();
+//			player.start();
 			
 			player.setOnCompletionListener(this);
 		}
@@ -58,9 +58,9 @@ public class Beeper extends Service implements MediaPlayer.OnCompletionListener{
 	}
 
 	public void play() {
-		if (!player.isPlaying()) {
+//		if (!player.isPlaying()) {
 			player.start();
-		}
+//		}
 	}
 	
 	public boolean isPlaying() {

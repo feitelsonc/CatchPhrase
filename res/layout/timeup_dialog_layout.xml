@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/medium_blue"
+    android:orientation="vertical"
+    android:padding="@dimen/activity_margin" >
+
+    <com.cs185.catchphrase.OutlineTextView
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/activity_margin"
+        android:gravity="center"
+        android:text="@string/times_up"
+        android:textColor="@color/white"
+        android:textSize="30sp"
+        android:textStyle="italic|bold" />
+    
+    <TextView
+        android:id="@+id/award_point"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/point_to"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:layout_marginBottom="@dimen/activity_margin" />
+
+    <Button
+        android:id="@+id/team1button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/list_item_margin"
+        android:background="@drawable/btn_general"
+        android:padding="@dimen/activity_margin"
+        android:singleLine="true"
+        android:textColor="@drawable/btn_text_color"
+        android:textSize="20sp" />
+
+    <Button
+        android:id="@+id/team2button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/list_item_margin"
+        android:background="@drawable/btn_general"
+        android:padding="@dimen/activity_margin"
+        android:singleLine="true"
+        android:textColor="@drawable/btn_text_color"
+        android:textSize="20sp" />
+
+    <Button
+        android:id="@+id/noscorebutton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/list_item_margin"
+        android:background="@drawable/btn_general"
+        android:padding="@dimen/activity_margin"
+        android:singleLine="true"
+        android:text="@string/no_score"
+        android:textColor="@drawable/btn_text_color"
+        android:textSize="20sp" />
+
+</LinearLayout>
