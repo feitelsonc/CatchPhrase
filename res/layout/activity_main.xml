@@ -146,7 +146,7 @@
             </RelativeLayout>
         </LinearLayout>
 
-        <com.cs185.catchphrase.TouchView
+        <com.cs185.catchphrase.TouchView2
             android:id="@+id/start"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
