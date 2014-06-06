@@ -577,8 +577,6 @@ public class MainActivity extends FragmentActivity implements OnItemSelectedList
 		this.finish();
 	}
 
-	
-
 	@Override
 	public void newGameClicked() {
 		startNewGame();
@@ -600,15 +598,11 @@ public class MainActivity extends FragmentActivity implements OnItemSelectedList
 	public void exitClicked() {
 		this.finish();
 	}
-
-	
-	
 	
 	@Override
 	public void team1Selected() {
 		incrementTeam1Score();
 	}
-
 	
 	@Override
 	public void team2Selected() {
@@ -618,7 +612,5 @@ public class MainActivity extends FragmentActivity implements OnItemSelectedList
 	@Override
 	public void neitherTeamSelected() {
 	}
-
-
-
+	
 }
