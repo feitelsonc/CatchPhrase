@@ -6,6 +6,7 @@
     <string name="team2">Team 2</string>
     <string name="categories">Categories</string>
     <string name="start">Swipe To Start &#x2192; </string>
+    <string name="swipe_start">&#x21E0; Swipe To Start &#x21E2; </string>
     <string name="zero">0</string>
     <string name="rename_team">Rename team</string>
     <string name="name_team1">name&#8230;</string>

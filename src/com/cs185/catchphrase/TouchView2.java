@@ -3,7 +3,6 @@ package com.cs185.catchphrase;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Paint;
-import android.support.v4.view.MotionEventCompat;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.Display;
@@ -14,7 +13,6 @@ import android.view.WindowManager;
 import android.view.animation.Animation;
 import android.view.animation.Animation.AnimationListener;
 import android.view.animation.TranslateAnimation;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 public class TouchView2 extends TextView {
@@ -26,7 +24,7 @@ public class TouchView2 extends TextView {
 	
 	MainActivity activity;
 	// velocity needed to get a new word
-	final float exitVelocity = 6000;
+	final float exitVelocity = 3000;
 	
 	public void setActivity(MainActivity activity) {
 		this.activity = activity;
@@ -35,7 +33,6 @@ public class TouchView2 extends TextView {
 	private void setDefault()
 	{
 		detector = new GestureDetector(getContext(),new myGestureListener());
-		setText("START");
 		WindowManager wm = (WindowManager) getContext().getSystemService(Context.WINDOW_SERVICE);
 		Display display = wm.getDefaultDisplay();
 		width = display.getWidth();

@@ -48,7 +48,8 @@
             android:padding="@dimen/activity_margin"
             android:singleLine="true"
             android:textColor="@color/black"
-            android:textSize="20sp" />
+            android:textSize="20sp"
+            android:imeOptions="flagNoExtractUi" />
 
         <TextView
             android:id="@+id/cteam_two_name_hint"
@@ -69,7 +70,8 @@
             android:padding="@dimen/activity_margin"
             android:singleLine="true"
             android:textColor="@color/black"
-            android:textSize="20sp" />
+            android:textSize="20sp"
+            android:imeOptions="flagNoExtractUi" />
 
         <TextView
             android:id="@+id/category_hint"
@@ -107,7 +109,8 @@
             android:padding="@dimen/activity_margin"
             android:singleLine="true"
             android:textColor="@color/black"
-            android:textSize="20sp" />
+            android:textSize="20sp"
+            android:imeOptions="flagNoExtractUi" />
 
         <View
             android:layout_width="0dp"

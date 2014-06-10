@@ -29,7 +29,7 @@ public class SplashActivity extends Activity implements OnItemSelectedListener {
 	private String team1Name;
 	private String team2Name;
 	private int selectedCategory = 0;
-	private int pointsToWin = 5;
+	private int pointsToWin = 7;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -23,7 +23,6 @@ import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.TextView;
 
@@ -53,12 +52,12 @@ public class MainActivity extends FragmentActivity implements OnItemSelectedList
 	private int scoreToWin;
 	private Spinner categorySpinner;
 	private int selectedCategory = 0;
-	private Button pauseButton;
+	private TextView pauseButton;
 	private View mainView;
-	private Button incrementTeam1Score;
-	private Button decrementTeam1Score;
-	private Button incrementTeam2Score;
-	private Button decrementTeam2Score;
+	private TextView incrementTeam1Score;
+	private TextView decrementTeam1Score;
+	private TextView incrementTeam2Score;
+	private TextView decrementTeam2Score;
 	private String[] wordsArray;
 	private ArrayList<String> words;
 	private TimeChecker timeChecker = null;
@@ -84,7 +83,7 @@ public class MainActivity extends FragmentActivity implements OnItemSelectedList
         team1NameTextView = (TextView) findViewById(R.id.team1);
         team2NameTextView = (TextView) findViewById(R.id.team2);
         mainView = (View) findViewById(R.id.main_layout);
-        pauseButton = (Button) findViewById(R.id.pause_button);
+        pauseButton = (TextView) findViewById(R.id.pause_button);
         pauseButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
             	if (beeper != null) {
@@ -99,10 +98,10 @@ public class MainActivity extends FragmentActivity implements OnItemSelectedList
             }
         });
         
-        incrementTeam1Score = (Button) findViewById(R.id.add_button_team_one);
-        decrementTeam1Score = (Button) findViewById(R.id.subtract_button_team_one);
-        incrementTeam2Score = (Button) findViewById(R.id.add_button_team_two);
-        decrementTeam2Score = (Button) findViewById(R.id.subtract_button_team_two);
+        incrementTeam1Score = (TextView) findViewById(R.id.add_button_team_one);
+        decrementTeam1Score = (TextView) findViewById(R.id.subtract_button_team_one);
+        incrementTeam2Score = (TextView) findViewById(R.id.add_button_team_two);
+        decrementTeam2Score = (TextView) findViewById(R.id.subtract_button_team_two);
         
         incrementTeam1Score.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
@@ -265,6 +264,9 @@ public class MainActivity extends FragmentActivity implements OnItemSelectedList
     	team1ScoreTextView.setText(Integer.valueOf(team1Score).toString());
     	
     	if (team1Score >= scoreToWin) {
+    		if (beeper != null) {
+        		beeper.pause();
+        	}
     		// popup game over  dialog
         	DialogFragment gameOverDialog = new GameoverDialog();
         	gameOverDialog.show(getSupportFragmentManager(), "gameover");
@@ -277,6 +279,9 @@ public class MainActivity extends FragmentActivity implements OnItemSelectedList
     	team2ScoreTextView.setText(Integer.valueOf(team2Score).toString());
     	
     	if (team2Score >= scoreToWin) {
+    		if (beeper != null) {
+        		beeper.pause();
+        	}
     		// popup game over  dialog
         	DialogFragment gameOverDialog = new GameoverDialog();
         	gameOverDialog.show(getSupportFragmentManager(), "gameover");
