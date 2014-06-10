@@ -18,13 +18,14 @@ import android.widget.TextView;
 public class TouchView2 extends TextView {
 	
 	private GestureDetector detector;
-	int motions = 0;
 	final long time = 500;
 	int width;
-	
+	float currentTranslation = 0;
 	MainActivity activity;
+	
 	// velocity needed to get a new word
 	final float exitVelocity = 3000;
+	boolean wasFling = false;
 	
 	public void setActivity(MainActivity activity) {
 		this.activity = activity;
@@ -36,7 +37,6 @@ public class TouchView2 extends TextView {
 		WindowManager wm = (WindowManager) getContext().getSystemService(Context.WINDOW_SERVICE);
 		Display display = wm.getDefaultDisplay();
 		width = display.getWidth();
-		Log.d("MyLog","Width: " + width);
 	}
 
 	public TouchView2(Context context) {
@@ -59,6 +59,7 @@ public class TouchView2 extends TextView {
 	
 	@Override
 	protected void onDraw(Canvas pCanvas) {
+		setTranslationX(currentTranslation);
 	    int textColor = getTextColors().getDefaultColor();
 	    setTextColor(getResources().getColor(R.color.black)); // your stroke's color
 	    getPaint().setStrokeWidth(8);
@@ -79,45 +80,75 @@ public class TouchView2 extends TextView {
 			detector.onTouchEvent(event);
 		}
 		
-		motions = ( motions + 1) % 10000;
+		if (event.getActionMasked() == MotionEvent.ACTION_UP )
+		{
+			if ( wasFling )
+			{
+				wasFling = false;
+			}
+			else
+			{
+				currentTranslation = 0;
+				invalidate();
+			}
+		}
 		return true;
 	}
 	
 	// Listen for Flings
 	class myGestureListener extends GestureDetector.SimpleOnGestureListener
-	{	
-		
-		
+	{		
 		@Override
 		public boolean onFling(MotionEvent e1, MotionEvent e2, float velocityX, float velocityY)
 		{
-			Log.d("MyLog","Velocity is: " + velocityX);
-			if(  Math.abs(velocityX)  > exitVelocity )	// get a new word
+			wasFling = true;
+			strongAnimation(velocityX);
+			return true;
+		}
+		
+		@Override
+		public boolean onScroll( MotionEvent e1, MotionEvent e2, float distanceX, float distanceY )
+		{
+			currentTranslation += e2.getX() - e1.getX();
+			setTranslationX(currentTranslation);
+			if ( e1.getActionMasked() == MotionEvent.ACTION_UP || e1.getActionMasked() == MotionEvent.ACTION_POINTER_UP
+				 ||  e2.getActionMasked() == MotionEvent.ACTION_UP || e2.getActionMasked() == MotionEvent.ACTION_POINTER_UP)
 			{
-				strongAnimation(velocityX);
+				Log.d("MyLog","Centering!");
+				currentTranslation = 0;
+				invalidate();
 			}
-			else
-			{
-				weakAnimation(velocityX);
-			}
-			
-			
 			return true;
 		}
 	}
 	
 	private void strongAnimation(float velocity)
 	{	
-		//modify time by velocity, resulting in a faster animation
-		long animTime = (long) (time / (Math.abs(velocity)/(exitVelocity%(3*exitVelocity))));
-		
-		float flingDist = width;
-		if( velocity < 0)
+		// change time based on velocity
+		float averageVelocity = 1800;
+		if ( velocity > 1.5 * averageVelocity)
+			velocity = (float) (1.5 * averageVelocity);
+		long animTime;
+		if ( velocity > averageVelocity )
+		{
+			animTime = (long) ( time / ( velocity / averageVelocity) );
+		}
+		else
+		{
+			animTime = time;
+		}
+		float ratio = (width - Math.abs(currentTranslation)) / width;
+		//change time based on x position
+		animTime = (long) (animTime * ratio);
+		// Change fling distance based on screen position
+		float flingDist = width * ratio;
+		// Fling will be determined by current X position on screen. Using direction of velocity results in many more mistakes
+		if( currentTranslation < 0)
 		{
 			flingDist *= -1;
 		}
 		
-		TranslateAnimation anim = new TranslateAnimation(0,flingDist,0,0);
+		TranslateAnimation anim = new TranslateAnimation(currentTranslation,currentTranslation + flingDist,0,0);
 		anim.setDuration(animTime);
 		
 		// recenter->happens automatically
@@ -134,7 +165,7 @@ public class TouchView2 extends TextView {
             public void onAnimationEnd(Animation animation) {
             	// set opacity to zero
             	setVisibility(View.INVISIBLE);
-            	Log.d("MyLog","Setting Invisible");
+            	currentTranslation = 0;
             	clearAnimation();
             	activity.requestNewWord();
             	setVisibility(View.VISIBLE);
@@ -142,47 +173,4 @@ public class TouchView2 extends TextView {
         });
 		startAnimation(anim);
 	}
-	
-	private void weakAnimation( float velocity )
-	{
-		long struggleTime = 50;
-		float struggleDist = width/25;
-		if ( velocity < 0 )
-		{
-			struggleDist *= -1;
-		}
-		
-		TranslateAnimation anim = new TranslateAnimation(0,struggleDist,0,0);
-		anim.setDuration(struggleTime);
-		
-		// recenter->happens automatically
-		anim.setAnimationListener(new AnimationListener() {
-
-            @Override
-            public void onAnimationStart(Animation animation) {
-            }
-
-            @Override
-            public void onAnimationRepeat(Animation animation) {}
-
-            @Override
-            public void onAnimationEnd(Animation animation) {
-            	// set opacity to zero
-            }
-        });
-		startAnimation(anim);	
-		// calculate distance based on velocity
-		
-		// move that distance and return
-	}
-
-	
-
-	
-//	public void newWord()
-//	{
-//		// get a new word
-//		setText( "" + motions);
-//	}
-		
 }
