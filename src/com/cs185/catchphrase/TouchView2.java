@@ -111,13 +111,6 @@ public class TouchView2 extends TextView {
 		{
 			currentTranslation += e2.getX() - e1.getX();
 			setTranslationX(currentTranslation);
-			if ( e1.getActionMasked() == MotionEvent.ACTION_UP || e1.getActionMasked() == MotionEvent.ACTION_POINTER_UP
-				 ||  e2.getActionMasked() == MotionEvent.ACTION_UP || e2.getActionMasked() == MotionEvent.ACTION_POINTER_UP)
-			{
-				Log.d("MyLog","Centering!");
-				currentTranslation = 0;
-				invalidate();
-			}
 			return true;
 		}
 	}

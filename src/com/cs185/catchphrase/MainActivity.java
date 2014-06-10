@@ -153,7 +153,8 @@ public class MainActivity extends FragmentActivity implements OnItemSelectedList
         team2NameTextView.setText(team2Name);
         selectedCategory = extras.getInt(CATEGORY_EXTRA);
         updateArraylistAndSpinner();
-        scoreToWin = extras.getInt(POINTS_EXTRA);  
+        //scoreToWin = extras.getInt(POINTS_EXTRA);
+        scoreToWin = 7;
     }
     
     public void requestNewWord()
@@ -584,6 +585,12 @@ public class MainActivity extends FragmentActivity implements OnItemSelectedList
 		MainActivity.this.startActivity(intent);
 		this.finish();
 	}
+	
+	private void prepareNextGame()
+	{
+		mainView.setBackgroundColor(Color.parseColor("#0099cc"));
+		start.setText(R.string.swipe_start);
+	}
 
 	@Override
 	public void newGameClicked() {
@@ -592,8 +599,10 @@ public class MainActivity extends FragmentActivity implements OnItemSelectedList
 
 	@Override
 	public void resetScoreClicked() {
-		pauseButton.setVisibility(View.GONE);
 		resetScores();
+		pauseButton.setVisibility(View.VISIBLE);
+		beeper.play();
+		requestNewWord();
 	}
 
 	@Override
@@ -611,15 +620,18 @@ public class MainActivity extends FragmentActivity implements OnItemSelectedList
 	@Override
 	public void team1Selected() {
 		incrementTeam1Score();
+		prepareNextGame();
 	}
 	
 	@Override
 	public void team2Selected() {
 		incrementTeam2Score();
+		prepareNextGame();
 	}
 
 	@Override
 	public void neitherTeamSelected() {
+		prepareNextGame();
 	}
 	
 }
